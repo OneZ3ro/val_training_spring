@@ -1,6 +1,7 @@
 package it.fides.val_training_spring.entities;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -8,30 +9,41 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
+import jakarta.persistence.JoinTable;
+import jakarta.persistence.ManyToMany;
 import jakarta.persistence.OneToOne;
+import jakarta.persistence.Table;
 
-@Entity(name = "gruppo")
+@Entity
+@Table(name="gruppo")
 public class GruppoEntity {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id_gruppo")
 	private Long idGruppo;
 	
-	@Column(name = "nome")
+	@Column(name = "nome", nullable=false, unique = true)
 	private String nomeGruppo;
 	
-	@Column(name = "data_creazione")
+	@Column(name = "data_creazione", nullable=false)
 	private LocalDateTime dataCreazione;
 	
-	@Column(name = "data_modifica")
+	@Column(name = "data_modifica", nullable=false)
 	private LocalDateTime dataModifica;
 	
-	@Column(name = "flg_cancellato")
+	@Column(name = "flg_cancellato", nullable=false)
 	private boolean flgCancellato;
 	
 	@OneToOne
 	@JoinColumn(name = "responsabile")
-	private Long idResponsabile;
+	private UtenteEntity responsabile;
+	
+	@ManyToMany
+    @JoinTable(
+            name = "utente_gruppo",
+            joinColumns = @JoinColumn(name = "id_gruppo"),
+            inverseJoinColumns = @JoinColumn(name = "id_utente"))
+    private List<UtenteEntity> utenti;
 
 	public Long getIdGruppo() {
 		return idGruppo;
@@ -73,19 +85,19 @@ public class GruppoEntity {
 		this.flgCancellato = flgCancellato;
 	}
 
-	public Long getIdResponsabile() {
-		return idResponsabile;
+	public UtenteEntity getIdResponsabile() {
+		return responsabile;
 	}
 
-	public void setIdResponsabile(Long idResponsabile) {
-		this.idResponsabile = idResponsabile;
+	public void setIdResponsabile(UtenteEntity idResponsabile) {
+		this.responsabile = idResponsabile;
 	}
 
 	@Override
 	public String toString() {
 		return "GruppoEntity [idGruppo=" + idGruppo + ", nomeGruppo=" + nomeGruppo + ", dataCreazione=" + dataCreazione
 				+ ", dataModifica=" + dataModifica + ", flgCancellato=" + flgCancellato + ", idResponsabile="
-				+ idResponsabile + "]";
+				+ responsabile + "]";
 	}
 	
 	

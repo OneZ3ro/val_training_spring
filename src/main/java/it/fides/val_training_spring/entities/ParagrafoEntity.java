@@ -1,8 +1,6 @@
-package model;
+package it.fides.val_training_spring.entities;
 
 import java.time.LocalDateTime;
-import java.util.List;
-
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -10,7 +8,6 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
-import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
 @Entity
@@ -38,11 +35,11 @@ public class ParagrafoEntity {
 	
 	@ManyToOne
 	@JoinColumn(name="utente")
-	private List<UtenteEntity> utenteParagrafo;
+	private UtenteEntity utenteParagrafo;
 	
 	@ManyToOne
 	@JoinColumn(name="sezione")
-	private List<SezioneEntity> sezioneParagrafo;
+	private SezioneEntity sezioneParagrafo;
 	
 	//GETTER E SETTER
 
@@ -94,21 +91,31 @@ public class ParagrafoEntity {
 		this.flgCancellatoParagrafo = flgCancellatoParagrafo;
 	}
 
-	public List<UtenteEntity> getUtenteParagrafo() {
+	public UtenteEntity getUtenteParagrafo() {
 		return utenteParagrafo;
 	}
 
-	public void setUtenteParagrafo(List<UtenteEntity> utenteParagrafo) {
+	public void setUtenteParagrafo(UtenteEntity utenteParagrafo) {
 		this.utenteParagrafo = utenteParagrafo;
 	}
 
-	public List<SezioneEntity> getSezioneParagrafo() {
+	public SezioneEntity getSezioneParagrafo() {
 		return sezioneParagrafo;
 	}
 
-	public void setSezioneParagrafo(List<SezioneEntity> sezioneParagrafo) {
+	public void setSezioneParagrafo (SezioneEntity sezioneParagrafo) {
 		this.sezioneParagrafo = sezioneParagrafo;
 	}
 
+	@Override
+	public String toString() {
+		return "ParagrafoEntity [idParagrafo=" + idParagrafo + ", titoloParagrafo=" + titoloParagrafo
+				+ ", descrizioneParagrafo=" + descrizioneParagrafo + ", dataCreazioneParagrafo="
+				+ dataCreazioneParagrafo + ", dataModificaParagrafo=" + dataModificaParagrafo
+				+ ", flgCancellatoParagrafo=" + flgCancellatoParagrafo + ", utenteParagrafo=" + utenteParagrafo
+				+ ", sezioneParagrafo=" + sezioneParagrafo + "]";
+	}
+
+	
 	
 }

@@ -8,10 +8,11 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
-import jakarta.persistence.OneToMany;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.Table;
 
-@Entity(name = "scala")
-
+@Entity
+@Table(name = "scala")
 public class ScalaEntity {
 
 	@Id
@@ -19,24 +20,24 @@ public class ScalaEntity {
 	@Column(name = "id_scala")
 	private Long idScala;
 
-	@Column(name = "titolo")
+	@Column(name = "titolo", nullable=false)
 	private String titolo;
 
 	@Column(name = "descrizione")
 	private String descrizione;
 
-	@Column(name = "data_creazione")
+	@Column(name = "data_creazione", nullable=false)
 	private LocalDateTime dataCreazione;
 
-	@Column(name = "data_modifica")
+	@Column(name = "data_modifica", nullable=false)
 	private LocalDateTime dataModifica;
 
-	@Column(name = "flg_cancellato")
+	@Column(name = "flg_cancellato", nullable=false)
 	private boolean flgCancellato;
 
-	@OneToMany
+	@ManyToOne
 	@JoinColumn(name = "id_paragrafo")
-	private Long idParagrafo;
+	private ParagrafoEntity paragrafo;
 
 	// Getter & Setter
 
@@ -88,17 +89,21 @@ public class ScalaEntity {
 		this.flgCancellato = flgCancellato;
 	}
 
-	public Long getIdParagrafo() {
-		return idParagrafo;
+	
+	public ParagrafoEntity getParagrafo() {
+		return paragrafo;
 	}
 
-	public void setIdParagrafo(Long idParagrafo) {
-		this.idParagrafo = idParagrafo;
+	public void setParagrafo(ParagrafoEntity paragrafo) {
+		this.paragrafo = paragrafo;
 	}
 
 	@Override
 	public String toString() {
-	   return "ScalaEntity [idScala=" + idScala + ",titolo=" + titolo + ",descrizione=" + descrizione + "dataCreazione=" + dataCreazione
-				+ ", dataModifica=" + dataModifica + ", flgCancellato=" + flgCancellato + "]";
+		return "ScalaEntity [idScala=" + idScala + ", titolo=" + titolo + ", descrizione=" + descrizione
+				+ ", dataCreazione=" + dataCreazione + ", dataModifica=" + dataModifica + ", flgCancellato="
+				+ flgCancellato + ", paragrafo=" + paragrafo + "]";
 	}
+
+	
 }
