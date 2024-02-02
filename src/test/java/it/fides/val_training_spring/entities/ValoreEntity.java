@@ -116,6 +116,14 @@ public class ValoreEntity {
 		this.idUtenteValore = idUtenteValore;
 	}
 
+	@Override
+	public String toString() {
+		return "ValoreEntity [idValore=" + idValore + ", nomeValore=" + nomeValore + ", votoValore=" + votoValore
+				+ ", dataCreazioneValore=" + dataCreazioneValore + ", dataModificaValore=" + dataModificaValore
+				+ ", flgCancellatoValore=" + flgCancellatoValore + ", idParagrafoValore=" + idParagrafoValore
+				+ ", idUtenteValore=" + idUtenteValore + "]";
+	}
+
 	
 	
 }
