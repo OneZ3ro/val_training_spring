@@ -20,10 +20,10 @@ public class ScalaEntity {
 	@Column(name = "id_scala")
 	private Long idScala;
 
-	@Column(name = "titolo", nullable=false)
+	@Column(name = "titolo", nullable=false, length = 64)
 	private String titolo;
 
-	@Column(name = "descrizione")
+	@Column(name = "descrizione", length = 1000)
 	private String descrizione;
 
 	@Column(name = "data_creazione", nullable=false)

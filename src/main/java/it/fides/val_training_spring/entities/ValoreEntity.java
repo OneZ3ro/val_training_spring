@@ -19,16 +19,22 @@ public class ValoreEntity {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id_valore", nullable = false)
 	private Long idValore;
-	@Column(name = "nome")
+	
+	@Column(name = "nome", length = 32)
 	private String nomeValore;
-	@Column(name = "voto")
+	
+	@Column(name = "voto", length = 32)
 	private String votoValore;
+	
 	@Column(name = "data_creazione", nullable = false)
 	private LocalDateTime dataCreazioneValore;
+	
 	@Column(name = "data_modifica", nullable = false)
 	private LocalDateTime dataModificaValore;
+	
 	@Column(name = "flg_cancellato", nullable = false)
 	private Boolean flgCancellatoValore;
+	
 	@ManyToOne
 	@JoinColumn(name = "id_paragrafo", nullable = false)
 	private ParagrafoEntity paragrafo;
