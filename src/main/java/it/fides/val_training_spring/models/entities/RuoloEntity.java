@@ -1,4 +1,4 @@
-package it.fides.val_training_spring.entities;
+package it.fides.val_training_spring.models.entities;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -32,12 +32,9 @@ public class RuoloEntity {
 	public void setNomeRuolo(String nomeRuolo) {
 		this.nomeRuolo = nomeRuolo;
 	}
-	
+
 	@Override
 	public String toString() {
-		return
-				"RUOLO: {\n" +
-				"Id: " + getIdRuolo() + "\n" +
-				"Nome: " + getNomeRuolo() + "\n}";
+		return "RuoloEntity [idRuolo=" + idRuolo + ", nomeRuolo=" + nomeRuolo + "]";
 	}
 }

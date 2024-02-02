@@ -1,4 +1,4 @@
-package it.fides.val_training_spring.entities;
+package it.fides.val_training_spring.models.entities;
 
 import java.time.LocalDateTime;
 import jakarta.persistence.Column;
@@ -35,11 +35,11 @@ public class ParagrafoEntity {
 	
 	@ManyToOne
 	@JoinColumn(name="utente")
-	private UtenteEntity utenteParagrafo;
+	private UtenteEntity utente;
 	
 	@ManyToOne
 	@JoinColumn(name="sezione")
-	private SezioneEntity sezioneParagrafo;
+	private SezioneEntity sezione;
 	
 	//GETTER E SETTER
 
@@ -91,20 +91,20 @@ public class ParagrafoEntity {
 		this.flgCancellatoParagrafo = flgCancellatoParagrafo;
 	}
 
-	public UtenteEntity getUtenteParagrafo() {
-		return utenteParagrafo;
+	public UtenteEntity getUtente() {
+		return utente;
 	}
 
-	public void setUtenteParagrafo(UtenteEntity utenteParagrafo) {
-		this.utenteParagrafo = utenteParagrafo;
+	public void setUtente(UtenteEntity utente) {
+		this.utente = utente;
 	}
 
-	public SezioneEntity getSezioneParagrafo() {
-		return sezioneParagrafo;
+	public SezioneEntity getSezione() {
+		return sezione;
 	}
 
-	public void setSezioneParagrafo (SezioneEntity sezioneParagrafo) {
-		this.sezioneParagrafo = sezioneParagrafo;
+	public void setSezione(SezioneEntity sezione) {
+		this.sezione = sezione;
 	}
 
 	@Override
@@ -112,10 +112,7 @@ public class ParagrafoEntity {
 		return "ParagrafoEntity [idParagrafo=" + idParagrafo + ", titoloParagrafo=" + titoloParagrafo
 				+ ", descrizioneParagrafo=" + descrizioneParagrafo + ", dataCreazioneParagrafo="
 				+ dataCreazioneParagrafo + ", dataModificaParagrafo=" + dataModificaParagrafo
-				+ ", flgCancellatoParagrafo=" + flgCancellatoParagrafo + ", utenteParagrafo=" + utenteParagrafo
-				+ ", sezioneParagrafo=" + sezioneParagrafo + "]";
-	}
-
-	
-	
+				+ ", flgCancellatoParagrafo=" + flgCancellatoParagrafo + ", utenteParagrafo=" + utente
+				+ ", sezioneParagrafo=" + sezione + "]";
+	}	
 }
