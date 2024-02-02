@@ -1,8 +1,10 @@
-package model;
+package it.fides.val_training_spring.entities;
 
 import java.time.LocalDateTime;
 import java.util.List;
 
+import it.fides.val_training_spring.entities.SezioneEntity;
+import it.fides.val_training_spring.entities.UtenteEntity;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
