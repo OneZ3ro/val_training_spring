@@ -12,8 +12,10 @@ import jakarta.persistence.JoinTable;
 import jakarta.persistence.ManyToMany;
 import jakarta.persistence.ManyToOne;
 // import it.fides.val_training_spring.entities.GruppoEntity;
+import jakarta.persistence.Table;
 
 @Entity
+@Table(name = "utente")
 public class UtenteEntity {
 	
 	@Id
@@ -21,28 +23,28 @@ public class UtenteEntity {
 	@Column(name = "id_utente")
 	private Long idUtente;
 	
-	@Column(name = "nome")
+	@Column(name = "nome", nullable=false)
 	private String nomeUtente;
 	
-	@Column(name = "cognome")
+	@Column(name = "cognome", nullable=false)
 	private String cognomeUtente;
 	
-	@Column(name = "email")
+	@Column(name = "email", nullable=false, unique = true)
 	private String emailUtente;
 	
-	@Column(name = "password")
+	@Column(name = "password", nullable=false)
 	private String passwordUtente;
 	
-	@Column(name = "informazioni_generali")
+	@Column(name = "informazioni_generali", nullable=false)
 	private String informazioniGeneraliUtente;
 	
-	@Column(name = "data_creazione")
+	@Column(name = "data_creazione", nullable=false)
 	private LocalDateTime dataCreazioneUtente;
 	
-	@Column(name = "data_modifica")
+	@Column(name = "data_modifica", nullable=false)
 	private LocalDateTime dataModificaUtente;
 	
-	@Column(name = "flg_cancellato")
+	@Column(name = "flg_cancellato", nullable=false)
 	private boolean flgCancellato;
 	
     @ManyToOne
@@ -124,19 +126,15 @@ public class UtenteEntity {
 	public void setGruppi(List<GruppoEntity> gruppi) {
 		this.gruppi = gruppi;
 	}
-	
+
 	@Override
 	public String toString() {
-		return
-				"UTENTE: {\n" +
-				"Id: " + getIdUtente() + "\n" +
-				"Nome: " + getNomeUtente() + "\n" +
-				"Cognome: " + getCognomeUtente() + "\n" +
-				"Email: " + getEmailUtente() + "\n" +
-				"Password: " + getPasswordUtente() + "\n" +
-				"Informazioni Generali: " + getInformazioniGeneraliUtente() + "\n" +
-				"Flg Cancellato: " + isFlgCancellato() + "\n" +
-				"Ruolo: " + getRuolo() + "\n" +
-				"Gruppi: " + getGruppi() + "\n}";
+		return "UtenteEntity [idUtente=" + idUtente + ", nomeUtente=" + nomeUtente + ", cognomeUtente=" + cognomeUtente
+				+ ", emailUtente=" + emailUtente + ", passwordUtente=" + passwordUtente
+				+ ", informazioniGeneraliUtente=" + informazioniGeneraliUtente + ", dataCreazioneUtente="
+				+ dataCreazioneUtente + ", dataModificaUtente=" + dataModificaUtente + ", flgCancellato="
+				+ flgCancellato + ", ruolo=" + ruolo + ", gruppi=" + gruppi + "]";
 	}
+	
+
 }

@@ -7,9 +7,10 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 
-@Entity(name = "scala")
-
+@Entity
+@Table(name="scala")
 public class SezioneEntity {
 
 	@Id
@@ -17,20 +18,20 @@ public class SezioneEntity {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long idSezione;
 
-	@Column(name = "titolo")
+	@Column(name = "titolo", nullable=false)
 	private String titolo;
 
-	@Column(name = "data_creazione")
+	@Column(name = "data_creazione", nullable=false)
 	private LocalDateTime dataCreazione;
 
-	@Column(name = "data_modifica")
+	@Column(name = "data_modifica", nullable=false)
 	private LocalDateTime dataModifica;
 
-	@Column(name = "flg_cancellato")
+	@Column(name = "flg_cancellato", nullable=false)
 	private boolean flgCancellato;
 
 	// Getter & Setter
-
+	
 	public Long getIdSezione() {
 		return idSezione;
 	}

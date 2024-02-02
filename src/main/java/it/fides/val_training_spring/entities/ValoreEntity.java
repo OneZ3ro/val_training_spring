@@ -14,7 +14,7 @@ import jakarta.persistence.Table;
 @Entity
 @Table(name = "valore")
 public class ValoreEntity {
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id_valore", nullable = false)
@@ -31,25 +31,27 @@ public class ValoreEntity {
 	private Boolean flgCancellatoValore;
 	@ManyToOne
 	@JoinColumn(name = "id_paragrafo", nullable = false)
-	private Long idParagrafoValore;
+	private ParagrafoEntity paragrafo;
+	
 	@ManyToOne
 	@JoinColumn(name = "id_utente", nullable = false)
-	private Long idUtenteValore;
-	
+	private UtenteEntity utente;
+
 	public ValoreEntity(Long idValore, String nomeValore, String votoValore, LocalDateTime dataCreazioneValore,
-			LocalDateTime dataModificaValore, Boolean flgCancellatoValore, Long idRoleValore, Long idUserValore) {
+			LocalDateTime dataModificaValore, Boolean flgCancellatoValore, ParagrafoEntity paragrafo,
+			UtenteEntity utente) {
 		this.idValore = idValore;
 		this.nomeValore = nomeValore;
 		this.votoValore = votoValore;
 		this.dataCreazioneValore = dataCreazioneValore;
 		this.dataModificaValore = dataModificaValore;
 		this.flgCancellatoValore = flgCancellatoValore;
-		this.idParagrafoValore = idRoleValore;
-		this.idUtenteValore = idUserValore;
+		this.paragrafo = paragrafo;
+		this.utente = utente;
 	}
-	
+
 	public ValoreEntity() {
-		
+
 	}
 
 	public Long getIdValore() {
@@ -100,30 +102,27 @@ public class ValoreEntity {
 		this.flgCancellatoValore = flgCancellatoValore;
 	}
 
-	public Long getIdParagrafoValore() {
-		return idParagrafoValore;
+	public ParagrafoEntity getParagrafo() {
+		return paragrafo;
 	}
 
-	public void setIdParagrafoValore(Long idParagrafoValore) {
-		this.idParagrafoValore = idParagrafoValore;
+	public void setParagrafo(ParagrafoEntity paragrafo) {
+		this.paragrafo = paragrafo;
 	}
 
-	public Long getIdUtenteValore() {
-		return idUtenteValore;
+	public UtenteEntity getUtente() {
+		return utente;
 	}
 
-	public void setIdUtenteValore(Long idUtenteValore) {
-		this.idUtenteValore = idUtenteValore;
+	public void setUtente(UtenteEntity utente) {
+		this.utente = utente;
 	}
 
 	@Override
 	public String toString() {
 		return "ValoreEntity [idValore=" + idValore + ", nomeValore=" + nomeValore + ", votoValore=" + votoValore
 				+ ", dataCreazioneValore=" + dataCreazioneValore + ", dataModificaValore=" + dataModificaValore
-				+ ", flgCancellatoValore=" + flgCancellatoValore + ", idParagrafoValore=" + idParagrafoValore
-				+ ", idUtenteValore=" + idUtenteValore + "]";
+				+ ", flgCancellatoValore=" + flgCancellatoValore + ", paragrafo=" + paragrafo + ", utente=" + utente
+				+ "]";
 	}
-
-	
-	
 }
