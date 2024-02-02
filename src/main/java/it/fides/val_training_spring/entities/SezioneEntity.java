@@ -7,23 +7,18 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.OneToMany;
 
 @Entity(name = "scala")
 
-public class ScalaEntity {
+public class SezioneEntity {
 
 	@Id
+	@Column(name = "id_sezione")
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "id_scala")
-	private Long idScala;
+	private Long idSezione;
 
 	@Column(name = "titolo")
 	private String titolo;
-
-	@Column(name = "descrizione")
-	private String descrizione;
 
 	@Column(name = "data_creazione")
 	private LocalDateTime dataCreazione;
@@ -34,18 +29,14 @@ public class ScalaEntity {
 	@Column(name = "flg_cancellato")
 	private boolean flgCancellato;
 
-	@OneToMany
-	@JoinColumn(name = "id_paragrafo")
-	private Long idParagrafo;
-
 	// Getter & Setter
 
-	public Long getIdScala() {
-		return idScala;
+	public Long getIdSezione() {
+		return idSezione;
 	}
 
-	public void setIdScala(Long idScala) {
-		this.idScala = idScala;
+	public void setIdSezione(Long idSezione) {
+		this.idSezione = idSezione;
 	}
 
 	public String getTitolo() {
@@ -54,14 +45,6 @@ public class ScalaEntity {
 
 	public void setTitolo(String titolo) {
 		this.titolo = titolo;
-	}
-
-	public String getDescrizione() {
-		return descrizione;
-	}
-
-	public void setDescrizione(String descrizione) {
-		this.descrizione = descrizione;
 	}
 
 	public LocalDateTime getDataCreazione() {
@@ -86,14 +69,6 @@ public class ScalaEntity {
 
 	public void setFlgCancellato(boolean flgCancellato) {
 		this.flgCancellato = flgCancellato;
-	}
-
-	public Long getIdParagrafo() {
-		return idParagrafo;
-	}
-
-	public void setIdParagrafo(Long idParagrafo) {
-		this.idParagrafo = idParagrafo;
 	}
 
 }
