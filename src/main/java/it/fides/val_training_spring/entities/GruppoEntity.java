@@ -22,7 +22,7 @@ public class GruppoEntity {
 	@Column(name = "id_gruppo")
 	private Long idGruppo;
 	
-	@Column(name = "nome", nullable=false, unique = true)
+	@Column(name = "nome", nullable=false, unique = true, length = 64)
 	private String nomeGruppo;
 	
 	@Column(name = "data_creazione", nullable=false)

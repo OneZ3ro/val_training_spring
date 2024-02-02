@@ -18,19 +18,19 @@ public class ParagrafoEntity {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long idParagrafo;
 	
-	@Column(name="titolo", length=64, nullable=false, unique=false)
+	@Column(name="titolo", nullable=false, length=64)
 	private String titoloParagrafo;
 	
-	@Column(name="descrizione", length=500, nullable=true, unique=false)
+	@Column(name="descrizione", nullable=true, length=1000)
 	private String descrizioneParagrafo;
 	
-	@Column(name="data_creazione", nullable=false, unique=false)
+	@Column(name="data_creazione", nullable=false)
 	private LocalDateTime dataCreazioneParagrafo;
 	
-	@Column(name="data_modifica", nullable=false, unique=false)
+	@Column(name="data_modifica", nullable=false)
 	private LocalDateTime dataModificaParagrafo;
 	
-	@Column(name="flg_cancellato", nullable=false, unique=false)
+	@Column(name="flg_cancellato", nullable=false)
 	private Boolean flgCancellatoParagrafo;
 	
 	@ManyToOne

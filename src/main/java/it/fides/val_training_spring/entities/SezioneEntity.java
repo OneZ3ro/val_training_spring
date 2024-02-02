@@ -18,7 +18,7 @@ public class SezioneEntity {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long idSezione;
 
-	@Column(name = "titolo", nullable=false)
+	@Column(name = "titolo", nullable=false, length = 64)
 	private String titolo;
 
 	@Column(name = "data_creazione", nullable=false)

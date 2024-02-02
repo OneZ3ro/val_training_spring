@@ -11,7 +11,6 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.JoinTable;
 import jakarta.persistence.ManyToMany;
 import jakarta.persistence.ManyToOne;
-// import it.fides.val_training_spring.entities.GruppoEntity;
 import jakarta.persistence.Table;
 
 @Entity
@@ -23,19 +22,19 @@ public class UtenteEntity {
 	@Column(name = "id_utente")
 	private Long idUtente;
 	
-	@Column(name = "nome", nullable=false)
+	@Column(name = "nome", nullable=false, length = 32)
 	private String nomeUtente;
 	
-	@Column(name = "cognome", nullable=false)
+	@Column(name = "cognome", nullable=false, length = 32)
 	private String cognomeUtente;
 	
-	@Column(name = "email", nullable=false, unique = true)
+	@Column(name = "email", nullable=false, unique = true, length = 100)
 	private String emailUtente;
 	
-	@Column(name = "password", nullable=false)
+	@Column(name = "password", nullable=false, length = 100)
 	private String passwordUtente;
 	
-	@Column(name = "informazioni_generali", nullable=false)
+	@Column(name = "informazioni_generali", nullable=false, length = 500)
 	private String informazioniGeneraliUtente;
 	
 	@Column(name = "data_creazione", nullable=false)
@@ -135,6 +134,4 @@ public class UtenteEntity {
 				+ dataCreazioneUtente + ", dataModificaUtente=" + dataModificaUtente + ", flgCancellato="
 				+ flgCancellato + ", ruolo=" + ruolo + ", gruppi=" + gruppi + "]";
 	}
-	
-
 }
