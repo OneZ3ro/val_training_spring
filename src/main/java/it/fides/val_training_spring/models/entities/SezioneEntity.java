@@ -1,4 +1,4 @@
-package it.fides.val_training_spring.entities;
+package it.fides.val_training_spring.models.entities;
 
 import java.time.LocalDateTime;
 
@@ -77,5 +77,4 @@ public class SezioneEntity {
 		return "SezioneEntity [idSezione=" + idSezione + ", titolo=" + titolo + ", dataCreazione=" + dataCreazione
 				+ ", dataModifica=" + dataModifica + ", flgCancellato=" + flgCancellato + "]";
 	}
-
 }

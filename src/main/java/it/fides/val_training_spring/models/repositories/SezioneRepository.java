@@ -1,8 +1,8 @@
-package it.fides.val_training_spring.repositories;
+package it.fides.val_training_spring.models.repositories;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
-import it.fides.val_training_spring.entities.SezioneEntity;
+import it.fides.val_training_spring.models.entities.SezioneEntity;
 
 @Repository
 public interface SezioneRepository extends JpaRepository<SezioneEntity, Long> {

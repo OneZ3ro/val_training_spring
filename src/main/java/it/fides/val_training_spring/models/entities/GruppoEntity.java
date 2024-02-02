@@ -1,8 +1,7 @@
-package it.fides.val_training_spring.entities;
+package it.fides.val_training_spring.models.entities;
 
 import java.time.LocalDateTime;
 import java.util.List;
-
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -43,7 +42,9 @@ public class GruppoEntity {
             name = "utente_gruppo",
             joinColumns = @JoinColumn(name = "id_gruppo"),
             inverseJoinColumns = @JoinColumn(name = "id_utente"))
-    private List<UtenteEntity> utenti;
+    private List<UtenteEntity> dipendenti;
+	
+	public GruppoEntity() {}
 
 	public Long getIdGruppo() {
 		return idGruppo;
@@ -85,20 +86,26 @@ public class GruppoEntity {
 		this.flgCancellato = flgCancellato;
 	}
 
-	public UtenteEntity getIdResponsabile() {
+	public UtenteEntity getResponsabile() {
 		return responsabile;
 	}
 
-	public void setIdResponsabile(UtenteEntity idResponsabile) {
-		this.responsabile = idResponsabile;
+	public void setResponsabile(UtenteEntity responsabile) {
+		this.responsabile = responsabile;
+	}
+
+	public List<UtenteEntity> getDipendenti() {
+		return dipendenti;
+	}
+
+	public void setDipendenti(List<UtenteEntity> dipendenti) {
+		this.dipendenti = dipendenti;
 	}
 
 	@Override
 	public String toString() {
 		return "GruppoEntity [idGruppo=" + idGruppo + ", nomeGruppo=" + nomeGruppo + ", dataCreazione=" + dataCreazione
-				+ ", dataModifica=" + dataModifica + ", flgCancellato=" + flgCancellato + ", idResponsabile="
-				+ responsabile + "]";
+				+ ", dataModifica=" + dataModifica + ", flgCancellato=" + flgCancellato + ", responsabile="
+				+ responsabile + ", dipendenti=" + dipendenti + "]";
 	}
-	
-	
 }

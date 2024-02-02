@@ -1,4 +1,4 @@
-package it.fides.val_training_spring.entities;
+package it.fides.val_training_spring.models.entities;
 
 import java.time.LocalDateTime;
 
@@ -43,6 +43,10 @@ public class ValoreEntity {
 	@JoinColumn(name = "id_utente", nullable = false)
 	private UtenteEntity utente;
 
+	public ValoreEntity() {
+
+	}
+	
 	public ValoreEntity(Long idValore, String nomeValore, String votoValore, LocalDateTime dataCreazioneValore,
 			LocalDateTime dataModificaValore, Boolean flgCancellatoValore, ParagrafoEntity paragrafo,
 			UtenteEntity utente) {
@@ -54,10 +58,6 @@ public class ValoreEntity {
 		this.flgCancellatoValore = flgCancellatoValore;
 		this.paragrafo = paragrafo;
 		this.utente = utente;
-	}
-
-	public ValoreEntity() {
-
 	}
 
 	public Long getIdValore() {
