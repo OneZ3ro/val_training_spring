@@ -31,7 +31,7 @@ public class GruppoEntity {
 	
 	@OneToOne
 	@JoinColumn(name = "responsabile")
-	private Long idResponsabile;
+	private UtenteEntity responsabile;
 
 	public Long getIdGruppo() {
 		return idGruppo;
@@ -73,19 +73,19 @@ public class GruppoEntity {
 		this.flgCancellato = flgCancellato;
 	}
 
-	public Long getIdResponsabile() {
-		return idResponsabile;
+	public UtenteEntity getIdResponsabile() {
+		return responsabile;
 	}
 
-	public void setIdResponsabile(Long idResponsabile) {
-		this.idResponsabile = idResponsabile;
+	public void setIdResponsabile(UtenteEntity idResponsabile) {
+		this.responsabile = idResponsabile;
 	}
 
 	@Override
 	public String toString() {
 		return "GruppoEntity [idGruppo=" + idGruppo + ", nomeGruppo=" + nomeGruppo + ", dataCreazione=" + dataCreazione
 				+ ", dataModifica=" + dataModifica + ", flgCancellato=" + flgCancellato + ", idResponsabile="
-				+ idResponsabile + "]";
+				+ responsabile + "]";
 	}
 	
 	

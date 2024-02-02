@@ -1,4 +1,4 @@
-package model;
+package it.fides.val_training_spring.entities;
 
 import java.time.LocalDateTime;
 import java.util.List;
