@@ -96,4 +96,9 @@ public class ScalaEntity {
 		this.idParagrafo = idParagrafo;
 	}
 
+	@Override
+	public String toString() {
+	   return "ScalaEntity [idScala=" + idScala + ",titolo=" + titolo + ",descrizione=" + descrizione + "dataCreazione=" + dataCreazione
+				+ ", dataModifica=" + dataModifica + ", flgCancellato=" + flgCancellato + "]";
+	}
 }

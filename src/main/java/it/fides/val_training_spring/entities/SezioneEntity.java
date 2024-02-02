@@ -71,4 +71,10 @@ public class SezioneEntity {
 		this.flgCancellato = flgCancellato;
 	}
 
+	@Override
+	public String toString() {
+		return "SezioneEntity [idSezione=" + idSezione + ", titolo=" + titolo + ", dataCreazione=" + dataCreazione
+				+ ", dataModifica=" + dataModifica + ", flgCancellato=" + flgCancellato + "]";
+	}
+
 }
