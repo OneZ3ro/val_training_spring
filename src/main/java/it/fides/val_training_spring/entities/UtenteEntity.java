@@ -11,6 +11,7 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.JoinTable;
 import jakarta.persistence.ManyToMany;
 import jakarta.persistence.ManyToOne;
+// import it.fides.val_training_spring.entities.GruppoEntity;
 
 @Entity
 public class UtenteEntity {
