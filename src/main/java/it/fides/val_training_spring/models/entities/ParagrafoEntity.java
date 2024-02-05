@@ -34,11 +34,11 @@ public class ParagrafoEntity {
 	private Boolean flgCancellatoParagrafo;
 	
 	@ManyToOne
-	@JoinColumn(name="utente")
+	@JoinColumn(name="id_utente")
 	private UtenteEntity utente;
 	
 	@ManyToOne
-	@JoinColumn(name="sezione")
+	@JoinColumn(name="id_sezione")
 	private SezioneEntity sezione;
 	
 	//GETTER E SETTER

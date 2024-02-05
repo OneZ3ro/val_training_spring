@@ -34,7 +34,7 @@ public class GruppoEntity {
 	private boolean flgCancellato;
 	
 	@OneToOne
-	@JoinColumn(name = "responsabile")
+	@JoinColumn(name = "id_responsabile")
 	private UtenteEntity responsabile;
 	
 	@ManyToMany
