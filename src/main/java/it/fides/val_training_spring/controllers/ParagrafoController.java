@@ -1,4 +1,4 @@
-package it.fides.val_training_spring.controller;
+package it.fides.val_training_spring.controllers;
 
 import java.util.List;
 import java.util.Optional;
@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import it.fides.val_training_spring.models.entities.ParagrafoEntity;
 import it.fides.val_training_spring.models.repositories.ParagrafoRepository;
-import it.fides.val_training_spring.service.ParagrafoService;
+import it.fides.val_training_spring.services.ParagrafoService;
 @RestController
 public class ParagrafoController {
 

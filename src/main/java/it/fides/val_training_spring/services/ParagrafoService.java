@@ -1,4 +1,4 @@
-package it.fides.val_training_spring.service;
+package it.fides.val_training_spring.services;
 
 import java.util.List;
 import java.util.Optional;
