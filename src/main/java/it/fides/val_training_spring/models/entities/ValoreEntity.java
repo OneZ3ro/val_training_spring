@@ -131,5 +131,4 @@ public class ValoreEntity {
 				+ ", flgCancellatoValore=" + flgCancellatoValore + ", paragrafo=" + paragrafo + ", utente=" + utente
 				+ "]";
 	}
-
 }

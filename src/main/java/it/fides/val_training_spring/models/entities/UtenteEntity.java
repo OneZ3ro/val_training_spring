@@ -1,7 +1,13 @@
 package it.fides.val_training_spring.models.entities;
 
 import java.time.LocalDateTime;
+
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import java.util.List;
+
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -16,6 +22,8 @@ import jakarta.persistence.Table;
 @Entity
 @Table(name = "utente")
 public class UtenteEntity {
+	
+	
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
