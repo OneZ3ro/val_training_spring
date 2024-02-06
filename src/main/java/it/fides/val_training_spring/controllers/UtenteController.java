@@ -1,6 +1,8 @@
 package it.fides.val_training_spring.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -24,6 +26,11 @@ public class UtenteController {
     public List<UtenteEntity> getAllUtenti() {
         return utenteService.getAllUtenti();
     }
+    
+    @GetMapping("/me")
+    public UserDetails getProfile(@AuthenticationPrincipal UserDetails currentUser){
+        return currentUser;
+    };
     
     @GetMapping("/{id}")
     public UtenteEntity getUtente(@PathVariable Long id) {
