@@ -44,7 +44,7 @@ public class UtenteEntity {
 	private LocalDateTime dataModificaUtente;
 	
 	@Column(name = "flg_cancellato", nullable=false)
-	private boolean flgCancellato;
+	private boolean flgCancellatoUtente;
 	
     @ManyToOne
     @JoinColumn(name = "id_ruolo")
@@ -107,11 +107,11 @@ public class UtenteEntity {
 	public void setDataModificaUtente(LocalDateTime dataModificaUtente) {
 		this.dataModificaUtente = dataModificaUtente;
 	}
-	public boolean isFlgCancellato() {
-		return flgCancellato;
+	public boolean isFlgCancellatoUtente() {
+		return flgCancellatoUtente;
 	}
-	public void setFlgCancellato(boolean flgCancellato) {
-		this.flgCancellato = flgCancellato;
+	public void setFlgCancellatoUtente(boolean flgCancellatoUtente) {
+		this.flgCancellatoUtente = flgCancellatoUtente;
 	}
 	public RuoloEntity getRuolo() {
 		return ruolo;
@@ -131,7 +131,7 @@ public class UtenteEntity {
 		return "UtenteEntity [idUtente=" + idUtente + ", nomeUtente=" + nomeUtente + ", cognomeUtente=" + cognomeUtente
 				+ ", emailUtente=" + emailUtente + ", passwordUtente=" + passwordUtente
 				+ ", informazioniGeneraliUtente=" + informazioniGeneraliUtente + ", dataCreazioneUtente="
-				+ dataCreazioneUtente + ", dataModificaUtente=" + dataModificaUtente + ", flgCancellato="
-				+ flgCancellato + ", ruolo=" + ruolo + ", gruppi=" + gruppi + "]";
+				+ dataCreazioneUtente + ", dataModificaUtente=" + dataModificaUtente + ", flgCancellatoUtente="
+				+ flgCancellatoUtente + ", ruolo=" + ruolo + ", gruppi=" + gruppi + "]";
 	}
 }

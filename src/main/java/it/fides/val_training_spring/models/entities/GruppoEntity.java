@@ -25,13 +25,13 @@ public class GruppoEntity {
 	private String nomeGruppo;
 	
 	@Column(name = "data_creazione", nullable=false)
-	private LocalDateTime dataCreazione;
+	private LocalDateTime dataCreazioneGruppo;
 	
 	@Column(name = "data_modifica", nullable=false)
-	private LocalDateTime dataModifica;
+	private LocalDateTime dataModificaGruppo;
 	
 	@Column(name = "flg_cancellato", nullable=false)
-	private boolean flgCancellato;
+	private boolean flgCancellatoGruppo;
 	
 	@OneToOne
 	@JoinColumn(name = "id_responsabile")
@@ -62,28 +62,28 @@ public class GruppoEntity {
 		this.nomeGruppo = nomeGruppo;
 	}
 
-	public LocalDateTime getDataCreazione() {
-		return dataCreazione;
+	public LocalDateTime getDataCreazioneGruppo() {
+		return dataCreazioneGruppo;
 	}
 
-	public void setDataCreazione(LocalDateTime dataCreazione) {
-		this.dataCreazione = dataCreazione;
+	public void setDataCreazioneGruppo(LocalDateTime dataCreazioneGruppo) {
+		this.dataCreazioneGruppo = dataCreazioneGruppo;
 	}
 
-	public LocalDateTime getDataModifica() {
-		return dataModifica;
+	public LocalDateTime getDataModificaGruppo() {
+		return dataModificaGruppo;
 	}
 
-	public void setDataModifica(LocalDateTime dataModifica) {
-		this.dataModifica = dataModifica;
+	public void setDataModificaGruppo(LocalDateTime dataModificaGruppo) {
+		this.dataModificaGruppo = dataModificaGruppo;
 	}
 
-	public boolean isFlgCancellato() {
-		return flgCancellato;
+	public boolean isFlgCancellatoGruppo() {
+		return flgCancellatoGruppo;
 	}
 
-	public void setFlgCancellato(boolean flgCancellato) {
-		this.flgCancellato = flgCancellato;
+	public void setFlgCancellatoGruppo(boolean flgCancellatoGruppo) {
+		this.flgCancellatoGruppo = flgCancellatoGruppo;
 	}
 
 	public UtenteEntity getResponsabile() {
@@ -104,8 +104,8 @@ public class GruppoEntity {
 
 	@Override
 	public String toString() {
-		return "GruppoEntity [idGruppo=" + idGruppo + ", nomeGruppo=" + nomeGruppo + ", dataCreazione=" + dataCreazione
-				+ ", dataModifica=" + dataModifica + ", flgCancellato=" + flgCancellato + ", responsabile="
-				+ responsabile + ", dipendenti=" + dipendenti + "]";
+		return "GruppoEntity [idGruppo=" + idGruppo + ", nomeGruppo=" + nomeGruppo + ", dataCreazioneGruppo="
+				+ dataCreazioneGruppo + ", dataModificaGruppo=" + dataModificaGruppo + ", flgCancellatoGruppo="
+				+ flgCancellatoGruppo + ", responsabile=" + responsabile + ", dipendenti=" + dipendenti + "]";
 	}
 }

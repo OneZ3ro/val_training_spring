@@ -11,7 +11,7 @@ public interface UtenteRepository extends JpaRepository<UtenteEntity, Long> {
 	// JPQL
     @Query("SELECT u FROM UtenteEntity u WHERE u.emailUtente = :email")
     UtenteEntity getUtenteByEmail(@Param("email") String email);
-	
+
 	// Native
 	@Query(value = "SELECT * FROM UtenteEntity WHERE email=?", nativeQuery = true)
 	public UtenteEntity getUtenteByPassword(String email);	

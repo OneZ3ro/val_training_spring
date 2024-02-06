@@ -19,16 +19,16 @@ public class SezioneEntity {
 	private Long idSezione;
 
 	@Column(name = "titolo", nullable=false, length = 64)
-	private String titolo;
+	private String titoloSezione;
 
 	@Column(name = "data_creazione", nullable=false)
-	private LocalDateTime dataCreazione;
+	private LocalDateTime dataCreazioneSezione;
 
 	@Column(name = "data_modifica", nullable=false)
-	private LocalDateTime dataModifica;
+	private LocalDateTime dataModificaSezione;
 
 	@Column(name = "flg_cancellato", nullable=false)
-	private boolean flgCancellato;
+	private boolean flgCancellatoSezione;
 
 	// Getter & Setter
 	
@@ -40,41 +40,42 @@ public class SezioneEntity {
 		this.idSezione = idSezione;
 	}
 
-	public String getTitolo() {
-		return titolo;
+	public String getTitoloSezione() {
+		return titoloSezione;
 	}
 
-	public void setTitolo(String titolo) {
-		this.titolo = titolo;
+	public void setTitoloSezione(String titoloSezione) {
+		this.titoloSezione = titoloSezione;
 	}
 
-	public LocalDateTime getDataCreazione() {
-		return dataCreazione;
+	public LocalDateTime getDataCreazioneSezione() {
+		return dataCreazioneSezione;
 	}
 
-	public void setDataCreazione(LocalDateTime dataCreazione) {
-		this.dataCreazione = dataCreazione;
+	public void setDataCreazioneSezione(LocalDateTime dataCreazioneSezione) {
+		this.dataCreazioneSezione = dataCreazioneSezione;
 	}
 
-	public LocalDateTime getDataModifica() {
-		return dataModifica;
+	public LocalDateTime getDataModificaSezione() {
+		return dataModificaSezione;
 	}
 
-	public void setDataModifica(LocalDateTime dataModifica) {
-		this.dataModifica = dataModifica;
+	public void setDataModificaSezione(LocalDateTime dataModificaSezione) {
+		this.dataModificaSezione = dataModificaSezione;
 	}
 
-	public boolean isFlgCancellato() {
-		return flgCancellato;
+	public boolean isFlgCancellatoSezione() {
+		return flgCancellatoSezione;
 	}
 
-	public void setFlgCancellato(boolean flgCancellato) {
-		this.flgCancellato = flgCancellato;
+	public void setFlgCancellatoSezione(boolean flgCancellatoSezione) {
+		this.flgCancellatoSezione = flgCancellatoSezione;
 	}
 
 	@Override
 	public String toString() {
-		return "SezioneEntity [idSezione=" + idSezione + ", titolo=" + titolo + ", dataCreazione=" + dataCreazione
-				+ ", dataModifica=" + dataModifica + ", flgCancellato=" + flgCancellato + "]";
+		return "SezioneEntity [idSezione=" + idSezione + ", titoloSezione=" + titoloSezione + ", dataCreazioneSezione="
+				+ dataCreazioneSezione + ", dataModificaSezione=" + dataModificaSezione + ", flgCancellatoSezione="
+				+ flgCancellatoSezione + "]";
 	}
 }

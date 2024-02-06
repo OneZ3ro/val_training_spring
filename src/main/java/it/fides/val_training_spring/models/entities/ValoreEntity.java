@@ -33,7 +33,7 @@ public class ValoreEntity {
 	private LocalDateTime dataModificaValore;
 	
 	@Column(name = "flg_cancellato", nullable = false)
-	private Boolean flgCancellatoValore;
+	private boolean flgCancellatoValore;
 	
 	@ManyToOne
 	@JoinColumn(name = "id_paragrafo", nullable = false)
@@ -48,7 +48,7 @@ public class ValoreEntity {
 	}
 	
 	public ValoreEntity(Long idValore, String nomeValore, String votoValore, LocalDateTime dataCreazioneValore,
-			LocalDateTime dataModificaValore, Boolean flgCancellatoValore, ParagrafoEntity paragrafo,
+			LocalDateTime dataModificaValore, boolean flgCancellatoValore, ParagrafoEntity paragrafo,
 			UtenteEntity utente) {
 		this.idValore = idValore;
 		this.nomeValore = nomeValore;
@@ -100,11 +100,11 @@ public class ValoreEntity {
 		this.dataModificaValore = dataModificaValore;
 	}
 
-	public Boolean getFlgCancellatoValore() {
+	public boolean isFlgCancellatoValore() {
 		return flgCancellatoValore;
 	}
 
-	public void setFlgCancellatoValore(Boolean flgCancellatoValore) {
+	public void setFlgCancellatoValore(boolean flgCancellatoValore) {
 		this.flgCancellatoValore = flgCancellatoValore;
 	}
 
@@ -131,5 +131,4 @@ public class ValoreEntity {
 				+ ", flgCancellatoValore=" + flgCancellatoValore + ", paragrafo=" + paragrafo + ", utente=" + utente
 				+ "]";
 	}
-
 }

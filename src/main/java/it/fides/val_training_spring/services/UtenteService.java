@@ -24,6 +24,7 @@ public class UtenteService {
         } else {
             utenteLogger.log.error("Utenti non trovati");
         }
+        
         return utenti;
     }
     
@@ -35,10 +36,11 @@ public class UtenteService {
     	} else {
     		utenteLogger.log.error("Utente non trovato");
     	}
+    	
     	return utente;
     }
     
-    public UtenteEntity saveUtente(UtenteEntity utenteEntity) {
+    public UtenteEntity insertUtente(UtenteEntity utenteEntity) {
     	UtenteEntity utente = utenteRepository.save(utenteEntity);
     	if (utente != null) {
     		utenteLogger.log.info("Utente: " + utente);
@@ -55,13 +57,15 @@ public class UtenteService {
     	if (utente != null) {
     		utenteLogger.log.info("Utente: " + utente);
     		
+    		utente.setIdUtente(utenteEntity.getIdUtente());
     		utente.setNomeUtente(utenteEntity.getNomeUtente());
     		utente.setCognomeUtente(utenteEntity.getCognomeUtente());
     		utente.setEmailUtente(utenteEntity.getEmailUtente());
     		utente.setPasswordUtente(utenteEntity.getPasswordUtente());
     		utente.setInformazioniGeneraliUtente(utenteEntity.getInformazioniGeneraliUtente());
+    		utente.setDataCreazioneUtente(utenteEntity.getDataCreazioneUtente());
     		utente.setDataModificaUtente(utenteEntity.getDataModificaUtente());
-    		utente.setFlgCancellato(utenteEntity.isFlgCancellato());
+    		utente.setFlgCancellatoUtente(utenteEntity.isFlgCancellatoUtente());
     		utente.setRuolo(utenteEntity.getRuolo());
     		utente.setGruppi(utenteEntity.getGruppi());
     		

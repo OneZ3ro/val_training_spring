@@ -18,11 +18,13 @@ public class GruppoService {
 	
 	public List<GruppoEntity> getAllGruppi() {
 		List<GruppoEntity> gruppi = gruppoRepository.findAll();
+		
 		if (gruppi.size() > 0) {
 			gruppoLogger.log.info("Gruppi: " + gruppi);
 		} else {
 			gruppoLogger.log.error("Gruppi non trovati");
 		}
+		
 		return gruppi;
 	}
 	
@@ -44,7 +46,7 @@ public class GruppoService {
 		if (gruppo != null) {
 			gruppoLogger.log.info("Gruppo: " + gruppo);
 		} else {
-			gruppoLogger.log.error("Gruppo non trovato");
+			gruppoLogger.log.error("Gruppo non creato");
 		}
 		
 		return gruppo;
@@ -57,16 +59,16 @@ public class GruppoService {
 		if (gruppo != null) {
 			gruppo.setIdGruppo(gruppoEntity.getIdGruppo());
 			gruppo.setNomeGruppo(gruppoEntity.getNomeGruppo());
-			gruppo.setDataCreazione(gruppoEntity.getDataCreazione());
-			gruppo.setDataModifica(gruppoEntity.getDataModifica());
-			gruppo.setFlgCancellato(gruppoEntity.isFlgCancellato());
+			gruppo.setDataCreazioneGruppo(gruppoEntity.getDataCreazioneGruppo());
+			gruppo.setDataModificaGruppo(gruppoEntity.getDataModificaGruppo());
+			gruppo.setFlgCancellatoGruppo(gruppoEntity.isFlgCancellatoGruppo());
 			gruppo.setResponsabile(gruppoEntity.getResponsabile());
 			gruppo.setDipendenti(gruppoEntity.getDipendenti());
 			
 			updatedGruppo = gruppoRepository.save(gruppo);
-			gruppoLogger.log.info("Ruolo aggiornato: " + updatedGruppo);
+			gruppoLogger.log.info("Gruppo aggiornato: " + updatedGruppo);
 		} else {
-			gruppoLogger.log.error("Ruolo non aggiornato");
+			gruppoLogger.log.error("Gruppo non aggiornato");
 		}
 		
 		return updatedGruppo;

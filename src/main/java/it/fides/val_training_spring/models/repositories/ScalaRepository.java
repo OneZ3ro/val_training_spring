@@ -6,5 +6,7 @@ import it.fides.val_training_spring.models.entities.ScalaEntity;
 
 @Repository
 public interface ScalaRepository extends JpaRepository<ScalaEntity, Long> {
+	
+	
 
 }

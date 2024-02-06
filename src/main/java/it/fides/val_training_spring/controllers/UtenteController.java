@@ -31,8 +31,8 @@ public class UtenteController {
     }
     
     @PostMapping
-    public UtenteEntity addUtente(@RequestBody UtenteEntity utenteEntity) {
-        return utenteService.saveUtente(utenteEntity);
+    public UtenteEntity insertUtente(@RequestBody UtenteEntity utenteEntity) {
+        return utenteService.insertUtente(utenteEntity);
     }
 
     @PutMapping("/{id}")
