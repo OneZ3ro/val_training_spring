@@ -1,13 +1,11 @@
 package it.fides.val_training_spring.services;
 
 import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import it.fides.val_training_spring.models.entities.SezioneEntity;
 import it.fides.val_training_spring.models.repositories.SezioneRepository;
-import it.fides.val_training_spring.utils.logger.SezioneLogger;
+import it.fides.val_training_spring.utils.loggers.SezioneLogger;
 
 @Service
 public class SezioneService {

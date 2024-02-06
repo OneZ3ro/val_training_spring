@@ -3,9 +3,9 @@ package it.fides.val_training_spring.services;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import it.fides.val_training_spring.models.entities.*;
-import it.fides.val_training_spring.models.repositories.*;
-import it.fides.val_training_spring.utils.logger.ParagrafoLogger;
+import it.fides.val_training_spring.models.entities.ParagrafoEntity;
+import it.fides.val_training_spring.models.repositories.ParagrafoRepository;
+import it.fides.val_training_spring.utils.loggers.ParagrafoLogger;
 
 @Service
 public class ParagrafoService {
