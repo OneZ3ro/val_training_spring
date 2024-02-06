@@ -10,38 +10,38 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import it.fides.val_training_spring.models.entities.ScalaEntity;
-import it.fides.val_training_spring.services.ScalaService;
+import it.fides.val_training_spring.models.entities.GruppoEntity;
+import it.fides.val_training_spring.services.GruppoService;
 
 @RestController
-@RequestMapping("/scale")
-public class ScalaController {
-
+@RequestMapping("/gruppi")
+public class GruppoController {
+	
 	@Autowired
-	private ScalaService scalaService;
-
+	private GruppoService gruppoService;
+	
 	@GetMapping
-	public List<ScalaEntity> getAllScale() {
-		return scalaService.getAllScale();
+	public List<GruppoEntity> getAllGruppi() {
+		return gruppoService.getAllGruppi();
 	}
 	
 	@GetMapping("/{id}")
-	public ScalaEntity getScala(@PathVariable Long id) {
-		return scalaService.getScala(id);
+	public GruppoEntity getGruppo(@PathVariable Long id) {
+		return gruppoService.getGruppo(id);
 	}
 	
 	@PostMapping
-	public ScalaEntity insertScala(@RequestBody ScalaEntity scalaEntity) {
-		return scalaService.insertScala(scalaEntity);
+	public GruppoEntity insertGruppo(@RequestBody GruppoEntity gruppoEntity) {
+		return gruppoService.insertGruppo(gruppoEntity);
 	}
 	
 	@PutMapping("/{id}")
-	public ScalaEntity updateScala(@RequestBody ScalaEntity scalaEntity, @PathVariable Long id) {
-		return scalaService.updateScala(scalaEntity, id);
+	public GruppoEntity updateGruppo(@PathVariable Long id, @RequestBody GruppoEntity gruppoEntity) {
+		return gruppoService.updateGruppo(id, gruppoEntity);
 	}
 	
 	@DeleteMapping("/{id}")
-	public void deleteScala(Long id) {
-		scalaService.deleteScala(id);
+	public void deleteGruppo(@PathVariable Long id) {
+		gruppoService.deleteGruppo(id);
 	}
 }

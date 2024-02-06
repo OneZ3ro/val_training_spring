@@ -1,13 +1,11 @@
 package it.fides.val_training_spring.services;
 
 import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import it.fides.val_training_spring.models.entities.SezioneEntity;
 import it.fides.val_training_spring.models.repositories.SezioneRepository;
-import it.fides.val_training_spring.utils.logger.SezioneLogger;
+import it.fides.val_training_spring.utils.loggers.SezioneLogger;
 
 @Service
 public class SezioneService {
@@ -18,55 +16,64 @@ public class SezioneService {
 	@Autowired
 	private SezioneLogger sezioneLogger;
 
-	public List<SezioneEntity> getAllSezione() {
-
+	public List<SezioneEntity> getAllSezioni() {
 		List<SezioneEntity> sezioni = sezioneRepository.findAll();
-		sezioneLogger.log.info("");
-		sezioneLogger.log.warn("");
-
+		
+		if (sezioni.size() > 0) {
+			sezioneLogger.log.info("Scale: " + sezioni);
+		} else {
+			sezioneLogger.log.error("Scale non trovate");
+		}
+		
 		return sezioni;
 	}
 
 	public SezioneEntity getSezione(Long id) {
 		SezioneEntity sezione = sezioneRepository.findById(id).get();
-		sezioneLogger.log.info("");
-		sezioneLogger.log.warn("");
+		
+		if (sezione != null) {
+			sezioneLogger.log.info("Sezione: " + sezione);
+		} else {
+			sezioneLogger.log.error("Sezione non trovata");
+		}
 
 		return sezione;
 
 	}
 
-	public SezioneEntity createSezione(SezioneEntity sezioneEntity) {
+	public SezioneEntity insertSezione(SezioneEntity sezioneEntity) {
 		SezioneEntity sezione = sezioneRepository.save(sezioneEntity);
-		sezioneLogger.log.info("");
-		sezioneLogger.log.warn("");
+
+		if (sezione != null) {
+			sezioneLogger.log.info("Sezione: " + sezione);
+		} else {
+			sezioneLogger.log.error("Sezione non creata");
+		}
 		
 		return sezione;
 	}
 	
 	public SezioneEntity updateSezione(SezioneEntity sezioneEntity, Long id) {
 		SezioneEntity sezione = sezioneRepository.findById(id).get();
+		SezioneEntity updatedSezione = null;
 		
-		sezione.setTitolo(sezioneEntity.getTitolo());
-		sezione.setIdSezione(sezioneEntity.getIdSezione());
-		sezione.setDataCreazione(sezioneEntity.getDataCreazione());
-		sezione.setDataModifica(sezioneEntity.getDataModifica());
-		sezione.setFlgCancellato(sezioneEntity.isFlgCancellato());
+		if (sezione != null) {
+			sezione.setIdSezione(sezioneEntity.getIdSezione());
+			sezione.setTitoloSezione(sezioneEntity.getTitoloSezione());
+			sezione.setDataCreazioneSezione(sezioneEntity.getDataCreazioneSezione());
+			sezione.setDataModificaSezione(sezioneEntity.getDataModificaSezione());
+			sezione.setFlgCancellatoSezione(sezioneEntity.isFlgCancellatoSezione());
+			
+			updatedSezione = sezioneRepository.save(sezione);
+			sezioneLogger.log.info("Sezione aggiornata: " + updatedSezione);
+		} else {
+			sezioneLogger.log.error("Sezione non aggiornata");
+		}
 		
-		sezioneLogger.log.info("");
-		sezioneLogger.log.warn("");
-		
-		sezioneRepository.save(sezione);
-		
-		return sezione;
-		
+		return updatedSezione;
 	}
 	
 	public void deleteSezione(Long id) {
 		sezioneRepository.deleteById(id);
-		
-		sezioneLogger.log.info("");
-		sezioneLogger.log.warn("");
 	}
-
 }

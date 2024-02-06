@@ -10,7 +10,7 @@ public class SezioneConverter {
 		SezioneEntity sezioneEntity = new SezioneEntity();
 		
 		sezioneEntity.setIdSezione(sezioneDto.getIdSezione());
-		sezioneEntity.setTitolo(sezioneDto.getTitolo());
+		sezioneEntity.setTitoloSezione(sezioneDto.getTitoloSezione());
 		
 		return sezioneEntity;
 	}
@@ -20,7 +20,7 @@ public class SezioneConverter {
 		SezioneDto sezioneDto = new SezioneDto();
 		
 		sezioneDto.setIdSezione(sezioneEntity.getIdSezione());
-		sezioneDto.setTitolo(sezioneEntity.getTitolo());
+		sezioneDto.setTitoloSezione(sezioneEntity.getTitoloSezione());
 		
 		return sezioneDto;
 	}

@@ -4,7 +4,7 @@ public class SezioneDto {
 
 	private Long idSezione;
 
-	private String titolo;
+	private String titoloSezione;
 	
 	public SezioneDto() {}
 
@@ -18,16 +18,16 @@ public class SezioneDto {
 		this.idSezione = idSezione;
 	}
 
-	public String getTitolo() {
-		return titolo;
+	public String getTitoloSezione() {
+		return titoloSezione;
 	}
 
-	public void setTitolo(String titolo) {
-		this.titolo = titolo;
+	public void setTitoloSezione(String titoloSezione) {
+		this.titoloSezione = titoloSezione;
 	}
 
 	@Override
 	public String toString() {
-		return "SezioneDto [idSezione=" + idSezione + ", titolo=" + titolo + "]";
+		return "SezioneDto [idSezione=" + idSezione + ", titoloSezione=" + titoloSezione + "]";
 	}
 }

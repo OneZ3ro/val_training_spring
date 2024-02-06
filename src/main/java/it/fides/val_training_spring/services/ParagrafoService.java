@@ -1,18 +1,15 @@
 package it.fides.val_training_spring.services;
 
 import java.util.List;
-import java.util.Optional;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import it.fides.val_training_spring.models.entities.*;
-import it.fides.val_training_spring.models.repositories.*;
-import it.fides.val_training_spring.utils.logger.ParagrafoLogger;
-
+import it.fides.val_training_spring.models.entities.ParagrafoEntity;
+import it.fides.val_training_spring.models.repositories.ParagrafoRepository;
+import it.fides.val_training_spring.utils.loggers.ParagrafoLogger;
 
 @Service
 public class ParagrafoService {
+	
 	@Autowired
 	private ParagrafoRepository paragrafoRepository;
 	
@@ -21,25 +18,63 @@ public class ParagrafoService {
 	
 	public List<ParagrafoEntity> getAllParagrafi() {
 		
-		List<ParagrafoEntity> listaParagrafi = paragrafoRepository.findAll(); 
-		if(listaParagrafi.size() > 0) {
-			for(ParagrafoEntity paragrafi: listaParagrafi) paragrafoLogger.log.info("Paragrafi: "+paragrafi);
+		List<ParagrafoEntity> paragrafi = paragrafoRepository.findAll(); 
+		if(paragrafi.size() > 0) {
+			paragrafoLogger.log.info("Paragrafi: " + paragrafi);
 		} else {
 			paragrafoLogger.log.error("Utenti non trovati");
 		}
-		return listaParagrafi;
+		return paragrafi;
 	}
 	
-	public Optional<ParagrafoEntity> getParagrafoById(Long id) {
-		return paragrafoRepository.findById(id);
-	}
-	
-    public ParagrafoEntity updateParagrafo(ParagrafoEntity paragrafoEntity, Long id) {
-    	ParagrafoEntity paragrafo = paragrafoRepository.findById(id).get();
-    	paragrafo.setTitoloParagrafo(paragrafoEntity.getTitoloParagrafo());
-    	paragrafo.setDescrizioneParagrafo(paragrafoEntity.getDescrizioneParagrafo());
-    	paragrafo.setUtente(paragrafoEntity.getUtente());
-    	paragrafo.setSezione(paragrafoEntity.getSezione());
+	public ParagrafoEntity getParagrafo(Long id) {
+		ParagrafoEntity paragrafo = paragrafoRepository.findById(id).get();
+		
+		if (paragrafo != null) {
+			paragrafoLogger.log.info("Paragarfo: " + paragrafo);
+		} else {
+			paragrafoLogger.log.error("Paragrafo non trovato");
+		}
+		
 		return paragrafo;
+	}
+	
+	public ParagrafoEntity insertParagrafo(ParagrafoEntity paragrafoEntity) {
+		ParagrafoEntity paragrafo = paragrafoRepository.save(paragrafoEntity);
+		
+		if (paragrafo != null) {
+			paragrafoLogger.log.info("Paragrafo: " + paragrafo);
+		} else {
+			paragrafoLogger.log.error("Paragrafo non trovato");
+		}
+		
+		return paragrafo;
+	}
+	
+    public ParagrafoEntity updateParagrafo(Long id, ParagrafoEntity paragrafoEntity) {
+    	ParagrafoEntity paragrafo = paragrafoRepository.findById(id).get();
+    	ParagrafoEntity updatedParagrafo = null;
+    	
+    	if (paragrafo != null) {
+    		paragrafo.setIdParagrafo(paragrafoEntity.getIdParagrafo());
+    		paragrafo.setTitoloParagrafo(paragrafoEntity.getTitoloParagrafo());
+    		paragrafo.setDescrizioneParagrafo(paragrafoEntity.getDescrizioneParagrafo());
+    		paragrafo.setDataCreazioneParagrafo(paragrafoEntity.getDataCreazioneParagrafo());
+    		paragrafo.setDataModificaParagrafo(paragrafoEntity.getDataModificaParagrafo());
+    		paragrafo.setFlgCancellatoParagrafo(paragrafoEntity.isFlgCancellatoParagrafo());
+    		paragrafo.setUtente(paragrafoEntity.getUtente());
+    		paragrafo.setSezione(paragrafoEntity.getSezione());
+    		
+    		updatedParagrafo = paragrafoRepository.save(paragrafo);
+    		paragrafoLogger.log.info("Paragrafo aggiornato: " + updatedParagrafo);
+    	} else {
+    		paragrafoLogger.log.error("Paragrafo non aggiornato");
+    	}
+    	
+		return updatedParagrafo;
     }
+    
+	public void deleteParagrafo(Long id) {
+		paragrafoRepository.deleteById(id);
+	}
 }

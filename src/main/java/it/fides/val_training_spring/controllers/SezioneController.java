@@ -1,7 +1,6 @@
 package it.fides.val_training_spring.controllers;
 
 import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -11,20 +10,19 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
 import it.fides.val_training_spring.models.entities.SezioneEntity;
 import it.fides.val_training_spring.services.SezioneService;
 
 @RestController
-@RequestMapping("/sezione")
+@RequestMapping("/sezioni")
 public class SezioneController {
 
 	@Autowired
 	private SezioneService sezioneService;
 
 	@GetMapping
-	public List<SezioneEntity> getAllSezione() {
-		return sezioneService.getAllSezione();
+	public List<SezioneEntity> getAllSezioni() {
+		return sezioneService.getAllSezioni();
 	}
 
 	@GetMapping("/{id}")
@@ -33,8 +31,8 @@ public class SezioneController {
 	}
 
 	@PostMapping
-	public SezioneEntity createSezione(@RequestBody SezioneEntity sezioneEntity) {
-		return sezioneService.createSezione(sezioneEntity);
+	public SezioneEntity insertSezione(@RequestBody SezioneEntity sezioneEntity) {
+		return sezioneService.insertSezione(sezioneEntity);
 	}
 	
 	@PutMapping("/{id}")
@@ -45,6 +43,5 @@ public class SezioneController {
 	@DeleteMapping("/{id}")
 	public void deleteSezione(Long id) {
 		sezioneService.deleteSezione(id);
-		
 	}
 }

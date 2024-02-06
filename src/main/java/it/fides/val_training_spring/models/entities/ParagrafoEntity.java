@@ -31,7 +31,7 @@ public class ParagrafoEntity {
 	private LocalDateTime dataModificaParagrafo;
 	
 	@Column(name="flg_cancellato", nullable=false)
-	private Boolean flgCancellatoParagrafo;
+	private boolean flgCancellatoParagrafo;
 	
 	@ManyToOne
 	@JoinColumn(name="id_utente")
@@ -83,11 +83,11 @@ public class ParagrafoEntity {
 		this.dataModificaParagrafo = dataModificaParagrafo;
 	}
 
-	public Boolean getFlgCancellatoParagrafo() {
+	public boolean isFlgCancellatoParagrafo() {
 		return flgCancellatoParagrafo;
 	}
 
-	public void setFlgCancellatoParagrafo(Boolean flgCancellatoParagrafo) {
+	public void setFlgCancellatoParagrafo(boolean flgCancellatoParagrafo) {
 		this.flgCancellatoParagrafo = flgCancellatoParagrafo;
 	}
 

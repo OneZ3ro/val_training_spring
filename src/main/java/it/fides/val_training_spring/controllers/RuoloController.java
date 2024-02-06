@@ -1,6 +1,7 @@
 package it.fides.val_training_spring.controllers;
 
 import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -10,38 +11,39 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import it.fides.val_training_spring.models.entities.ScalaEntity;
-import it.fides.val_training_spring.services.ScalaService;
+
+import it.fides.val_training_spring.models.entities.RuoloEntity;
+import it.fides.val_training_spring.services.RuoloService;
 
 @RestController
-@RequestMapping("/scale")
-public class ScalaController {
-
+@RequestMapping("/ruoli")
+public class RuoloController {
+	
 	@Autowired
-	private ScalaService scalaService;
-
+	private RuoloService ruoloService;
+	
 	@GetMapping
-	public List<ScalaEntity> getAllScale() {
-		return scalaService.getAllScale();
+	public List<RuoloEntity> getAllRuoli() {
+		return ruoloService.getAllRuoli();
 	}
 	
 	@GetMapping("/{id}")
-	public ScalaEntity getScala(@PathVariable Long id) {
-		return scalaService.getScala(id);
+	public RuoloEntity getRuolo(@PathVariable Long id) {
+		return ruoloService.getRuolo(id);
 	}
 	
 	@PostMapping
-	public ScalaEntity insertScala(@RequestBody ScalaEntity scalaEntity) {
-		return scalaService.insertScala(scalaEntity);
+	public RuoloEntity insertRuolo(@RequestBody RuoloEntity ruoloEntity) {
+		return ruoloService.insertRuolo(ruoloEntity);
 	}
 	
 	@PutMapping("/{id}")
-	public ScalaEntity updateScala(@RequestBody ScalaEntity scalaEntity, @PathVariable Long id) {
-		return scalaService.updateScala(scalaEntity, id);
+	public RuoloEntity updateRuolo(@PathVariable Long id, @RequestBody RuoloEntity ruoloEntity) {
+		return ruoloService.updateRuolo(id, ruoloEntity);
 	}
 	
 	@DeleteMapping("/{id}")
-	public void deleteScala(Long id) {
-		scalaService.deleteScala(id);
+	public void deleteRuolo(@PathVariable Long id) {
+		ruoloService.deleteRuolo(id);
 	}
 }

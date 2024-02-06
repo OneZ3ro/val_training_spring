@@ -1,11 +1,9 @@
-package it.fides.val_training_spring.utils.logger;
-
+package it.fides.val_training_spring.utils.loggers;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.stereotype.Component;
-
-import it.fides.val_training_spring.models.entities.*;
+import it.fides.val_training_spring.models.entities.ParagrafoEntity;
 
 @Component
 public class ParagrafoLogger {
