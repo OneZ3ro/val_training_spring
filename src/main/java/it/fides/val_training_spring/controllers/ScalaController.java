@@ -1,4 +1,4 @@
-package it.fides.val_training_spring.models.controllers;
+package it.fides.val_training_spring.controllers;
 
 import java.util.List;
 
