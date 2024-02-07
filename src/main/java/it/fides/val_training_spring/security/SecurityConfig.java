@@ -5,7 +5,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpMethod;
 import org.springframework.security.config.Customizer;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
-import org.springframework.security.config.annotation.web.configuration.WebSecurityCustomizer;
+import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.provisioning.JdbcUserDetailsManager;
@@ -34,18 +34,20 @@ public class SecurityConfig {
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
     	
+    	//http.sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS));
+    	
     	http.authorizeHttpRequests(configurer ->
                     configurer
                     		.requestMatchers(HttpMethod.GET, "/utenti").hasAuthority("responsabile")
                     		.requestMatchers(HttpMethod.GET, "/paragrafo").hasAuthority("responsabile")
                     		.anyRequest().authenticated()
         );
-        
+    	
         http.formLogin(form ->
 			        form
 			                .loginPage("/login")
 			                .loginProcessingUrl("/processing-login")
-			                .defaultSuccessUrl("/index.html")
+			                .defaultSuccessUrl("/home", true)
 			                .permitAll()
         );
         
