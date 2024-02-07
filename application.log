@@ -14744,3 +14744,732 @@ jakarta.servlet.ServletException: Circular view path [login]: would dispatch bac
 2024-02-07 14:26:41.828 [http-nio-9090-exec-1] DEBUG org.springframework.security.web.FilterChainProxy - Securing GET /login?error
 2024-02-07 14:26:41.828 [http-nio-9090-exec-1] DEBUG org.springframework.security.web.FilterChainProxy - Secured GET /login?error
 2024-02-07 14:26:41.831 [http-nio-9090-exec-1] DEBUG org.springframework.security.web.authentication.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2024-02-07 14:46:15.072 [main] INFO  it.fides.val_training_spring.ValTrainingSpringApplication - Starting ValTrainingSpringApplication using Java 17.0.9 with PID 15048 (C:\Users\User\Documents\val_training_spring2\target\classes started by User in C:\Users\User\Documents\val_training_spring2)
+2024-02-07 14:46:15.094 [main] INFO  it.fides.val_training_spring.ValTrainingSpringApplication - No active profile set, falling back to 1 default profile: "default"
+2024-02-07 14:46:16.420 [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-02-07 14:46:16.560 [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 123 ms. Found 7 JPA repository interfaces.
+2024-02-07 14:46:17.696 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2024-02-07 14:46:17.722 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2024-02-07 14:46:17.728 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2024-02-07 14:46:17.729 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.18]
+2024-02-07 14:46:17.872 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-02-07 14:46:17.877 [main] INFO  org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2689 ms
+2024-02-07 14:46:18.014 [main] WARN  org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'dataSourceScriptDatabaseInitializer' defined in class path resource [org/springframework/boot/autoconfigure/sql/init/DataSourceInitializationConfiguration.class]: Unsatisfied dependency expressed through method 'dataSourceScriptDatabaseInitializer' parameter 0: Error creating bean with name 'dataSource' defined in class path resource [org/springframework/boot/autoconfigure/jdbc/DataSourceConfiguration$Hikari.class]: Failed to instantiate [com.zaxxer.hikari.HikariDataSource]: Factory method 'dataSource' threw exception with message: Failed to determine a suitable driver class
+2024-02-07 14:46:18.022 [main] INFO  org.apache.catalina.core.StandardService - Stopping service [Tomcat]
+2024-02-07 14:46:18.068 [main] INFO  org.springframework.boot.autoconfigure.logging.ConditionEvaluationReportLogger - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2024-02-07 14:46:18.111 [main] ERROR org.springframework.boot.diagnostics.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Failed to configure a DataSource: 'url' attribute is not specified and no embedded datasource could be configured.
+
+Reason: Failed to determine a suitable driver class
+
+
+Action:
+
+Consider the following:
+	If you want an embedded database (H2, HSQL or Derby), please put it on the classpath.
+	If you have database settings to be loaded from a particular profile you may need to activate it (no profiles are currently active).
+
+2024-02-07 14:48:21.746 [main] INFO  org.springframework.test.context.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [it.fides.val_training_spring.ValTrainingSpringApplicationTests]: ValTrainingSpringApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2024-02-07 14:48:21.949 [main] INFO  org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration it.fides.val_training_spring.ValTrainingSpringApplication for test class it.fides.val_training_spring.ValTrainingSpringApplicationTests
+2024-02-07 14:48:22.549 [main] INFO  it.fides.val_training_spring.ValTrainingSpringApplicationTests - Starting ValTrainingSpringApplicationTests using Java 17.0.9 with PID 356 (started by User in C:\Users\User\Documents\val_training_spring2)
+2024-02-07 14:48:22.556 [main] INFO  it.fides.val_training_spring.ValTrainingSpringApplicationTests - No active profile set, falling back to 1 default profile: "default"
+2024-02-07 14:48:24.128 [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-02-07 14:48:24.252 [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 109 ms. Found 7 JPA repository interfaces.
+2024-02-07 14:48:25.169 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2024-02-07 14:48:25.784 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@25fd6d1e
+2024-02-07 14:48:25.789 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2024-02-07 14:48:25.855 [main] INFO  org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-02-07 14:48:25.974 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.1.Final
+2024-02-07 14:48:26.051 [main] INFO  org.hibernate.cache.internal.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2024-02-07 14:48:26.568 [main] INFO  org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-02-07 14:48:28.313 [main] INFO  org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-02-07 14:48:28.317 [main] INFO  org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-02-07 14:48:29.085 [main] INFO  org.springframework.data.jpa.repository.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-02-07 14:48:29.812 [main] INFO  org.springframework.security.provisioning.JdbcUserDetailsManager - No authentication manager set. Reauthentication of users when changing passwords will not be performed.
+2024-02-07 14:48:29.861 [main] WARN  org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-02-07 14:48:30.102 [main] INFO  org.springframework.boot.autoconfigure.web.servlet.WelcomePageHandlerMapping - Adding welcome page template: index
+2024-02-07 14:48:30.519 [main] INFO  org.springframework.security.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@62a193e0, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@489ec791, org.springframework.security.web.context.SecurityContextHolderFilter@75ee63f2, org.springframework.security.web.header.HeaderWriterFilter@559d9517, org.springframework.web.filter.CorsFilter@3597174b, org.springframework.security.web.authentication.logout.LogoutFilter@12bb0322, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@2a0c76d6, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@10f03ab0, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@7e32f76b, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@339b9869, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@24a38ef3, org.springframework.security.web.access.ExceptionTranslationFilter@4f8e6101, org.springframework.security.web.access.intercept.AuthorizationFilter@3253d771]
+2024-02-07 14:48:31.102 [main] INFO  it.fides.val_training_spring.ValTrainingSpringApplicationTests - Started ValTrainingSpringApplicationTests in 8.901 seconds (process running for 11.207)
+2024-02-07 14:48:32.151 [SpringApplicationShutdownHook] INFO  org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-02-07 14:48:32.155 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2024-02-07 14:48:32.171 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2024-02-07 14:48:39.298 [main] INFO  it.fides.val_training_spring.ValTrainingSpringApplication - Starting ValTrainingSpringApplication using Java 17.0.9 with PID 14956 (C:\Users\User\Documents\val_training_spring2\target\classes started by User in C:\Users\User\Documents\val_training_spring2)
+2024-02-07 14:48:39.317 [main] INFO  it.fides.val_training_spring.ValTrainingSpringApplication - No active profile set, falling back to 1 default profile: "default"
+2024-02-07 14:48:40.569 [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-02-07 14:48:40.727 [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 136 ms. Found 7 JPA repository interfaces.
+2024-02-07 14:48:41.932 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port 9090 (http)
+2024-02-07 14:48:41.953 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-9090"]
+2024-02-07 14:48:41.958 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2024-02-07 14:48:41.958 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.18]
+2024-02-07 14:48:42.075 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-02-07 14:48:42.081 [main] INFO  org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2672 ms
+2024-02-07 14:48:42.409 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2024-02-07 14:48:42.979 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@598657cd
+2024-02-07 14:48:42.980 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2024-02-07 14:48:43.065 [main] INFO  org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-02-07 14:48:43.184 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.1.Final
+2024-02-07 14:48:43.256 [main] INFO  org.hibernate.cache.internal.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2024-02-07 14:48:43.719 [main] INFO  org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-02-07 14:48:45.429 [main] INFO  org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-02-07 14:48:45.433 [main] INFO  org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-02-07 14:48:46.154 [main] INFO  org.springframework.data.jpa.repository.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-02-07 14:48:46.806 [main] INFO  org.springframework.security.provisioning.JdbcUserDetailsManager - No authentication manager set. Reauthentication of users when changing passwords will not be performed.
+2024-02-07 14:48:46.846 [main] WARN  org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-02-07 14:48:47.043 [main] INFO  org.springframework.boot.autoconfigure.web.servlet.WelcomePageHandlerMapping - Adding welcome page template: index
+2024-02-07 14:48:47.364 [main] INFO  org.springframework.security.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@61d4e070, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@66a5cbe5, org.springframework.security.web.context.SecurityContextHolderFilter@362ad436, org.springframework.security.web.header.HeaderWriterFilter@4e502162, org.springframework.web.filter.CorsFilter@6311898c, org.springframework.security.web.authentication.logout.LogoutFilter@14fed48e, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@776ae580, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@7cfc2a08, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@b6a20ce, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@79296ce0, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@7ea0438c, org.springframework.security.web.access.ExceptionTranslationFilter@6655b4e6, org.springframework.security.web.access.intercept.AuthorizationFilter@3c82bcbd]
+2024-02-07 14:48:47.794 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-9090"]
+2024-02-07 14:48:47.832 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port 9090 (http) with context path ''
+2024-02-07 14:48:47.850 [main] INFO  it.fides.val_training_spring.ValTrainingSpringApplication - Started ValTrainingSpringApplication in 9.174 seconds (process running for 10.698)
+2024-02-07 14:48:57.831 [http-nio-9090-exec-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-02-07 14:48:57.831 [http-nio-9090-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2024-02-07 14:48:57.833 [http-nio-9090-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+2024-02-07 14:48:57.861 [http-nio-9090-exec-1] DEBUG org.springframework.security.web.FilterChainProxy - Securing GET /login?error
+2024-02-07 14:48:57.881 [http-nio-9090-exec-1] DEBUG org.springframework.security.web.FilterChainProxy - Secured GET /login?error
+2024-02-07 14:48:58.237 [http-nio-9090-exec-1] DEBUG org.springframework.security.web.authentication.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2024-02-07 14:49:01.790 [http-nio-9090-exec-3] DEBUG org.springframework.security.web.FilterChainProxy - Securing GET /
+2024-02-07 14:49:01.792 [http-nio-9090-exec-3] DEBUG org.springframework.security.web.authentication.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2024-02-07 14:49:01.832 [http-nio-9090-exec-3] DEBUG org.springframework.security.web.savedrequest.HttpSessionRequestCache - Saved request http://localhost:9090/?continue to session
+2024-02-07 14:49:01.832 [http-nio-9090-exec-3] DEBUG org.springframework.security.web.authentication.DelegatingAuthenticationEntryPoint - Trying to match using And [Not [RequestHeaderRequestMatcher [expectedHeaderName=X-Requested-With, expectedHeaderValue=XMLHttpRequest]], MediaTypeRequestMatcher [contentNegotiationStrategy=org.springframework.web.accept.ContentNegotiationManager@36e6e59f, matchingMediaTypes=[application/xhtml+xml, image/*, text/html, text/plain], useEquals=false, ignoredMediaTypes=[*/*]]]
+2024-02-07 14:49:01.843 [http-nio-9090-exec-3] DEBUG org.springframework.security.web.authentication.DelegatingAuthenticationEntryPoint - Match found! Executing org.springframework.security.web.authentication.LoginUrlAuthenticationEntryPoint@547d3e8e
+2024-02-07 14:49:01.845 [http-nio-9090-exec-3] DEBUG org.springframework.security.web.DefaultRedirectStrategy - Redirecting to http://localhost:9090/login
+2024-02-07 14:49:01.851 [http-nio-9090-exec-2] DEBUG org.springframework.security.web.FilterChainProxy - Securing GET /login
+2024-02-07 14:49:01.851 [http-nio-9090-exec-2] DEBUG org.springframework.security.web.FilterChainProxy - Secured GET /login
+2024-02-07 14:49:01.854 [http-nio-9090-exec-2] DEBUG org.springframework.security.web.authentication.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2024-02-07 14:49:09.174 [http-nio-9090-exec-4] DEBUG org.springframework.security.web.FilterChainProxy - Securing POST /process-login
+2024-02-07 14:49:09.325 [http-nio-9090-exec-4] WARN  org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder - Encoded password does not look like BCrypt
+2024-02-07 14:49:09.325 [http-nio-9090-exec-4] DEBUG org.springframework.security.authentication.dao.DaoAuthenticationProvider - Failed to authenticate since password does not match stored value
+2024-02-07 14:49:09.325 [http-nio-9090-exec-4] DEBUG org.springframework.security.web.DefaultRedirectStrategy - Redirecting to /login?error
+2024-02-07 14:49:09.325 [http-nio-9090-exec-5] DEBUG org.springframework.security.web.FilterChainProxy - Securing GET /login?error
+2024-02-07 14:49:09.325 [http-nio-9090-exec-5] DEBUG org.springframework.security.web.FilterChainProxy - Secured GET /login?error
+2024-02-07 14:49:09.342 [http-nio-9090-exec-5] DEBUG org.springframework.security.web.authentication.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2024-02-07 14:55:17.486 [main] INFO  it.fides.val_training_spring.ValTrainingSpringApplication - Starting ValTrainingSpringApplication using Java 17.0.9 with PID 15296 (C:\Users\User\Documents\val_training_spring2\target\classes started by User in C:\Users\User\Documents\val_training_spring2)
+2024-02-07 14:55:17.499 [main] INFO  it.fides.val_training_spring.ValTrainingSpringApplication - No active profile set, falling back to 1 default profile: "default"
+2024-02-07 14:55:18.423 [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-02-07 14:55:18.522 [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 86 ms. Found 7 JPA repository interfaces.
+2024-02-07 14:55:19.380 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port 9090 (http)
+2024-02-07 14:55:19.400 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-9090"]
+2024-02-07 14:55:19.406 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2024-02-07 14:55:19.407 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.18]
+2024-02-07 14:55:19.531 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-02-07 14:55:19.537 [main] INFO  org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1976 ms
+2024-02-07 14:55:19.822 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2024-02-07 14:55:20.383 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@456aa471
+2024-02-07 14:55:20.386 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2024-02-07 14:55:20.466 [main] INFO  org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-02-07 14:55:20.590 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.1.Final
+2024-02-07 14:55:20.666 [main] INFO  org.hibernate.cache.internal.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2024-02-07 14:55:21.158 [main] INFO  org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-02-07 14:55:22.984 [main] INFO  org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-02-07 14:55:22.989 [main] INFO  org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-02-07 14:55:23.705 [main] INFO  org.springframework.data.jpa.repository.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-02-07 14:55:24.399 [main] INFO  org.springframework.security.provisioning.JdbcUserDetailsManager - No authentication manager set. Reauthentication of users when changing passwords will not be performed.
+2024-02-07 14:55:24.443 [main] WARN  org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-02-07 14:55:24.648 [main] INFO  org.springframework.boot.autoconfigure.web.servlet.WelcomePageHandlerMapping - Adding welcome page template: index
+2024-02-07 14:55:24.952 [main] INFO  org.springframework.security.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@6311898c, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@7ea0438c, org.springframework.security.web.context.SecurityContextHolderFilter@b6a20ce, org.springframework.security.web.header.HeaderWriterFilter@561494af, org.springframework.web.filter.CorsFilter@3831fb48, org.springframework.security.web.authentication.logout.LogoutFilter@bf70ce5, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@5748638c, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@66a5cbe5, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@19c28c97, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@15b54cb7, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@7083e548, org.springframework.security.web.access.ExceptionTranslationFilter@4e502162, org.springframework.security.web.access.intercept.AuthorizationFilter@6b0bcea5]
+2024-02-07 14:55:25.416 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-9090"]
+2024-02-07 14:55:25.428 [main] WARN  org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'
+2024-02-07 14:55:25.432 [main] INFO  org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-02-07 14:55:25.436 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2024-02-07 14:55:25.454 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2024-02-07 14:55:25.478 [main] INFO  org.springframework.boot.autoconfigure.logging.ConditionEvaluationReportLogger - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2024-02-07 14:55:25.513 [main] ERROR org.springframework.boot.diagnostics.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 9090 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 9090 or configure this application to listen on another port.
+
+2024-02-07 14:55:50.574 [main] INFO  it.fides.val_training_spring.ValTrainingSpringApplication - Starting ValTrainingSpringApplication using Java 17.0.9 with PID 3900 (C:\Users\User\Documents\val_training_spring2\target\classes started by User in C:\Users\User\Documents\val_training_spring2)
+2024-02-07 14:55:50.593 [main] INFO  it.fides.val_training_spring.ValTrainingSpringApplication - No active profile set, falling back to 1 default profile: "default"
+2024-02-07 14:55:51.795 [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-02-07 14:55:51.938 [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 125 ms. Found 7 JPA repository interfaces.
+2024-02-07 14:55:53.173 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port 9091 (http)
+2024-02-07 14:55:53.199 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-9091"]
+2024-02-07 14:55:53.205 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2024-02-07 14:55:53.206 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.18]
+2024-02-07 14:55:53.343 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-02-07 14:55:53.348 [main] INFO  org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2663 ms
+2024-02-07 14:55:53.642 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2024-02-07 14:55:54.206 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@39ace1a7
+2024-02-07 14:55:54.209 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2024-02-07 14:55:54.311 [main] INFO  org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-02-07 14:55:54.436 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.1.Final
+2024-02-07 14:55:54.513 [main] INFO  org.hibernate.cache.internal.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2024-02-07 14:55:54.954 [main] INFO  org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-02-07 14:55:56.793 [main] INFO  org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-02-07 14:55:56.798 [main] INFO  org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-02-07 14:55:57.510 [main] INFO  org.springframework.data.jpa.repository.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-02-07 14:55:58.156 [main] INFO  org.springframework.security.provisioning.JdbcUserDetailsManager - No authentication manager set. Reauthentication of users when changing passwords will not be performed.
+2024-02-07 14:55:58.196 [main] WARN  org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-02-07 14:55:58.405 [main] INFO  org.springframework.boot.autoconfigure.web.servlet.WelcomePageHandlerMapping - Adding welcome page template: index
+2024-02-07 14:55:58.723 [main] INFO  org.springframework.security.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@33f5d807, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@6a7db16e, org.springframework.security.web.context.SecurityContextHolderFilter@33c6c4f, org.springframework.security.web.header.HeaderWriterFilter@6fc44cb6, org.springframework.web.filter.CorsFilter@5acbef42, org.springframework.security.web.authentication.logout.LogoutFilter@7dfbdcfe, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@4c9ed40, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@7f6b3f4c, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@1dade178, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@561494af, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@7cfc2a08, org.springframework.security.web.access.ExceptionTranslationFilter@28d07fa4, org.springframework.security.web.access.intercept.AuthorizationFilter@1f9009d3]
+2024-02-07 14:55:59.124 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-9091"]
+2024-02-07 14:55:59.170 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port 9091 (http) with context path ''
+2024-02-07 14:55:59.189 [main] INFO  it.fides.val_training_spring.ValTrainingSpringApplication - Started ValTrainingSpringApplication in 9.186 seconds (process running for 10.095)
+2024-02-07 14:56:10.799 [http-nio-9090-exec-8] DEBUG org.springframework.security.web.FilterChainProxy - Securing GET /
+2024-02-07 14:56:10.800 [http-nio-9090-exec-8] DEBUG org.springframework.security.web.authentication.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2024-02-07 14:56:10.801 [http-nio-9090-exec-8] DEBUG org.springframework.security.web.savedrequest.HttpSessionRequestCache - Saved request http://localhost:9090/?continue to session
+2024-02-07 14:56:10.802 [http-nio-9090-exec-8] DEBUG org.springframework.security.web.authentication.DelegatingAuthenticationEntryPoint - Trying to match using And [Not [RequestHeaderRequestMatcher [expectedHeaderName=X-Requested-With, expectedHeaderValue=XMLHttpRequest]], MediaTypeRequestMatcher [contentNegotiationStrategy=org.springframework.web.accept.ContentNegotiationManager@36e6e59f, matchingMediaTypes=[application/xhtml+xml, image/*, text/html, text/plain], useEquals=false, ignoredMediaTypes=[*/*]]]
+2024-02-07 14:56:10.802 [http-nio-9090-exec-8] DEBUG org.springframework.security.web.authentication.DelegatingAuthenticationEntryPoint - Match found! Executing org.springframework.security.web.authentication.LoginUrlAuthenticationEntryPoint@547d3e8e
+2024-02-07 14:56:10.802 [http-nio-9090-exec-8] DEBUG org.springframework.security.web.DefaultRedirectStrategy - Redirecting to http://localhost:9090/login
+2024-02-07 14:56:10.806 [http-nio-9090-exec-9] DEBUG org.springframework.security.web.FilterChainProxy - Securing GET /login
+2024-02-07 14:56:10.806 [http-nio-9090-exec-9] DEBUG org.springframework.security.web.FilterChainProxy - Secured GET /login
+2024-02-07 14:56:10.810 [http-nio-9090-exec-9] DEBUG org.springframework.security.web.authentication.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2024-02-07 14:56:16.437 [http-nio-9090-exec-3] DEBUG org.springframework.security.web.FilterChainProxy - Securing POST /process-login
+2024-02-07 14:56:16.444 [http-nio-9090-exec-3] WARN  org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder - Encoded password does not look like BCrypt
+2024-02-07 14:56:16.444 [http-nio-9090-exec-3] DEBUG org.springframework.security.authentication.dao.DaoAuthenticationProvider - Failed to authenticate since password does not match stored value
+2024-02-07 14:56:16.444 [http-nio-9090-exec-3] DEBUG org.springframework.security.web.DefaultRedirectStrategy - Redirecting to /login?error
+2024-02-07 14:56:16.447 [http-nio-9090-exec-2] DEBUG org.springframework.security.web.FilterChainProxy - Securing GET /login?error
+2024-02-07 14:56:16.447 [http-nio-9090-exec-2] DEBUG org.springframework.security.web.FilterChainProxy - Secured GET /login?error
+2024-02-07 14:56:16.447 [http-nio-9090-exec-2] DEBUG org.springframework.security.web.authentication.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2024-02-07 14:57:47.540 [http-nio-9090-exec-6] DEBUG org.springframework.security.web.FilterChainProxy - Securing GET /
+2024-02-07 14:57:47.541 [http-nio-9090-exec-6] DEBUG org.springframework.security.web.authentication.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2024-02-07 14:57:47.543 [http-nio-9090-exec-6] DEBUG org.springframework.security.web.savedrequest.HttpSessionRequestCache - Saved request http://localhost:9090/?continue to session
+2024-02-07 14:57:47.544 [http-nio-9090-exec-6] DEBUG org.springframework.security.web.authentication.DelegatingAuthenticationEntryPoint - Trying to match using And [Not [RequestHeaderRequestMatcher [expectedHeaderName=X-Requested-With, expectedHeaderValue=XMLHttpRequest]], MediaTypeRequestMatcher [contentNegotiationStrategy=org.springframework.web.accept.ContentNegotiationManager@36e6e59f, matchingMediaTypes=[application/xhtml+xml, image/*, text/html, text/plain], useEquals=false, ignoredMediaTypes=[*/*]]]
+2024-02-07 14:57:47.544 [http-nio-9090-exec-6] DEBUG org.springframework.security.web.authentication.DelegatingAuthenticationEntryPoint - Match found! Executing org.springframework.security.web.authentication.LoginUrlAuthenticationEntryPoint@547d3e8e
+2024-02-07 14:57:47.544 [http-nio-9090-exec-6] DEBUG org.springframework.security.web.DefaultRedirectStrategy - Redirecting to http://localhost:9090/login
+2024-02-07 14:57:47.545 [http-nio-9090-exec-7] DEBUG org.springframework.security.web.FilterChainProxy - Securing GET /login
+2024-02-07 14:57:47.545 [http-nio-9090-exec-7] DEBUG org.springframework.security.web.FilterChainProxy - Secured GET /login
+2024-02-07 14:57:47.554 [http-nio-9090-exec-7] DEBUG org.springframework.security.web.authentication.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2024-02-07 14:57:52.460 [http-nio-9090-exec-8] DEBUG org.springframework.security.web.FilterChainProxy - Securing POST /process-login
+2024-02-07 14:57:52.828 [http-nio-9090-exec-8] DEBUG org.springframework.security.authentication.dao.DaoAuthenticationProvider - Authenticated user
+2024-02-07 14:57:52.828 [http-nio-9090-exec-8] DEBUG org.springframework.security.web.authentication.session.ChangeSessionIdAuthenticationStrategy - Changed session id from D55690765C26F940F7AE2BEABAF78235
+2024-02-07 14:57:52.832 [http-nio-9090-exec-8] DEBUG org.springframework.security.web.context.HttpSessionSecurityContextRepository - Stored SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=pippo23@gmail.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, CredentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[$2a$12$1jwMunTGWZdWF0NhftJwhemS/YQtBs7dNg/SG8aXQcK6gPLyvgLEy]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=D55690765C26F940F7AE2BEABAF78235], Granted Authorities=[$2a$12$1jwMunTGWZdWF0NhftJwhemS/YQtBs7dNg/SG8aXQcK6gPLyvgLEy]]] to HttpSession [org.apache.catalina.session.StandardSessionFacade@2dadd69e]
+2024-02-07 14:57:52.832 [http-nio-9090-exec-8] DEBUG org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter - Set SecurityContextHolder to UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=pippo23@gmail.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, CredentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[$2a$12$1jwMunTGWZdWF0NhftJwhemS/YQtBs7dNg/SG8aXQcK6gPLyvgLEy]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=D55690765C26F940F7AE2BEABAF78235], Granted Authorities=[$2a$12$1jwMunTGWZdWF0NhftJwhemS/YQtBs7dNg/SG8aXQcK6gPLyvgLEy]]
+2024-02-07 14:57:52.832 [http-nio-9090-exec-8] DEBUG org.springframework.security.web.DefaultRedirectStrategy - Redirecting to http://localhost:9090/?continue
+2024-02-07 14:57:52.837 [http-nio-9090-exec-10] DEBUG org.springframework.security.web.FilterChainProxy - Securing GET /?continue
+2024-02-07 14:57:52.837 [http-nio-9090-exec-10] DEBUG org.springframework.security.web.savedrequest.HttpSessionRequestCache - Loaded matching saved request http://localhost:9090/?continue
+2024-02-07 14:57:52.840 [http-nio-9090-exec-10] DEBUG org.springframework.security.web.context.HttpSessionSecurityContextRepository - Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=pippo23@gmail.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, CredentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[$2a$12$1jwMunTGWZdWF0NhftJwhemS/YQtBs7dNg/SG8aXQcK6gPLyvgLEy]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=D55690765C26F940F7AE2BEABAF78235], Granted Authorities=[$2a$12$1jwMunTGWZdWF0NhftJwhemS/YQtBs7dNg/SG8aXQcK6gPLyvgLEy]]]
+2024-02-07 14:57:52.840 [http-nio-9090-exec-10] DEBUG org.springframework.security.web.access.AccessDeniedHandlerImpl - Responding with 403 status code
+2024-02-07 14:57:52.851 [http-nio-9090-exec-10] DEBUG org.springframework.security.web.FilterChainProxy - Securing GET /error?continue
+2024-02-07 14:57:52.851 [http-nio-9090-exec-10] DEBUG org.springframework.security.web.context.HttpSessionSecurityContextRepository - Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=pippo23@gmail.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, CredentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[$2a$12$1jwMunTGWZdWF0NhftJwhemS/YQtBs7dNg/SG8aXQcK6gPLyvgLEy]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=D55690765C26F940F7AE2BEABAF78235], Granted Authorities=[$2a$12$1jwMunTGWZdWF0NhftJwhemS/YQtBs7dNg/SG8aXQcK6gPLyvgLEy]]]
+2024-02-07 14:57:52.852 [http-nio-9090-exec-10] DEBUG org.springframework.security.web.access.AccessDeniedHandlerImpl - Responding with 403 status code
+2024-02-07 15:01:23.174 [http-nio-9090-exec-3] DEBUG org.springframework.security.web.FilterChainProxy - Securing GET /login
+2024-02-07 15:01:23.176 [http-nio-9090-exec-3] DEBUG org.springframework.security.web.FilterChainProxy - Secured GET /login
+2024-02-07 15:01:23.180 [http-nio-9090-exec-3] DEBUG org.springframework.security.web.context.HttpSessionSecurityContextRepository - Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=pippo23@gmail.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, CredentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[$2a$12$1jwMunTGWZdWF0NhftJwhemS/YQtBs7dNg/SG8aXQcK6gPLyvgLEy]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=D55690765C26F940F7AE2BEABAF78235], Granted Authorities=[$2a$12$1jwMunTGWZdWF0NhftJwhemS/YQtBs7dNg/SG8aXQcK6gPLyvgLEy]]]
+2024-02-07 15:01:30.164 [http-nio-9090-exec-2] DEBUG org.springframework.security.web.FilterChainProxy - Securing POST /process-login
+2024-02-07 15:01:30.168 [http-nio-9090-exec-2] DEBUG org.springframework.security.provisioning.JdbcUserDetailsManager - Query returned no results for user 'pippo24@gmail.com'
+2024-02-07 15:01:30.237 [http-nio-9090-exec-2] DEBUG org.springframework.security.authentication.dao.DaoAuthenticationProvider - Failed to find user 'pippo24@gmail.com'
+2024-02-07 15:01:30.237 [http-nio-9090-exec-2] DEBUG org.springframework.security.web.DefaultRedirectStrategy - Redirecting to /login?error
+2024-02-07 15:01:30.249 [http-nio-9090-exec-4] DEBUG org.springframework.security.web.FilterChainProxy - Securing GET /login?error
+2024-02-07 15:01:30.249 [http-nio-9090-exec-4] DEBUG org.springframework.security.web.FilterChainProxy - Secured GET /login?error
+2024-02-07 15:01:30.253 [http-nio-9090-exec-4] DEBUG org.springframework.security.web.context.HttpSessionSecurityContextRepository - Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=pippo23@gmail.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, CredentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[$2a$12$1jwMunTGWZdWF0NhftJwhemS/YQtBs7dNg/SG8aXQcK6gPLyvgLEy]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=D55690765C26F940F7AE2BEABAF78235], Granted Authorities=[$2a$12$1jwMunTGWZdWF0NhftJwhemS/YQtBs7dNg/SG8aXQcK6gPLyvgLEy]]]
+2024-02-07 15:02:01.453 [http-nio-9090-exec-7] DEBUG org.springframework.security.web.FilterChainProxy - Securing POST /process-login
+2024-02-07 15:02:01.736 [http-nio-9090-exec-7] DEBUG org.springframework.security.authentication.dao.DaoAuthenticationProvider - Authenticated user
+2024-02-07 15:02:01.736 [http-nio-9090-exec-7] DEBUG org.springframework.security.web.authentication.session.ChangeSessionIdAuthenticationStrategy - Changed session id from 9362D4E8F51772621482E673C1CB219A
+2024-02-07 15:02:01.736 [http-nio-9090-exec-7] DEBUG org.springframework.security.web.context.HttpSessionSecurityContextRepository - Stored SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=pluto24@gmail.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, CredentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[$2a$12$1jwMunTGWZdWF0NhftJwhemS/YQtBs7dNg/SG8aXQcK6gPLyvgLEy]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=9362D4E8F51772621482E673C1CB219A], Granted Authorities=[$2a$12$1jwMunTGWZdWF0NhftJwhemS/YQtBs7dNg/SG8aXQcK6gPLyvgLEy]]] to HttpSession [org.apache.catalina.session.StandardSessionFacade@2dadd69e]
+2024-02-07 15:02:01.736 [http-nio-9090-exec-7] DEBUG org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter - Set SecurityContextHolder to UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=pluto24@gmail.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, CredentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[$2a$12$1jwMunTGWZdWF0NhftJwhemS/YQtBs7dNg/SG8aXQcK6gPLyvgLEy]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=9362D4E8F51772621482E673C1CB219A], Granted Authorities=[$2a$12$1jwMunTGWZdWF0NhftJwhemS/YQtBs7dNg/SG8aXQcK6gPLyvgLEy]]
+2024-02-07 15:02:01.736 [http-nio-9090-exec-7] DEBUG org.springframework.security.web.DefaultRedirectStrategy - Redirecting to /
+2024-02-07 15:02:01.740 [http-nio-9090-exec-9] DEBUG org.springframework.security.web.FilterChainProxy - Securing GET /
+2024-02-07 15:02:01.740 [http-nio-9090-exec-9] DEBUG org.springframework.security.web.context.HttpSessionSecurityContextRepository - Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=pluto24@gmail.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, CredentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[$2a$12$1jwMunTGWZdWF0NhftJwhemS/YQtBs7dNg/SG8aXQcK6gPLyvgLEy]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=9362D4E8F51772621482E673C1CB219A], Granted Authorities=[$2a$12$1jwMunTGWZdWF0NhftJwhemS/YQtBs7dNg/SG8aXQcK6gPLyvgLEy]]]
+2024-02-07 15:02:01.740 [http-nio-9090-exec-9] DEBUG org.springframework.security.web.access.AccessDeniedHandlerImpl - Responding with 403 status code
+2024-02-07 15:02:01.740 [http-nio-9090-exec-9] DEBUG org.springframework.security.web.FilterChainProxy - Securing GET /error
+2024-02-07 15:02:01.740 [http-nio-9090-exec-9] DEBUG org.springframework.security.web.context.HttpSessionSecurityContextRepository - Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=pluto24@gmail.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, CredentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[$2a$12$1jwMunTGWZdWF0NhftJwhemS/YQtBs7dNg/SG8aXQcK6gPLyvgLEy]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=9362D4E8F51772621482E673C1CB219A], Granted Authorities=[$2a$12$1jwMunTGWZdWF0NhftJwhemS/YQtBs7dNg/SG8aXQcK6gPLyvgLEy]]]
+2024-02-07 15:02:01.740 [http-nio-9090-exec-9] DEBUG org.springframework.security.web.access.AccessDeniedHandlerImpl - Responding with 403 status code
+2024-02-07 15:12:43.049 [main] INFO  it.fides.val_training_spring.ValTrainingSpringApplication - Starting ValTrainingSpringApplication using Java 17.0.9 with PID 8044 (C:\Users\User\Documents\val_training_spring2\target\classes started by User in C:\Users\User\Documents\val_training_spring2)
+2024-02-07 15:12:43.068 [main] INFO  it.fides.val_training_spring.ValTrainingSpringApplication - No active profile set, falling back to 1 default profile: "default"
+2024-02-07 15:12:44.316 [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-02-07 15:12:44.463 [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 131 ms. Found 7 JPA repository interfaces.
+2024-02-07 15:12:45.621 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port 9091 (http)
+2024-02-07 15:12:45.645 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-9091"]
+2024-02-07 15:12:45.651 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2024-02-07 15:12:45.652 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.18]
+2024-02-07 15:12:45.796 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-02-07 15:12:45.801 [main] INFO  org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2644 ms
+2024-02-07 15:12:46.089 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2024-02-07 15:12:46.653 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@58882a93
+2024-02-07 15:12:46.655 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2024-02-07 15:12:46.759 [main] INFO  org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-02-07 15:12:46.877 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.1.Final
+2024-02-07 15:12:46.957 [main] INFO  org.hibernate.cache.internal.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2024-02-07 15:12:47.410 [main] INFO  org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-02-07 15:12:49.197 [main] INFO  org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-02-07 15:12:49.201 [main] INFO  org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-02-07 15:12:49.881 [main] INFO  org.springframework.data.jpa.repository.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-02-07 15:12:50.549 [main] INFO  org.springframework.security.provisioning.JdbcUserDetailsManager - No authentication manager set. Reauthentication of users when changing passwords will not be performed.
+2024-02-07 15:12:50.588 [main] WARN  org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-02-07 15:12:50.806 [main] INFO  org.springframework.boot.autoconfigure.web.servlet.WelcomePageHandlerMapping - Adding welcome page template: index
+2024-02-07 15:12:51.143 [main] INFO  org.springframework.security.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@776ae580, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@6b0bcea5, org.springframework.security.web.context.SecurityContextHolderFilter@398a27e, org.springframework.security.web.header.HeaderWriterFilter@3759ea4d, org.springframework.web.filter.CorsFilter@5748638c, org.springframework.security.web.authentication.logout.LogoutFilter@64236be, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@51a3e3b4, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@3c82bcbd, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@28d07fa4, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@298990ab, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@7e864a8c, org.springframework.security.web.access.ExceptionTranslationFilter@32107bba, org.springframework.security.web.access.intercept.AuthorizationFilter@331b0bfd]
+2024-02-07 15:12:51.557 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-9091"]
+2024-02-07 15:12:51.568 [main] WARN  org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'
+2024-02-07 15:12:51.574 [main] INFO  org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-02-07 15:12:51.578 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2024-02-07 15:12:51.594 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2024-02-07 15:12:51.619 [main] INFO  org.springframework.boot.autoconfigure.logging.ConditionEvaluationReportLogger - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2024-02-07 15:12:51.654 [main] ERROR org.springframework.boot.diagnostics.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 9091 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 9091 or configure this application to listen on another port.
+
+2024-02-07 15:13:05.506 [main] INFO  it.fides.val_training_spring.ValTrainingSpringApplication - Starting ValTrainingSpringApplication using Java 17.0.9 with PID 6716 (C:\Users\User\Documents\val_training_spring2\target\classes started by User in C:\Users\User\Documents\val_training_spring2)
+2024-02-07 15:13:05.522 [main] INFO  it.fides.val_training_spring.ValTrainingSpringApplication - No active profile set, falling back to 1 default profile: "default"
+2024-02-07 15:13:06.785 [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-02-07 15:13:06.935 [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 132 ms. Found 7 JPA repository interfaces.
+2024-02-07 15:13:08.107 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port 9092 (http)
+2024-02-07 15:13:08.130 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-9092"]
+2024-02-07 15:13:08.135 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2024-02-07 15:13:08.136 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.18]
+2024-02-07 15:13:08.273 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-02-07 15:13:08.277 [main] INFO  org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2676 ms
+2024-02-07 15:13:08.605 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2024-02-07 15:13:09.134 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@11148dc2
+2024-02-07 15:13:09.136 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2024-02-07 15:13:09.236 [main] INFO  org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-02-07 15:13:09.386 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.1.Final
+2024-02-07 15:13:09.497 [main] INFO  org.hibernate.cache.internal.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2024-02-07 15:13:09.968 [main] INFO  org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-02-07 15:13:11.650 [main] INFO  org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-02-07 15:13:11.655 [main] INFO  org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-02-07 15:13:12.363 [main] INFO  org.springframework.data.jpa.repository.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-02-07 15:13:13.010 [main] INFO  org.springframework.security.provisioning.JdbcUserDetailsManager - No authentication manager set. Reauthentication of users when changing passwords will not be performed.
+2024-02-07 15:13:13.056 [main] WARN  org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-02-07 15:13:13.258 [main] INFO  org.springframework.boot.autoconfigure.web.servlet.WelcomePageHandlerMapping - Adding welcome page template: index
+2024-02-07 15:13:13.557 [main] INFO  org.springframework.security.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@27e0906f, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@14432052, org.springframework.security.web.context.SecurityContextHolderFilter@6089c1e3, org.springframework.security.web.header.HeaderWriterFilter@2845fd12, org.springframework.web.filter.CorsFilter@7f6c85c4, org.springframework.security.web.authentication.logout.LogoutFilter@19c28c97, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@3c739a9b, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@51a3e3b4, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@7acb0a44, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@63088bbd, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@319c77de, org.springframework.security.web.access.ExceptionTranslationFilter@26a5007, org.springframework.security.web.access.intercept.AuthorizationFilter@113a7d12]
+2024-02-07 15:13:13.936 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-9092"]
+2024-02-07 15:13:13.986 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port 9092 (http) with context path ''
+2024-02-07 15:13:14.006 [main] INFO  it.fides.val_training_spring.ValTrainingSpringApplication - Started ValTrainingSpringApplication in 9.034 seconds (process running for 9.946)
+2024-02-07 15:13:23.442 [http-nio-9092-exec-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-02-07 15:13:23.444 [http-nio-9092-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2024-02-07 15:13:23.445 [http-nio-9092-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2024-02-07 15:13:23.468 [http-nio-9092-exec-1] DEBUG org.springframework.security.web.FilterChainProxy - Securing GET /
+2024-02-07 15:13:23.476 [http-nio-9092-exec-1] DEBUG org.springframework.security.web.authentication.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2024-02-07 15:13:23.536 [http-nio-9092-exec-1] DEBUG org.springframework.security.web.savedrequest.HttpSessionRequestCache - Saved request http://localhost:9092/?continue to session
+2024-02-07 15:13:23.536 [http-nio-9092-exec-1] DEBUG org.springframework.security.web.authentication.DelegatingAuthenticationEntryPoint - Trying to match using And [Not [RequestHeaderRequestMatcher [expectedHeaderName=X-Requested-With, expectedHeaderValue=XMLHttpRequest]], MediaTypeRequestMatcher [contentNegotiationStrategy=org.springframework.web.accept.ContentNegotiationManager@419dbd6d, matchingMediaTypes=[application/xhtml+xml, image/*, text/html, text/plain], useEquals=false, ignoredMediaTypes=[*/*]]]
+2024-02-07 15:13:23.542 [http-nio-9092-exec-1] DEBUG org.springframework.security.web.authentication.DelegatingAuthenticationEntryPoint - Match found! Executing org.springframework.security.web.authentication.LoginUrlAuthenticationEntryPoint@1440a166
+2024-02-07 15:13:23.543 [http-nio-9092-exec-1] DEBUG org.springframework.security.web.DefaultRedirectStrategy - Redirecting to http://localhost:9092/login
+2024-02-07 15:13:23.566 [http-nio-9092-exec-3] DEBUG org.springframework.security.web.FilterChainProxy - Securing GET /login
+2024-02-07 15:13:23.567 [http-nio-9092-exec-3] DEBUG org.springframework.security.web.FilterChainProxy - Secured GET /login
+2024-02-07 15:13:24.061 [http-nio-9092-exec-3] DEBUG org.springframework.security.web.authentication.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2024-02-07 15:13:24.097 [http-nio-9092-exec-2] DEBUG org.springframework.security.web.FilterChainProxy - Securing GET /favicon.ico
+2024-02-07 15:13:24.097 [http-nio-9092-exec-2] DEBUG org.springframework.security.web.authentication.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2024-02-07 15:13:24.097 [http-nio-9092-exec-2] DEBUG org.springframework.security.web.authentication.DelegatingAuthenticationEntryPoint - Trying to match using And [Not [RequestHeaderRequestMatcher [expectedHeaderName=X-Requested-With, expectedHeaderValue=XMLHttpRequest]], MediaTypeRequestMatcher [contentNegotiationStrategy=org.springframework.web.accept.ContentNegotiationManager@419dbd6d, matchingMediaTypes=[application/xhtml+xml, image/*, text/html, text/plain], useEquals=false, ignoredMediaTypes=[*/*]]]
+2024-02-07 15:13:24.097 [http-nio-9092-exec-2] DEBUG org.springframework.security.web.authentication.DelegatingAuthenticationEntryPoint - Match found! Executing org.springframework.security.web.authentication.LoginUrlAuthenticationEntryPoint@1440a166
+2024-02-07 15:13:24.097 [http-nio-9092-exec-2] DEBUG org.springframework.security.web.DefaultRedirectStrategy - Redirecting to http://localhost:9092/login
+2024-02-07 15:13:24.106 [http-nio-9092-exec-4] DEBUG org.springframework.security.web.FilterChainProxy - Securing GET /login
+2024-02-07 15:13:24.108 [http-nio-9092-exec-4] DEBUG org.springframework.security.web.FilterChainProxy - Secured GET /login
+2024-02-07 15:13:24.111 [http-nio-9092-exec-4] DEBUG org.springframework.security.web.authentication.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2024-02-07 15:13:32.581 [http-nio-9092-exec-5] DEBUG org.springframework.security.web.FilterChainProxy - Securing POST /process-login
+2024-02-07 15:13:32.732 [http-nio-9092-exec-5] DEBUG org.springframework.security.authentication.dao.DaoAuthenticationProvider - Failed to authenticate since user account is disabled
+2024-02-07 15:13:32.732 [http-nio-9092-exec-5] DEBUG org.springframework.security.web.DefaultRedirectStrategy - Redirecting to /login?error
+2024-02-07 15:13:32.743 [http-nio-9092-exec-7] DEBUG org.springframework.security.web.FilterChainProxy - Securing GET /login?error
+2024-02-07 15:13:32.743 [http-nio-9092-exec-7] DEBUG org.springframework.security.web.FilterChainProxy - Secured GET /login?error
+2024-02-07 15:13:32.749 [http-nio-9092-exec-7] DEBUG org.springframework.security.web.authentication.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2024-02-07 15:13:32.762 [http-nio-9092-exec-6] DEBUG org.springframework.security.web.FilterChainProxy - Securing GET /favicon.ico
+2024-02-07 15:13:32.762 [http-nio-9092-exec-6] DEBUG org.springframework.security.web.authentication.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2024-02-07 15:13:32.764 [http-nio-9092-exec-6] DEBUG org.springframework.security.web.authentication.DelegatingAuthenticationEntryPoint - Trying to match using And [Not [RequestHeaderRequestMatcher [expectedHeaderName=X-Requested-With, expectedHeaderValue=XMLHttpRequest]], MediaTypeRequestMatcher [contentNegotiationStrategy=org.springframework.web.accept.ContentNegotiationManager@419dbd6d, matchingMediaTypes=[application/xhtml+xml, image/*, text/html, text/plain], useEquals=false, ignoredMediaTypes=[*/*]]]
+2024-02-07 15:13:32.765 [http-nio-9092-exec-6] DEBUG org.springframework.security.web.authentication.DelegatingAuthenticationEntryPoint - Match found! Executing org.springframework.security.web.authentication.LoginUrlAuthenticationEntryPoint@1440a166
+2024-02-07 15:13:32.765 [http-nio-9092-exec-6] DEBUG org.springframework.security.web.DefaultRedirectStrategy - Redirecting to http://localhost:9092/login
+2024-02-07 15:13:32.770 [http-nio-9092-exec-8] DEBUG org.springframework.security.web.FilterChainProxy - Securing GET /login
+2024-02-07 15:13:32.770 [http-nio-9092-exec-8] DEBUG org.springframework.security.web.FilterChainProxy - Secured GET /login
+2024-02-07 15:13:32.774 [http-nio-9092-exec-8] DEBUG org.springframework.security.web.authentication.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2024-02-07 15:13:38.069 [http-nio-9092-exec-9] DEBUG org.springframework.security.web.FilterChainProxy - Securing POST /process-login
+2024-02-07 15:13:38.074 [http-nio-9092-exec-9] DEBUG org.springframework.security.authentication.dao.DaoAuthenticationProvider - Failed to authenticate since user account is disabled
+2024-02-07 15:13:38.074 [http-nio-9092-exec-9] DEBUG org.springframework.security.web.DefaultRedirectStrategy - Redirecting to /login?error
+2024-02-07 15:13:38.078 [http-nio-9092-exec-10] DEBUG org.springframework.security.web.FilterChainProxy - Securing GET /login?error
+2024-02-07 15:13:38.079 [http-nio-9092-exec-10] DEBUG org.springframework.security.web.FilterChainProxy - Secured GET /login?error
+2024-02-07 15:13:38.081 [http-nio-9092-exec-10] DEBUG org.springframework.security.web.authentication.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2024-02-07 15:13:38.096 [http-nio-9092-exec-1] DEBUG org.springframework.security.web.FilterChainProxy - Securing GET /favicon.ico
+2024-02-07 15:13:38.096 [http-nio-9092-exec-1] DEBUG org.springframework.security.web.authentication.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2024-02-07 15:13:38.096 [http-nio-9092-exec-1] DEBUG org.springframework.security.web.authentication.DelegatingAuthenticationEntryPoint - Trying to match using And [Not [RequestHeaderRequestMatcher [expectedHeaderName=X-Requested-With, expectedHeaderValue=XMLHttpRequest]], MediaTypeRequestMatcher [contentNegotiationStrategy=org.springframework.web.accept.ContentNegotiationManager@419dbd6d, matchingMediaTypes=[application/xhtml+xml, image/*, text/html, text/plain], useEquals=false, ignoredMediaTypes=[*/*]]]
+2024-02-07 15:13:38.096 [http-nio-9092-exec-1] DEBUG org.springframework.security.web.authentication.DelegatingAuthenticationEntryPoint - Match found! Executing org.springframework.security.web.authentication.LoginUrlAuthenticationEntryPoint@1440a166
+2024-02-07 15:13:38.096 [http-nio-9092-exec-1] DEBUG org.springframework.security.web.DefaultRedirectStrategy - Redirecting to http://localhost:9092/login
+2024-02-07 15:13:38.101 [http-nio-9092-exec-3] DEBUG org.springframework.security.web.FilterChainProxy - Securing GET /login
+2024-02-07 15:13:38.102 [http-nio-9092-exec-3] DEBUG org.springframework.security.web.FilterChainProxy - Secured GET /login
+2024-02-07 15:13:38.105 [http-nio-9092-exec-3] DEBUG org.springframework.security.web.authentication.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2024-02-07 15:13:54.947 [http-nio-9092-exec-2] DEBUG org.springframework.security.web.FilterChainProxy - Securing POST /process-login
+2024-02-07 15:13:54.952 [http-nio-9092-exec-2] DEBUG org.springframework.security.authentication.dao.DaoAuthenticationProvider - Failed to authenticate since user account is disabled
+2024-02-07 15:13:54.953 [http-nio-9092-exec-2] DEBUG org.springframework.security.web.DefaultRedirectStrategy - Redirecting to /login?error
+2024-02-07 15:13:54.958 [http-nio-9092-exec-4] DEBUG org.springframework.security.web.FilterChainProxy - Securing GET /login?error
+2024-02-07 15:13:54.958 [http-nio-9092-exec-4] DEBUG org.springframework.security.web.FilterChainProxy - Secured GET /login?error
+2024-02-07 15:13:54.958 [http-nio-9092-exec-4] DEBUG org.springframework.security.web.authentication.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2024-02-07 15:13:54.980 [http-nio-9092-exec-5] DEBUG org.springframework.security.web.FilterChainProxy - Securing GET /favicon.ico
+2024-02-07 15:13:54.982 [http-nio-9092-exec-5] DEBUG org.springframework.security.web.authentication.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2024-02-07 15:13:54.982 [http-nio-9092-exec-5] DEBUG org.springframework.security.web.authentication.DelegatingAuthenticationEntryPoint - Trying to match using And [Not [RequestHeaderRequestMatcher [expectedHeaderName=X-Requested-With, expectedHeaderValue=XMLHttpRequest]], MediaTypeRequestMatcher [contentNegotiationStrategy=org.springframework.web.accept.ContentNegotiationManager@419dbd6d, matchingMediaTypes=[application/xhtml+xml, image/*, text/html, text/plain], useEquals=false, ignoredMediaTypes=[*/*]]]
+2024-02-07 15:13:54.982 [http-nio-9092-exec-5] DEBUG org.springframework.security.web.authentication.DelegatingAuthenticationEntryPoint - Match found! Executing org.springframework.security.web.authentication.LoginUrlAuthenticationEntryPoint@1440a166
+2024-02-07 15:13:54.982 [http-nio-9092-exec-5] DEBUG org.springframework.security.web.DefaultRedirectStrategy - Redirecting to http://localhost:9092/login
+2024-02-07 15:13:54.986 [http-nio-9092-exec-7] DEBUG org.springframework.security.web.FilterChainProxy - Securing GET /login
+2024-02-07 15:13:54.988 [http-nio-9092-exec-7] DEBUG org.springframework.security.web.FilterChainProxy - Secured GET /login
+2024-02-07 15:13:54.989 [http-nio-9092-exec-7] DEBUG org.springframework.security.web.authentication.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2024-02-07 15:14:19.938 [main] INFO  it.fides.val_training_spring.ValTrainingSpringApplication - Starting ValTrainingSpringApplication using Java 17.0.9 with PID 6456 (C:\Users\User\Documents\val_training_spring2\target\classes started by User in C:\Users\User\Documents\val_training_spring2)
+2024-02-07 15:14:19.952 [main] INFO  it.fides.val_training_spring.ValTrainingSpringApplication - No active profile set, falling back to 1 default profile: "default"
+2024-02-07 15:14:21.070 [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-02-07 15:14:21.209 [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 124 ms. Found 7 JPA repository interfaces.
+2024-02-07 15:14:22.348 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port 9092 (http)
+2024-02-07 15:14:22.375 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-9092"]
+2024-02-07 15:14:22.381 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2024-02-07 15:14:22.382 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.18]
+2024-02-07 15:14:22.549 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-02-07 15:14:22.555 [main] INFO  org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2530 ms
+2024-02-07 15:14:22.878 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2024-02-07 15:14:23.469 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@3be80ece
+2024-02-07 15:14:23.472 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2024-02-07 15:14:23.570 [main] INFO  org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-02-07 15:14:23.702 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.1.Final
+2024-02-07 15:14:23.804 [main] INFO  org.hibernate.cache.internal.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2024-02-07 15:14:24.311 [main] INFO  org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-02-07 15:14:26.065 [main] INFO  org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-02-07 15:14:26.071 [main] INFO  org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-02-07 15:14:26.778 [main] INFO  org.springframework.data.jpa.repository.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-02-07 15:14:27.467 [main] INFO  org.springframework.security.provisioning.JdbcUserDetailsManager - No authentication manager set. Reauthentication of users when changing passwords will not be performed.
+2024-02-07 15:14:27.512 [main] WARN  org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-02-07 15:14:27.716 [main] INFO  org.springframework.boot.autoconfigure.web.servlet.WelcomePageHandlerMapping - Adding welcome page template: index
+2024-02-07 15:14:28.042 [main] INFO  org.springframework.security.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@7f6c85c4, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@319c77de, org.springframework.security.web.context.SecurityContextHolderFilter@7acb0a44, org.springframework.security.web.header.HeaderWriterFilter@5679e464, org.springframework.web.filter.CorsFilter@12dcfa6a, org.springframework.security.web.authentication.logout.LogoutFilter@4f03729f, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@7dfbdcfe, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@14432052, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@4d20d8e6, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@32107bba, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@1f9009d3, org.springframework.security.web.access.ExceptionTranslationFilter@2845fd12, org.springframework.security.web.access.intercept.AuthorizationFilter@299022a9]
+2024-02-07 15:14:28.453 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-9092"]
+2024-02-07 15:14:28.494 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port 9092 (http) with context path ''
+2024-02-07 15:14:28.512 [main] INFO  it.fides.val_training_spring.ValTrainingSpringApplication - Started ValTrainingSpringApplication in 9.033 seconds (process running for 9.947)
+2024-02-07 15:14:43.211 [http-nio-9092-exec-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-02-07 15:14:43.212 [http-nio-9092-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2024-02-07 15:14:43.213 [http-nio-9092-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2024-02-07 15:14:43.232 [http-nio-9092-exec-1] DEBUG org.springframework.security.web.FilterChainProxy - Securing GET /
+2024-02-07 15:14:43.244 [http-nio-9092-exec-1] DEBUG org.springframework.security.web.authentication.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2024-02-07 15:14:43.277 [http-nio-9092-exec-1] DEBUG org.springframework.security.web.savedrequest.HttpSessionRequestCache - Saved request http://localhost:9092/?continue to session
+2024-02-07 15:14:43.277 [http-nio-9092-exec-1] DEBUG org.springframework.security.web.authentication.DelegatingAuthenticationEntryPoint - Trying to match using And [Not [RequestHeaderRequestMatcher [expectedHeaderName=X-Requested-With, expectedHeaderValue=XMLHttpRequest]], MediaTypeRequestMatcher [contentNegotiationStrategy=org.springframework.web.accept.ContentNegotiationManager@4a2891d1, matchingMediaTypes=[application/xhtml+xml, image/*, text/html, text/plain], useEquals=false, ignoredMediaTypes=[*/*]]]
+2024-02-07 15:14:43.281 [http-nio-9092-exec-1] DEBUG org.springframework.security.web.authentication.DelegatingAuthenticationEntryPoint - Match found! Executing org.springframework.security.web.authentication.LoginUrlAuthenticationEntryPoint@50e7f88b
+2024-02-07 15:14:43.281 [http-nio-9092-exec-1] DEBUG org.springframework.security.web.DefaultRedirectStrategy - Redirecting to http://localhost:9092/login
+2024-02-07 15:14:43.296 [http-nio-9092-exec-2] DEBUG org.springframework.security.web.FilterChainProxy - Securing GET /login
+2024-02-07 15:14:43.297 [http-nio-9092-exec-2] DEBUG org.springframework.security.web.FilterChainProxy - Secured GET /login
+2024-02-07 15:14:43.709 [http-nio-9092-exec-2] DEBUG org.springframework.security.web.authentication.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2024-02-07 15:14:43.731 [http-nio-9092-exec-3] DEBUG org.springframework.security.web.FilterChainProxy - Securing GET /favicon.ico
+2024-02-07 15:14:43.731 [http-nio-9092-exec-3] DEBUG org.springframework.security.web.authentication.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2024-02-07 15:14:43.731 [http-nio-9092-exec-3] DEBUG org.springframework.security.web.authentication.DelegatingAuthenticationEntryPoint - Trying to match using And [Not [RequestHeaderRequestMatcher [expectedHeaderName=X-Requested-With, expectedHeaderValue=XMLHttpRequest]], MediaTypeRequestMatcher [contentNegotiationStrategy=org.springframework.web.accept.ContentNegotiationManager@4a2891d1, matchingMediaTypes=[application/xhtml+xml, image/*, text/html, text/plain], useEquals=false, ignoredMediaTypes=[*/*]]]
+2024-02-07 15:14:43.731 [http-nio-9092-exec-3] DEBUG org.springframework.security.web.authentication.DelegatingAuthenticationEntryPoint - Match found! Executing org.springframework.security.web.authentication.LoginUrlAuthenticationEntryPoint@50e7f88b
+2024-02-07 15:14:43.735 [http-nio-9092-exec-3] DEBUG org.springframework.security.web.DefaultRedirectStrategy - Redirecting to http://localhost:9092/login
+2024-02-07 15:14:43.739 [http-nio-9092-exec-4] DEBUG org.springframework.security.web.FilterChainProxy - Securing GET /login
+2024-02-07 15:14:43.739 [http-nio-9092-exec-4] DEBUG org.springframework.security.web.FilterChainProxy - Secured GET /login
+2024-02-07 15:14:43.744 [http-nio-9092-exec-4] DEBUG org.springframework.security.web.authentication.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2024-02-07 15:14:48.173 [http-nio-9092-exec-5] DEBUG org.springframework.security.web.FilterChainProxy - Securing POST /process-login
+2024-02-07 15:14:48.328 [http-nio-9092-exec-5] DEBUG org.springframework.security.authentication.dao.DaoAuthenticationProvider - Failed to authenticate since user account is disabled
+2024-02-07 15:14:48.328 [http-nio-9092-exec-5] DEBUG org.springframework.security.web.DefaultRedirectStrategy - Redirecting to /login?error
+2024-02-07 15:14:48.341 [http-nio-9092-exec-6] DEBUG org.springframework.security.web.FilterChainProxy - Securing GET /login?error
+2024-02-07 15:14:48.345 [http-nio-9092-exec-6] DEBUG org.springframework.security.web.FilterChainProxy - Secured GET /login?error
+2024-02-07 15:14:48.345 [http-nio-9092-exec-6] DEBUG org.springframework.security.web.authentication.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2024-02-07 15:14:48.368 [http-nio-9092-exec-7] DEBUG org.springframework.security.web.FilterChainProxy - Securing GET /favicon.ico
+2024-02-07 15:14:48.369 [http-nio-9092-exec-7] DEBUG org.springframework.security.web.authentication.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2024-02-07 15:14:48.369 [http-nio-9092-exec-7] DEBUG org.springframework.security.web.authentication.DelegatingAuthenticationEntryPoint - Trying to match using And [Not [RequestHeaderRequestMatcher [expectedHeaderName=X-Requested-With, expectedHeaderValue=XMLHttpRequest]], MediaTypeRequestMatcher [contentNegotiationStrategy=org.springframework.web.accept.ContentNegotiationManager@4a2891d1, matchingMediaTypes=[application/xhtml+xml, image/*, text/html, text/plain], useEquals=false, ignoredMediaTypes=[*/*]]]
+2024-02-07 15:14:48.369 [http-nio-9092-exec-7] DEBUG org.springframework.security.web.authentication.DelegatingAuthenticationEntryPoint - Match found! Executing org.springframework.security.web.authentication.LoginUrlAuthenticationEntryPoint@50e7f88b
+2024-02-07 15:14:48.369 [http-nio-9092-exec-7] DEBUG org.springframework.security.web.DefaultRedirectStrategy - Redirecting to http://localhost:9092/login
+2024-02-07 15:14:48.374 [http-nio-9092-exec-8] DEBUG org.springframework.security.web.FilterChainProxy - Securing GET /login
+2024-02-07 15:14:48.375 [http-nio-9092-exec-8] DEBUG org.springframework.security.web.FilterChainProxy - Secured GET /login
+2024-02-07 15:14:48.377 [http-nio-9092-exec-8] DEBUG org.springframework.security.web.authentication.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2024-02-07 15:14:56.877 [http-nio-9092-exec-9] DEBUG org.springframework.security.web.FilterChainProxy - Securing POST /process-login
+2024-02-07 15:14:56.881 [http-nio-9092-exec-9] DEBUG org.springframework.security.authentication.dao.DaoAuthenticationProvider - Failed to authenticate since user account is disabled
+2024-02-07 15:14:56.881 [http-nio-9092-exec-9] DEBUG org.springframework.security.web.DefaultRedirectStrategy - Redirecting to /login?error
+2024-02-07 15:14:56.885 [http-nio-9092-exec-10] DEBUG org.springframework.security.web.FilterChainProxy - Securing GET /login?error
+2024-02-07 15:14:56.887 [http-nio-9092-exec-10] DEBUG org.springframework.security.web.FilterChainProxy - Secured GET /login?error
+2024-02-07 15:14:56.889 [http-nio-9092-exec-10] DEBUG org.springframework.security.web.authentication.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2024-02-07 15:14:56.920 [http-nio-9092-exec-1] DEBUG org.springframework.security.web.FilterChainProxy - Securing GET /favicon.ico
+2024-02-07 15:14:56.920 [http-nio-9092-exec-1] DEBUG org.springframework.security.web.authentication.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2024-02-07 15:14:56.920 [http-nio-9092-exec-1] DEBUG org.springframework.security.web.authentication.DelegatingAuthenticationEntryPoint - Trying to match using And [Not [RequestHeaderRequestMatcher [expectedHeaderName=X-Requested-With, expectedHeaderValue=XMLHttpRequest]], MediaTypeRequestMatcher [contentNegotiationStrategy=org.springframework.web.accept.ContentNegotiationManager@4a2891d1, matchingMediaTypes=[application/xhtml+xml, image/*, text/html, text/plain], useEquals=false, ignoredMediaTypes=[*/*]]]
+2024-02-07 15:14:56.923 [http-nio-9092-exec-1] DEBUG org.springframework.security.web.authentication.DelegatingAuthenticationEntryPoint - Match found! Executing org.springframework.security.web.authentication.LoginUrlAuthenticationEntryPoint@50e7f88b
+2024-02-07 15:14:56.923 [http-nio-9092-exec-1] DEBUG org.springframework.security.web.DefaultRedirectStrategy - Redirecting to http://localhost:9092/login
+2024-02-07 15:14:56.925 [http-nio-9092-exec-2] DEBUG org.springframework.security.web.FilterChainProxy - Securing GET /login
+2024-02-07 15:14:56.925 [http-nio-9092-exec-2] DEBUG org.springframework.security.web.FilterChainProxy - Secured GET /login
+2024-02-07 15:14:56.927 [http-nio-9092-exec-2] DEBUG org.springframework.security.web.authentication.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2024-02-07 15:15:50.284 [main] INFO  org.springframework.test.context.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [it.fides.val_training_spring.ValTrainingSpringApplicationTests]: ValTrainingSpringApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2024-02-07 15:15:50.480 [main] INFO  org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration it.fides.val_training_spring.ValTrainingSpringApplication for test class it.fides.val_training_spring.ValTrainingSpringApplicationTests
+2024-02-07 15:15:51.060 [main] INFO  it.fides.val_training_spring.ValTrainingSpringApplicationTests - Starting ValTrainingSpringApplicationTests using Java 17.0.9 with PID 10052 (started by User in C:\Users\User\Documents\val_training_spring2)
+2024-02-07 15:15:51.065 [main] INFO  it.fides.val_training_spring.ValTrainingSpringApplicationTests - No active profile set, falling back to 1 default profile: "default"
+2024-02-07 15:15:52.321 [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-02-07 15:15:52.445 [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 104 ms. Found 7 JPA repository interfaces.
+2024-02-07 15:15:53.344 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2024-02-07 15:15:53.949 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@7e5e6573
+2024-02-07 15:15:53.952 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2024-02-07 15:15:54.039 [main] INFO  org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-02-07 15:15:54.158 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.1.Final
+2024-02-07 15:15:54.234 [main] INFO  org.hibernate.cache.internal.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2024-02-07 15:15:54.721 [main] INFO  org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-02-07 15:15:56.488 [main] INFO  org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-02-07 15:15:56.493 [main] INFO  org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-02-07 15:15:57.255 [main] INFO  org.springframework.data.jpa.repository.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-02-07 15:15:57.931 [main] INFO  org.springframework.security.provisioning.JdbcUserDetailsManager - No authentication manager set. Reauthentication of users when changing passwords will not be performed.
+2024-02-07 15:15:57.980 [main] WARN  org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-02-07 15:15:58.208 [main] INFO  org.springframework.boot.autoconfigure.web.servlet.WelcomePageHandlerMapping - Adding welcome page template: index
+2024-02-07 15:15:58.631 [main] INFO  org.springframework.security.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@74efc394, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@794fbf0d, org.springframework.security.web.context.SecurityContextHolderFilter@6a7a8e1e, org.springframework.security.web.header.HeaderWriterFilter@7e32f76b, org.springframework.web.filter.CorsFilter@41a372c1, org.springframework.security.web.authentication.logout.LogoutFilter@5498d2a2, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@76b5b1e2, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@4af32714, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@6cad2d5f, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@3d707885, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@12bb3666, org.springframework.security.web.access.ExceptionTranslationFilter@561f982f, org.springframework.security.web.access.intercept.AuthorizationFilter@453c10c2]
+2024-02-07 15:15:59.270 [main] INFO  it.fides.val_training_spring.ValTrainingSpringApplicationTests - Started ValTrainingSpringApplicationTests in 8.558 seconds (process running for 10.747)
+2024-02-07 15:16:00.435 [SpringApplicationShutdownHook] INFO  org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-02-07 15:16:00.440 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2024-02-07 15:16:00.460 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2024-02-07 15:16:09.060 [main] INFO  it.fides.val_training_spring.ValTrainingSpringApplication - Starting ValTrainingSpringApplication using Java 17.0.9 with PID 14860 (C:\Users\User\Documents\val_training_spring2\target\classes started by User in C:\Users\User\Documents\val_training_spring2)
+2024-02-07 15:16:09.077 [main] INFO  it.fides.val_training_spring.ValTrainingSpringApplication - No active profile set, falling back to 1 default profile: "default"
+2024-02-07 15:16:10.376 [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-02-07 15:16:10.531 [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 128 ms. Found 7 JPA repository interfaces.
+2024-02-07 15:16:11.673 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port 9092 (http)
+2024-02-07 15:16:11.698 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-9092"]
+2024-02-07 15:16:11.704 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2024-02-07 15:16:11.705 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.18]
+2024-02-07 15:16:11.830 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-02-07 15:16:11.833 [main] INFO  org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2669 ms
+2024-02-07 15:16:12.157 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2024-02-07 15:16:12.727 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@467ef400
+2024-02-07 15:16:12.729 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2024-02-07 15:16:12.809 [main] INFO  org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-02-07 15:16:12.929 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.1.Final
+2024-02-07 15:16:13.003 [main] INFO  org.hibernate.cache.internal.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2024-02-07 15:16:13.481 [main] INFO  org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-02-07 15:16:15.113 [main] INFO  org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-02-07 15:16:15.116 [main] INFO  org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-02-07 15:16:15.811 [main] INFO  org.springframework.data.jpa.repository.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-02-07 15:16:16.434 [main] INFO  org.springframework.security.provisioning.JdbcUserDetailsManager - No authentication manager set. Reauthentication of users when changing passwords will not be performed.
+2024-02-07 15:16:16.475 [main] WARN  org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-02-07 15:16:16.676 [main] INFO  org.springframework.boot.autoconfigure.web.servlet.WelcomePageHandlerMapping - Adding welcome page template: index
+2024-02-07 15:16:16.993 [main] INFO  org.springframework.security.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@2eb6e166, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@43b1fdb7, org.springframework.security.web.context.SecurityContextHolderFilter@1bf8ea44, org.springframework.security.web.header.HeaderWriterFilter@7d7f49f3, org.springframework.web.filter.CorsFilter@7bdbf06f, org.springframework.security.web.authentication.logout.LogoutFilter@1f9009d3, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@7cfc2a08, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@3b6b9981, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@4a6ac443, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@5ab45d66, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@1c1bc904, org.springframework.security.web.access.ExceptionTranslationFilter@15b54cb7, org.springframework.security.web.access.intercept.AuthorizationFilter@5acbef42]
+2024-02-07 15:16:17.414 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-9092"]
+2024-02-07 15:16:17.453 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port 9092 (http) with context path ''
+2024-02-07 15:16:17.473 [main] INFO  it.fides.val_training_spring.ValTrainingSpringApplication - Started ValTrainingSpringApplication in 8.972 seconds (process running for 10.184)
+2024-02-07 15:16:25.195 [http-nio-9092-exec-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-02-07 15:16:25.195 [http-nio-9092-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2024-02-07 15:16:25.199 [http-nio-9092-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 4 ms
+2024-02-07 15:16:25.219 [http-nio-9092-exec-1] DEBUG org.springframework.security.web.FilterChainProxy - Securing GET /
+2024-02-07 15:16:25.230 [http-nio-9092-exec-1] DEBUG org.springframework.security.web.authentication.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2024-02-07 15:16:25.264 [http-nio-9092-exec-1] DEBUG org.springframework.security.web.savedrequest.HttpSessionRequestCache - Saved request http://localhost:9092/?continue to session
+2024-02-07 15:16:25.264 [http-nio-9092-exec-1] DEBUG org.springframework.security.web.authentication.DelegatingAuthenticationEntryPoint - Trying to match using And [Not [RequestHeaderRequestMatcher [expectedHeaderName=X-Requested-With, expectedHeaderValue=XMLHttpRequest]], MediaTypeRequestMatcher [contentNegotiationStrategy=org.springframework.web.accept.ContentNegotiationManager@5a2ce458, matchingMediaTypes=[application/xhtml+xml, image/*, text/html, text/plain], useEquals=false, ignoredMediaTypes=[*/*]]]
+2024-02-07 15:16:25.267 [http-nio-9092-exec-1] DEBUG org.springframework.security.web.authentication.DelegatingAuthenticationEntryPoint - Match found! Executing org.springframework.security.web.authentication.LoginUrlAuthenticationEntryPoint@1aac520e
+2024-02-07 15:16:25.269 [http-nio-9092-exec-1] DEBUG org.springframework.security.web.DefaultRedirectStrategy - Redirecting to http://localhost:9092/login
+2024-02-07 15:16:25.285 [http-nio-9092-exec-2] DEBUG org.springframework.security.web.FilterChainProxy - Securing GET /login
+2024-02-07 15:16:25.286 [http-nio-9092-exec-2] DEBUG org.springframework.security.web.FilterChainProxy - Secured GET /login
+2024-02-07 15:16:25.646 [http-nio-9092-exec-2] DEBUG org.springframework.security.web.authentication.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2024-02-07 15:16:25.663 [http-nio-9092-exec-4] DEBUG org.springframework.security.web.FilterChainProxy - Securing GET /favicon.ico
+2024-02-07 15:16:25.664 [http-nio-9092-exec-4] DEBUG org.springframework.security.web.authentication.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2024-02-07 15:16:25.665 [http-nio-9092-exec-4] DEBUG org.springframework.security.web.authentication.DelegatingAuthenticationEntryPoint - Trying to match using And [Not [RequestHeaderRequestMatcher [expectedHeaderName=X-Requested-With, expectedHeaderValue=XMLHttpRequest]], MediaTypeRequestMatcher [contentNegotiationStrategy=org.springframework.web.accept.ContentNegotiationManager@5a2ce458, matchingMediaTypes=[application/xhtml+xml, image/*, text/html, text/plain], useEquals=false, ignoredMediaTypes=[*/*]]]
+2024-02-07 15:16:25.666 [http-nio-9092-exec-4] DEBUG org.springframework.security.web.authentication.DelegatingAuthenticationEntryPoint - Match found! Executing org.springframework.security.web.authentication.LoginUrlAuthenticationEntryPoint@1aac520e
+2024-02-07 15:16:25.666 [http-nio-9092-exec-4] DEBUG org.springframework.security.web.DefaultRedirectStrategy - Redirecting to http://localhost:9092/login
+2024-02-07 15:16:25.669 [http-nio-9092-exec-5] DEBUG org.springframework.security.web.FilterChainProxy - Securing GET /login
+2024-02-07 15:16:25.669 [http-nio-9092-exec-5] DEBUG org.springframework.security.web.FilterChainProxy - Secured GET /login
+2024-02-07 15:16:25.674 [http-nio-9092-exec-5] DEBUG org.springframework.security.web.authentication.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2024-02-07 15:16:31.085 [http-nio-9092-exec-3] DEBUG org.springframework.security.web.FilterChainProxy - Securing POST /process-login
+2024-02-07 15:16:31.236 [http-nio-9092-exec-3] DEBUG org.springframework.security.authentication.dao.DaoAuthenticationProvider - Failed to authenticate since user account is disabled
+2024-02-07 15:16:31.241 [http-nio-9092-exec-3] DEBUG org.springframework.security.web.DefaultRedirectStrategy - Redirecting to /login?error
+2024-02-07 15:16:31.246 [http-nio-9092-exec-6] DEBUG org.springframework.security.web.FilterChainProxy - Securing GET /login?error
+2024-02-07 15:16:31.248 [http-nio-9092-exec-6] DEBUG org.springframework.security.web.FilterChainProxy - Secured GET /login?error
+2024-02-07 15:16:31.248 [http-nio-9092-exec-6] DEBUG org.springframework.security.web.authentication.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2024-02-07 15:16:31.273 [http-nio-9092-exec-7] DEBUG org.springframework.security.web.FilterChainProxy - Securing GET /favicon.ico
+2024-02-07 15:16:31.273 [http-nio-9092-exec-7] DEBUG org.springframework.security.web.authentication.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2024-02-07 15:16:31.273 [http-nio-9092-exec-7] DEBUG org.springframework.security.web.authentication.DelegatingAuthenticationEntryPoint - Trying to match using And [Not [RequestHeaderRequestMatcher [expectedHeaderName=X-Requested-With, expectedHeaderValue=XMLHttpRequest]], MediaTypeRequestMatcher [contentNegotiationStrategy=org.springframework.web.accept.ContentNegotiationManager@5a2ce458, matchingMediaTypes=[application/xhtml+xml, image/*, text/html, text/plain], useEquals=false, ignoredMediaTypes=[*/*]]]
+2024-02-07 15:16:31.273 [http-nio-9092-exec-7] DEBUG org.springframework.security.web.authentication.DelegatingAuthenticationEntryPoint - Match found! Executing org.springframework.security.web.authentication.LoginUrlAuthenticationEntryPoint@1aac520e
+2024-02-07 15:16:31.276 [http-nio-9092-exec-7] DEBUG org.springframework.security.web.DefaultRedirectStrategy - Redirecting to http://localhost:9092/login
+2024-02-07 15:16:31.280 [http-nio-9092-exec-8] DEBUG org.springframework.security.web.FilterChainProxy - Securing GET /login
+2024-02-07 15:16:31.280 [http-nio-9092-exec-8] DEBUG org.springframework.security.web.FilterChainProxy - Secured GET /login
+2024-02-07 15:16:31.280 [http-nio-9092-exec-8] DEBUG org.springframework.security.web.authentication.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2024-02-07 15:17:17.781 [http-nio-9092-exec-9] DEBUG org.springframework.security.web.FilterChainProxy - Securing POST /process-login
+2024-02-07 15:17:17.784 [http-nio-9092-exec-9] DEBUG org.springframework.security.authentication.dao.DaoAuthenticationProvider - Failed to authenticate since user account is disabled
+2024-02-07 15:17:17.784 [http-nio-9092-exec-9] DEBUG org.springframework.security.web.DefaultRedirectStrategy - Redirecting to /login?error
+2024-02-07 15:17:17.789 [http-nio-9092-exec-10] DEBUG org.springframework.security.web.FilterChainProxy - Securing GET /login?error
+2024-02-07 15:17:17.789 [http-nio-9092-exec-10] DEBUG org.springframework.security.web.FilterChainProxy - Secured GET /login?error
+2024-02-07 15:17:17.789 [http-nio-9092-exec-10] DEBUG org.springframework.security.web.authentication.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2024-02-07 15:17:17.810 [http-nio-9092-exec-1] DEBUG org.springframework.security.web.FilterChainProxy - Securing GET /favicon.ico
+2024-02-07 15:17:17.811 [http-nio-9092-exec-1] DEBUG org.springframework.security.web.authentication.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2024-02-07 15:17:17.811 [http-nio-9092-exec-1] DEBUG org.springframework.security.web.authentication.DelegatingAuthenticationEntryPoint - Trying to match using And [Not [RequestHeaderRequestMatcher [expectedHeaderName=X-Requested-With, expectedHeaderValue=XMLHttpRequest]], MediaTypeRequestMatcher [contentNegotiationStrategy=org.springframework.web.accept.ContentNegotiationManager@5a2ce458, matchingMediaTypes=[application/xhtml+xml, image/*, text/html, text/plain], useEquals=false, ignoredMediaTypes=[*/*]]]
+2024-02-07 15:17:17.811 [http-nio-9092-exec-1] DEBUG org.springframework.security.web.authentication.DelegatingAuthenticationEntryPoint - Match found! Executing org.springframework.security.web.authentication.LoginUrlAuthenticationEntryPoint@1aac520e
+2024-02-07 15:17:17.811 [http-nio-9092-exec-1] DEBUG org.springframework.security.web.DefaultRedirectStrategy - Redirecting to http://localhost:9092/login
+2024-02-07 15:17:17.811 [http-nio-9092-exec-2] DEBUG org.springframework.security.web.FilterChainProxy - Securing GET /login
+2024-02-07 15:17:17.817 [http-nio-9092-exec-2] DEBUG org.springframework.security.web.FilterChainProxy - Secured GET /login
+2024-02-07 15:17:17.819 [http-nio-9092-exec-2] DEBUG org.springframework.security.web.authentication.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2024-02-07 15:17:36.524 [http-nio-9092-exec-5] DEBUG org.springframework.security.web.FilterChainProxy - Securing POST /process-login
+2024-02-07 15:17:36.524 [http-nio-9092-exec-5] DEBUG org.springframework.security.authentication.dao.DaoAuthenticationProvider - Failed to authenticate since user account is disabled
+2024-02-07 15:17:36.524 [http-nio-9092-exec-5] DEBUG org.springframework.security.web.DefaultRedirectStrategy - Redirecting to /login?error
+2024-02-07 15:17:36.532 [http-nio-9092-exec-3] DEBUG org.springframework.security.web.FilterChainProxy - Securing GET /login?error
+2024-02-07 15:17:36.533 [http-nio-9092-exec-3] DEBUG org.springframework.security.web.FilterChainProxy - Secured GET /login?error
+2024-02-07 15:17:36.537 [http-nio-9092-exec-3] DEBUG org.springframework.security.web.authentication.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2024-02-07 15:17:36.552 [http-nio-9092-exec-6] DEBUG org.springframework.security.web.FilterChainProxy - Securing GET /favicon.ico
+2024-02-07 15:17:36.553 [http-nio-9092-exec-6] DEBUG org.springframework.security.web.authentication.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2024-02-07 15:17:36.553 [http-nio-9092-exec-6] DEBUG org.springframework.security.web.authentication.DelegatingAuthenticationEntryPoint - Trying to match using And [Not [RequestHeaderRequestMatcher [expectedHeaderName=X-Requested-With, expectedHeaderValue=XMLHttpRequest]], MediaTypeRequestMatcher [contentNegotiationStrategy=org.springframework.web.accept.ContentNegotiationManager@5a2ce458, matchingMediaTypes=[application/xhtml+xml, image/*, text/html, text/plain], useEquals=false, ignoredMediaTypes=[*/*]]]
+2024-02-07 15:17:36.554 [http-nio-9092-exec-6] DEBUG org.springframework.security.web.authentication.DelegatingAuthenticationEntryPoint - Match found! Executing org.springframework.security.web.authentication.LoginUrlAuthenticationEntryPoint@1aac520e
+2024-02-07 15:17:36.554 [http-nio-9092-exec-6] DEBUG org.springframework.security.web.DefaultRedirectStrategy - Redirecting to http://localhost:9092/login
+2024-02-07 15:17:36.558 [http-nio-9092-exec-7] DEBUG org.springframework.security.web.FilterChainProxy - Securing GET /login
+2024-02-07 15:17:36.558 [http-nio-9092-exec-7] DEBUG org.springframework.security.web.FilterChainProxy - Secured GET /login
+2024-02-07 15:17:36.558 [http-nio-9092-exec-7] DEBUG org.springframework.security.web.authentication.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2024-02-07 15:17:45.313 [http-nio-9092-exec-8] DEBUG org.springframework.security.web.FilterChainProxy - Securing GET /login?error
+2024-02-07 15:17:45.315 [http-nio-9092-exec-8] DEBUG org.springframework.security.web.FilterChainProxy - Secured GET /login?error
+2024-02-07 15:17:45.315 [http-nio-9092-exec-8] DEBUG org.springframework.security.web.authentication.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2024-02-07 15:17:45.334 [http-nio-9092-exec-9] DEBUG org.springframework.security.web.FilterChainProxy - Securing GET /favicon.ico
+2024-02-07 15:17:45.334 [http-nio-9092-exec-9] DEBUG org.springframework.security.web.authentication.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2024-02-07 15:17:45.336 [http-nio-9092-exec-9] DEBUG org.springframework.security.web.authentication.DelegatingAuthenticationEntryPoint - Trying to match using And [Not [RequestHeaderRequestMatcher [expectedHeaderName=X-Requested-With, expectedHeaderValue=XMLHttpRequest]], MediaTypeRequestMatcher [contentNegotiationStrategy=org.springframework.web.accept.ContentNegotiationManager@5a2ce458, matchingMediaTypes=[application/xhtml+xml, image/*, text/html, text/plain], useEquals=false, ignoredMediaTypes=[*/*]]]
+2024-02-07 15:17:45.336 [http-nio-9092-exec-9] DEBUG org.springframework.security.web.authentication.DelegatingAuthenticationEntryPoint - Match found! Executing org.springframework.security.web.authentication.LoginUrlAuthenticationEntryPoint@1aac520e
+2024-02-07 15:17:45.336 [http-nio-9092-exec-9] DEBUG org.springframework.security.web.DefaultRedirectStrategy - Redirecting to http://localhost:9092/login
+2024-02-07 15:17:45.340 [http-nio-9092-exec-10] DEBUG org.springframework.security.web.FilterChainProxy - Securing GET /login
+2024-02-07 15:17:45.340 [http-nio-9092-exec-10] DEBUG org.springframework.security.web.FilterChainProxy - Secured GET /login
+2024-02-07 15:17:45.344 [http-nio-9092-exec-10] DEBUG org.springframework.security.web.authentication.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2024-02-07 15:17:48.315 [http-nio-9092-exec-1] DEBUG org.springframework.security.web.FilterChainProxy - Securing GET /
+2024-02-07 15:17:48.315 [http-nio-9092-exec-1] DEBUG org.springframework.security.web.authentication.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2024-02-07 15:17:48.315 [http-nio-9092-exec-1] DEBUG org.springframework.security.web.savedrequest.HttpSessionRequestCache - Saved request http://localhost:9092/?continue to session
+2024-02-07 15:17:48.315 [http-nio-9092-exec-1] DEBUG org.springframework.security.web.authentication.DelegatingAuthenticationEntryPoint - Trying to match using And [Not [RequestHeaderRequestMatcher [expectedHeaderName=X-Requested-With, expectedHeaderValue=XMLHttpRequest]], MediaTypeRequestMatcher [contentNegotiationStrategy=org.springframework.web.accept.ContentNegotiationManager@5a2ce458, matchingMediaTypes=[application/xhtml+xml, image/*, text/html, text/plain], useEquals=false, ignoredMediaTypes=[*/*]]]
+2024-02-07 15:17:48.315 [http-nio-9092-exec-1] DEBUG org.springframework.security.web.authentication.DelegatingAuthenticationEntryPoint - Match found! Executing org.springframework.security.web.authentication.LoginUrlAuthenticationEntryPoint@1aac520e
+2024-02-07 15:17:48.315 [http-nio-9092-exec-1] DEBUG org.springframework.security.web.DefaultRedirectStrategy - Redirecting to http://localhost:9092/login
+2024-02-07 15:17:48.321 [http-nio-9092-exec-2] DEBUG org.springframework.security.web.FilterChainProxy - Securing GET /login
+2024-02-07 15:17:48.322 [http-nio-9092-exec-2] DEBUG org.springframework.security.web.FilterChainProxy - Secured GET /login
+2024-02-07 15:17:48.322 [http-nio-9092-exec-2] DEBUG org.springframework.security.web.authentication.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2024-02-07 15:17:48.345 [http-nio-9092-exec-4] DEBUG org.springframework.security.web.FilterChainProxy - Securing GET /favicon.ico
+2024-02-07 15:17:48.345 [http-nio-9092-exec-4] DEBUG org.springframework.security.web.authentication.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2024-02-07 15:17:48.347 [http-nio-9092-exec-4] DEBUG org.springframework.security.web.authentication.DelegatingAuthenticationEntryPoint - Trying to match using And [Not [RequestHeaderRequestMatcher [expectedHeaderName=X-Requested-With, expectedHeaderValue=XMLHttpRequest]], MediaTypeRequestMatcher [contentNegotiationStrategy=org.springframework.web.accept.ContentNegotiationManager@5a2ce458, matchingMediaTypes=[application/xhtml+xml, image/*, text/html, text/plain], useEquals=false, ignoredMediaTypes=[*/*]]]
+2024-02-07 15:17:48.349 [http-nio-9092-exec-4] DEBUG org.springframework.security.web.authentication.DelegatingAuthenticationEntryPoint - Match found! Executing org.springframework.security.web.authentication.LoginUrlAuthenticationEntryPoint@1aac520e
+2024-02-07 15:17:48.349 [http-nio-9092-exec-4] DEBUG org.springframework.security.web.DefaultRedirectStrategy - Redirecting to http://localhost:9092/login
+2024-02-07 15:17:48.352 [http-nio-9092-exec-5] DEBUG org.springframework.security.web.FilterChainProxy - Securing GET /login
+2024-02-07 15:17:48.354 [http-nio-9092-exec-5] DEBUG org.springframework.security.web.FilterChainProxy - Secured GET /login
+2024-02-07 15:17:48.357 [http-nio-9092-exec-5] DEBUG org.springframework.security.web.authentication.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2024-02-07 15:17:54.020 [http-nio-9092-exec-3] DEBUG org.springframework.security.web.FilterChainProxy - Securing POST /process-login
+2024-02-07 15:17:54.025 [http-nio-9092-exec-3] DEBUG org.springframework.security.authentication.dao.DaoAuthenticationProvider - Failed to authenticate since user account is disabled
+2024-02-07 15:17:54.026 [http-nio-9092-exec-3] DEBUG org.springframework.security.web.DefaultRedirectStrategy - Redirecting to /login?error
+2024-02-07 15:17:54.028 [http-nio-9092-exec-6] DEBUG org.springframework.security.web.FilterChainProxy - Securing GET /login?error
+2024-02-07 15:17:54.028 [http-nio-9092-exec-6] DEBUG org.springframework.security.web.FilterChainProxy - Secured GET /login?error
+2024-02-07 15:17:54.028 [http-nio-9092-exec-6] DEBUG org.springframework.security.web.authentication.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2024-02-07 15:17:54.048 [http-nio-9092-exec-7] DEBUG org.springframework.security.web.FilterChainProxy - Securing GET /favicon.ico
+2024-02-07 15:17:54.048 [http-nio-9092-exec-7] DEBUG org.springframework.security.web.authentication.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2024-02-07 15:17:54.048 [http-nio-9092-exec-7] DEBUG org.springframework.security.web.authentication.DelegatingAuthenticationEntryPoint - Trying to match using And [Not [RequestHeaderRequestMatcher [expectedHeaderName=X-Requested-With, expectedHeaderValue=XMLHttpRequest]], MediaTypeRequestMatcher [contentNegotiationStrategy=org.springframework.web.accept.ContentNegotiationManager@5a2ce458, matchingMediaTypes=[application/xhtml+xml, image/*, text/html, text/plain], useEquals=false, ignoredMediaTypes=[*/*]]]
+2024-02-07 15:17:54.048 [http-nio-9092-exec-7] DEBUG org.springframework.security.web.authentication.DelegatingAuthenticationEntryPoint - Match found! Executing org.springframework.security.web.authentication.LoginUrlAuthenticationEntryPoint@1aac520e
+2024-02-07 15:17:54.048 [http-nio-9092-exec-7] DEBUG org.springframework.security.web.DefaultRedirectStrategy - Redirecting to http://localhost:9092/login
+2024-02-07 15:17:54.057 [http-nio-9092-exec-8] DEBUG org.springframework.security.web.FilterChainProxy - Securing GET /login
+2024-02-07 15:17:54.057 [http-nio-9092-exec-8] DEBUG org.springframework.security.web.FilterChainProxy - Secured GET /login
+2024-02-07 15:17:54.058 [http-nio-9092-exec-8] DEBUG org.springframework.security.web.authentication.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2024-02-07 15:20:34.765 [main] INFO  it.fides.val_training_spring.ValTrainingSpringApplication - Starting ValTrainingSpringApplication using Java 17.0.9 with PID 11320 (C:\Users\User\Documents\val_training_spring2\target\classes started by User in C:\Users\User\Documents\val_training_spring2)
+2024-02-07 15:20:34.778 [main] INFO  it.fides.val_training_spring.ValTrainingSpringApplication - No active profile set, falling back to 1 default profile: "default"
+2024-02-07 15:20:35.758 [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-02-07 15:20:35.862 [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 91 ms. Found 7 JPA repository interfaces.
+2024-02-07 15:20:36.925 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port 9092 (http)
+2024-02-07 15:20:36.949 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-9092"]
+2024-02-07 15:20:36.954 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2024-02-07 15:20:36.954 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.18]
+2024-02-07 15:20:37.088 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-02-07 15:20:37.093 [main] INFO  org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2243 ms
+2024-02-07 15:20:37.405 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2024-02-07 15:20:38.002 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@39ace1a7
+2024-02-07 15:20:38.007 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2024-02-07 15:20:38.093 [main] INFO  org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-02-07 15:20:38.232 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.1.Final
+2024-02-07 15:20:38.303 [main] INFO  org.hibernate.cache.internal.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2024-02-07 15:20:38.779 [main] INFO  org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-02-07 15:20:40.504 [main] INFO  org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-02-07 15:20:40.510 [main] INFO  org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-02-07 15:20:41.227 [main] INFO  org.springframework.data.jpa.repository.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-02-07 15:20:41.885 [main] INFO  org.springframework.security.provisioning.JdbcUserDetailsManager - No authentication manager set. Reauthentication of users when changing passwords will not be performed.
+2024-02-07 15:20:41.925 [main] WARN  org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-02-07 15:20:42.145 [main] INFO  org.springframework.boot.autoconfigure.web.servlet.WelcomePageHandlerMapping - Adding welcome page template: index
+2024-02-07 15:20:42.475 [main] INFO  org.springframework.security.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@33f5d807, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@6a7db16e, org.springframework.security.web.context.SecurityContextHolderFilter@33c6c4f, org.springframework.security.web.header.HeaderWriterFilter@6fc44cb6, org.springframework.web.filter.CorsFilter@5acbef42, org.springframework.security.web.authentication.logout.LogoutFilter@7dfbdcfe, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@4c9ed40, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@7f6b3f4c, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@1dade178, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@561494af, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@7cfc2a08, org.springframework.security.web.access.ExceptionTranslationFilter@28d07fa4, org.springframework.security.web.access.intercept.AuthorizationFilter@1f9009d3]
+2024-02-07 15:20:42.883 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-9092"]
+2024-02-07 15:20:42.921 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port 9092 (http) with context path ''
+2024-02-07 15:20:42.939 [main] INFO  it.fides.val_training_spring.ValTrainingSpringApplication - Started ValTrainingSpringApplication in 8.613 seconds (process running for 9.539)
+2024-02-07 15:22:30.602 [main] INFO  it.fides.val_training_spring.ValTrainingSpringApplication - Starting ValTrainingSpringApplication using Java 17.0.9 with PID 14076 (C:\Users\User\Documents\val_training_spring2\target\classes started by User in C:\Users\User\Documents\val_training_spring2)
+2024-02-07 15:22:30.615 [main] INFO  it.fides.val_training_spring.ValTrainingSpringApplication - No active profile set, falling back to 1 default profile: "default"
+2024-02-07 15:22:31.501 [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-02-07 15:22:31.611 [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 97 ms. Found 7 JPA repository interfaces.
+2024-02-07 15:22:32.560 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port 9090 (http)
+2024-02-07 15:22:32.581 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-9090"]
+2024-02-07 15:22:32.586 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2024-02-07 15:22:32.586 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.18]
+2024-02-07 15:22:32.718 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-02-07 15:22:32.723 [main] INFO  org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2047 ms
+2024-02-07 15:22:33.011 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2024-02-07 15:22:33.521 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@5c25d0d1
+2024-02-07 15:22:33.524 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2024-02-07 15:22:33.606 [main] INFO  org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-02-07 15:22:33.723 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.1.Final
+2024-02-07 15:22:33.799 [main] INFO  org.hibernate.cache.internal.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2024-02-07 15:22:34.263 [main] INFO  org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-02-07 15:22:35.910 [main] INFO  org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-02-07 15:22:35.915 [main] INFO  org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-02-07 15:22:36.652 [main] INFO  org.springframework.data.jpa.repository.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-02-07 15:22:37.411 [main] INFO  org.springframework.security.provisioning.JdbcUserDetailsManager - No authentication manager set. Reauthentication of users when changing passwords will not be performed.
+2024-02-07 15:22:37.457 [main] WARN  org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-02-07 15:22:37.660 [main] INFO  org.springframework.boot.autoconfigure.web.servlet.WelcomePageHandlerMapping - Adding welcome page template: index
+2024-02-07 15:22:37.987 [main] INFO  org.springframework.security.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@3b6b9981, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@2eb6e166, org.springframework.security.web.context.SecurityContextHolderFilter@4fbbfea6, org.springframework.security.web.header.HeaderWriterFilter@4f03729f, org.springframework.web.filter.CorsFilter@43b1fdb7, org.springframework.security.web.authentication.logout.LogoutFilter@12dcfa6a, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@5acbef42, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@54ad9ff9, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@1ccf1819, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@4a6ac443, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@7bdbf06f, org.springframework.security.web.access.ExceptionTranslationFilter@19c28c97, org.springframework.security.web.access.intercept.AuthorizationFilter@6a7db16e]
+2024-02-07 15:22:38.397 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-9090"]
+2024-02-07 15:22:38.436 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port 9090 (http) with context path ''
+2024-02-07 15:22:38.453 [main] INFO  it.fides.val_training_spring.ValTrainingSpringApplication - Started ValTrainingSpringApplication in 8.282 seconds (process running for 9.175)
+2024-02-07 15:22:59.499 [http-nio-9090-exec-2] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-02-07 15:22:59.499 [http-nio-9090-exec-2] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2024-02-07 15:22:59.502 [http-nio-9090-exec-2] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+2024-02-07 15:22:59.523 [http-nio-9090-exec-2] DEBUG org.springframework.security.web.FilterChainProxy - Securing GET /
+2024-02-07 15:22:59.535 [http-nio-9090-exec-2] DEBUG org.springframework.security.web.authentication.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2024-02-07 15:22:59.571 [http-nio-9090-exec-2] DEBUG org.springframework.security.web.savedrequest.HttpSessionRequestCache - Saved request http://localhost:9090/?continue to session
+2024-02-07 15:22:59.571 [http-nio-9090-exec-2] DEBUG org.springframework.security.web.authentication.DelegatingAuthenticationEntryPoint - Trying to match using And [Not [RequestHeaderRequestMatcher [expectedHeaderName=X-Requested-With, expectedHeaderValue=XMLHttpRequest]], MediaTypeRequestMatcher [contentNegotiationStrategy=org.springframework.web.accept.ContentNegotiationManager@4e8e0052, matchingMediaTypes=[application/xhtml+xml, image/*, text/html, text/plain], useEquals=false, ignoredMediaTypes=[*/*]]]
+2024-02-07 15:22:59.575 [http-nio-9090-exec-2] DEBUG org.springframework.security.web.authentication.DelegatingAuthenticationEntryPoint - Match found! Executing org.springframework.security.web.authentication.LoginUrlAuthenticationEntryPoint@34949460
+2024-02-07 15:22:59.577 [http-nio-9090-exec-2] DEBUG org.springframework.security.web.DefaultRedirectStrategy - Redirecting to http://localhost:9090/login
+2024-02-07 15:22:59.592 [http-nio-9090-exec-1] DEBUG org.springframework.security.web.FilterChainProxy - Securing GET /login
+2024-02-07 15:22:59.593 [http-nio-9090-exec-1] DEBUG org.springframework.security.web.FilterChainProxy - Secured GET /login
+2024-02-07 15:22:59.889 [http-nio-9090-exec-1] DEBUG org.springframework.security.web.authentication.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2024-02-07 15:23:04.912 [http-nio-9090-exec-3] DEBUG org.springframework.security.web.FilterChainProxy - Securing POST /process-login
+2024-02-07 15:23:05.065 [http-nio-9090-exec-3] DEBUG org.springframework.security.authentication.dao.DaoAuthenticationProvider - Failed to authenticate since user account is disabled
+2024-02-07 15:23:05.069 [http-nio-9090-exec-3] DEBUG org.springframework.security.web.DefaultRedirectStrategy - Redirecting to /login?error
+2024-02-07 15:23:05.074 [http-nio-9090-exec-4] DEBUG org.springframework.security.web.FilterChainProxy - Securing GET /login?error
+2024-02-07 15:23:05.075 [http-nio-9090-exec-4] DEBUG org.springframework.security.web.FilterChainProxy - Secured GET /login?error
+2024-02-07 15:23:05.079 [http-nio-9090-exec-4] DEBUG org.springframework.security.web.authentication.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2024-02-07 15:24:26.777 [main] INFO  it.fides.val_training_spring.ValTrainingSpringApplication - Starting ValTrainingSpringApplication using Java 17.0.9 with PID 3284 (C:\Users\User\Documents\val_training_spring2\target\classes started by User in C:\Users\User\Documents\val_training_spring2)
+2024-02-07 15:24:26.794 [main] INFO  it.fides.val_training_spring.ValTrainingSpringApplication - No active profile set, falling back to 1 default profile: "default"
+2024-02-07 15:24:28.013 [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-02-07 15:24:28.155 [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 125 ms. Found 7 JPA repository interfaces.
+2024-02-07 15:24:29.398 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port 9090 (http)
+2024-02-07 15:24:29.433 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-9090"]
+2024-02-07 15:24:29.438 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2024-02-07 15:24:29.439 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.18]
+2024-02-07 15:24:29.568 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-02-07 15:24:29.573 [main] INFO  org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2689 ms
+2024-02-07 15:24:29.873 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2024-02-07 15:24:30.429 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@14be750c
+2024-02-07 15:24:30.432 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2024-02-07 15:24:30.521 [main] INFO  org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-02-07 15:24:30.638 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.1.Final
+2024-02-07 15:24:30.710 [main] INFO  org.hibernate.cache.internal.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2024-02-07 15:24:31.181 [main] INFO  org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-02-07 15:24:32.930 [main] INFO  org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-02-07 15:24:32.933 [main] INFO  org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-02-07 15:24:33.627 [main] INFO  org.springframework.data.jpa.repository.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-02-07 15:24:34.277 [main] INFO  org.springframework.security.provisioning.JdbcUserDetailsManager - No authentication manager set. Reauthentication of users when changing passwords will not be performed.
+2024-02-07 15:24:34.317 [main] WARN  org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-02-07 15:24:34.512 [main] INFO  org.springframework.boot.autoconfigure.web.servlet.WelcomePageHandlerMapping - Adding welcome page template: index
+2024-02-07 15:24:34.839 [main] INFO  org.springframework.security.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@776ae580, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@6b0bcea5, org.springframework.security.web.context.SecurityContextHolderFilter@398a27e, org.springframework.security.web.header.HeaderWriterFilter@3759ea4d, org.springframework.web.filter.CorsFilter@5748638c, org.springframework.security.web.authentication.logout.LogoutFilter@64236be, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@51a3e3b4, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@3c82bcbd, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@28d07fa4, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@298990ab, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@7e864a8c, org.springframework.security.web.access.ExceptionTranslationFilter@32107bba, org.springframework.security.web.access.intercept.AuthorizationFilter@331b0bfd]
+2024-02-07 15:24:35.234 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-9090"]
+2024-02-07 15:24:35.271 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port 9090 (http) with context path ''
+2024-02-07 15:24:35.290 [main] INFO  it.fides.val_training_spring.ValTrainingSpringApplication - Started ValTrainingSpringApplication in 9.069 seconds (process running for 9.979)
+2024-02-07 15:24:43.339 [http-nio-9090-exec-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-02-07 15:24:43.339 [http-nio-9090-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2024-02-07 15:24:43.354 [http-nio-9090-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 15 ms
+2024-02-07 15:24:43.381 [http-nio-9090-exec-1] DEBUG org.springframework.security.web.FilterChainProxy - Securing GET /
+2024-02-07 15:24:43.388 [http-nio-9090-exec-1] DEBUG org.springframework.security.web.authentication.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2024-02-07 15:24:43.453 [http-nio-9090-exec-1] DEBUG org.springframework.security.web.savedrequest.HttpSessionRequestCache - Saved request http://localhost:9090/?continue to session
+2024-02-07 15:24:43.454 [http-nio-9090-exec-1] DEBUG org.springframework.security.web.authentication.DelegatingAuthenticationEntryPoint - Trying to match using And [Not [RequestHeaderRequestMatcher [expectedHeaderName=X-Requested-With, expectedHeaderValue=XMLHttpRequest]], MediaTypeRequestMatcher [contentNegotiationStrategy=org.springframework.web.accept.ContentNegotiationManager@70376c6, matchingMediaTypes=[application/xhtml+xml, image/*, text/html, text/plain], useEquals=false, ignoredMediaTypes=[*/*]]]
+2024-02-07 15:24:43.454 [http-nio-9090-exec-1] DEBUG org.springframework.security.web.authentication.DelegatingAuthenticationEntryPoint - Match found! Executing org.springframework.security.web.authentication.LoginUrlAuthenticationEntryPoint@348b26e0
+2024-02-07 15:24:43.454 [http-nio-9090-exec-1] DEBUG org.springframework.security.web.DefaultRedirectStrategy - Redirecting to http://localhost:9090/login
+2024-02-07 15:24:43.472 [http-nio-9090-exec-2] DEBUG org.springframework.security.web.FilterChainProxy - Securing GET /login
+2024-02-07 15:24:43.472 [http-nio-9090-exec-2] DEBUG org.springframework.security.web.FilterChainProxy - Secured GET /login
+2024-02-07 15:24:43.982 [http-nio-9090-exec-2] DEBUG org.springframework.security.web.authentication.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2024-02-07 15:24:48.561 [http-nio-9090-exec-3] DEBUG org.springframework.security.web.FilterChainProxy - Securing POST /process-login
+2024-02-07 15:24:49.071 [http-nio-9090-exec-3] DEBUG org.springframework.security.authentication.dao.DaoAuthenticationProvider - Authenticated user
+2024-02-07 15:24:49.071 [http-nio-9090-exec-3] DEBUG org.springframework.security.web.authentication.session.ChangeSessionIdAuthenticationStrategy - Changed session id from 7B69BF93401D1C5A95E000C8AD1314DB
+2024-02-07 15:24:49.072 [http-nio-9090-exec-3] DEBUG org.springframework.security.web.context.HttpSessionSecurityContextRepository - Stored SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=pippo23@gmail.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, CredentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[1]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=7B69BF93401D1C5A95E000C8AD1314DB], Granted Authorities=[1]]] to HttpSession [org.apache.catalina.session.StandardSessionFacade@814aa04]
+2024-02-07 15:24:49.073 [http-nio-9090-exec-3] DEBUG org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter - Set SecurityContextHolder to UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=pippo23@gmail.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, CredentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[1]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=7B69BF93401D1C5A95E000C8AD1314DB], Granted Authorities=[1]]
+2024-02-07 15:24:49.073 [http-nio-9090-exec-3] DEBUG org.springframework.security.web.DefaultRedirectStrategy - Redirecting to http://localhost:9090/?continue
+2024-02-07 15:24:49.078 [http-nio-9090-exec-4] DEBUG org.springframework.security.web.FilterChainProxy - Securing GET /?continue
+2024-02-07 15:24:49.081 [http-nio-9090-exec-4] DEBUG org.springframework.security.web.savedrequest.HttpSessionRequestCache - Loaded matching saved request http://localhost:9090/?continue
+2024-02-07 15:24:49.083 [http-nio-9090-exec-4] DEBUG org.springframework.security.web.context.HttpSessionSecurityContextRepository - Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=pippo23@gmail.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, CredentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[1]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=7B69BF93401D1C5A95E000C8AD1314DB], Granted Authorities=[1]]]
+2024-02-07 15:24:49.083 [http-nio-9090-exec-4] DEBUG org.springframework.security.web.access.AccessDeniedHandlerImpl - Responding with 403 status code
+2024-02-07 15:24:49.089 [http-nio-9090-exec-4] DEBUG org.springframework.security.web.FilterChainProxy - Securing GET /error?continue
+2024-02-07 15:24:49.089 [http-nio-9090-exec-4] DEBUG org.springframework.security.web.context.HttpSessionSecurityContextRepository - Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=pippo23@gmail.com, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, CredentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[1]], Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=7B69BF93401D1C5A95E000C8AD1314DB], Granted Authorities=[1]]]
+2024-02-07 15:24:49.089 [http-nio-9090-exec-4] DEBUG org.springframework.security.web.access.AccessDeniedHandlerImpl - Responding with 403 status code

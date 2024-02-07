@@ -13,12 +13,11 @@ import org.springframework.security.provisioning.JdbcUserDetailsManager;
 import org.springframework.security.provisioning.UserDetailsManager;
 import org.springframework.security.web.SecurityFilterChain;
 
-
 @Configuration
 public class SecurityConfig {
 
 	String usersByUsernameQuery = "select email, password, not(flg_cancellato) from utente where email = ?";
-	String authsByUserQuery = "select email, password, not(flg_cancellato) from utente where email = ?";
+	String authsByUserQuery = "select u.email, r.id_ruolo from ruolo r LEFT JOIN utente u ON u.id_ruolo = r.id_ruolo where u.email = ?";
 
 	@Bean
 	public UserDetailsManager userDetailsManager(DataSource dataSource) {
@@ -32,30 +31,36 @@ public class SecurityConfig {
 	}
 
 	@Bean
-    public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
+	public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
 
-        http.authorizeHttpRequests(configurer ->
-                    configurer
-                            .requestMatchers(HttpMethod.GET, "/utenti/all").hasRole("1"));
-                            //.requestMatchers(HttpMethod.GET, "/api/employees/**").hasRole("DIPENDENTE")
-                            //.requestMatchers(HttpMethod.POST, "/api/employees").hasRole("RESPONSABILE")
-                            //.requestMatchers(HttpMethod.PUT, "/api/employees").hasRole("RESPONSABILE")
-                            //.requestMatchers(HttpMethod.DELETE, "/api/employees/**").hasRole("ADMIN"));
+		http.authorizeHttpRequests(
+				configurer -> configurer.requestMatchers(HttpMethod.GET, "/utenti/all").hasRole("1"));
+		// .requestMatchers(HttpMethod.GET, "/api/employees/**").hasRole("DIPENDENTE")
+		// .requestMatchers(HttpMethod.POST, "/api/employees").hasRole("RESPONSABILE")
+		// .requestMatchers(HttpMethod.PUT, "/api/employees").hasRole("RESPONSABILE")
+		// .requestMatchers(HttpMethod.DELETE, "/api/employees/**").hasRole("ADMIN"));
+		
+		http.formLogin(form -> form.loginPage("/login").loginProcessingUrl("/process-login").permitAll());
 
-        http.formLogin(form -> form
-        .loginPage("/login").loginProcessingUrl("/process-login").permitAll());
-        // use HTTP Basic authentication
-        http.httpBasic(Customizer.withDefaults());
-        
-        // disable Cross Site Request Forgery (CSRF)
-        // in general, not required for stateless REST APIs that use POST, PUT, DELETE and/or PATCH
-        http.csrf(csrf -> csrf.disable());
+		// use HTTP Basic authentication
+		http.httpBasic(Customizer.withDefaults());
 
-        return http.build();
-    }
+		// disable Cross Site Request Forgery (CSRF)
+		// in general, not required for stateless REST APIs that use POST, PUT, DELETE
+		// and/or PATCH
+		http.csrf(csrf -> csrf.disable());
+		
+		
+
+		return http.build();
+	}
 
 	@Bean
 	public PasswordEncoder passwordEncoder() {
 		return new BCryptPasswordEncoder();
 	}
+	
+	
+
+	
 }

@@ -25,4 +25,5 @@ public class RuoloDto {
 	public String toString() {
 		return "RuoloDto [idRuolo=" + idRuolo + ", nomeRuolo=" + nomeRuolo + "]";
 	}
+
 }
