@@ -9,4 +9,6 @@ public class ValTrainingSpringApplication {
 	public static void main(String[] args) {		
 		SpringApplication.run(ValTrainingSpringApplication.class, args);
 	}
+		
 }
+
