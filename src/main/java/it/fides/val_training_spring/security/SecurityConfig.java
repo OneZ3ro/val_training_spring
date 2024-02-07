@@ -45,7 +45,7 @@ public class SecurityConfig {
 			        form
 			                .loginPage("/login")
 			                .loginProcessingUrl("/processing-login")
-			                .defaultSuccessUrl("/index.html")
+							.defaultSuccessUrl("/index.html")
 			                .permitAll()
         );
         
