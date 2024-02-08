@@ -76,4 +76,18 @@ public class SezioneService {
 	public void deleteSezione(Long id) {
 		sezioneRepository.deleteById(id);
 	}
+	
+	public SezioneEntity trashSezione(Long id, SezioneEntity sezioneEntity) {
+		SezioneEntity sezione = sezioneRepository.findById(id).get();
+		SezioneEntity trashSezione = null;
+		
+		if (sezione != null && !sezione.isFlgCancellatoSezione()) {
+			sezione.setFlgCancellatoSezione(true);
+			trashSezione = sezioneRepository.save(sezione);
+			sezioneLogger.log.info("Sezione spostata nel cestino: " + trashSezione);
+		} else {
+			sezioneLogger.log.info("Sezione non spostata nel cestino");
+		}
+		return trashSezione;
+	}
 }

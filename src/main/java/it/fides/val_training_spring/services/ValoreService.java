@@ -78,4 +78,18 @@ public class ValoreService {
     public void deleteValore(Long id) {
     	valoreRepository.deleteById(id);
     }
+    
+    public ValoreEntity trashValore(Long id, ValoreEntity valoreEntity) {
+		ValoreEntity valore = valoreRepository.findById(id).get();
+		ValoreEntity trashValore = null;
+		
+		if (valore != null && !valore.isFlgCancellatoValore()) {
+			valore.setFlgCancellatoValore(true);
+			trashValore = valoreRepository.save(valore);
+			valoreLogger.log.info("Valore spostato nel cestino: " + trashValore);
+		} else {
+			valoreLogger.log.info("Valore non spostato nel cestino");
+		}
+		return trashValore;
+	}
 }
