@@ -34,13 +34,13 @@ public class ParagrafoController {
     }
     
     @PostMapping
-    @PreAuthorize("hasAuthority('responsabile')")
+    @PreAuthorize("hasAuthority('admin') or hasAuthority('responsabile')")
     public ParagrafoEntity insertParagrafo(@RequestBody ParagrafoEntity paragrafoEntity) {
     	return paragrafoService.insertParagrafo(paragrafoEntity);
     }
     
     @PutMapping("/{id}")
-    @PreAuthorize("hasAuthority('responsabile')")
+    @PreAuthorize("hasAuthority('admin') or hasAuthority('responsabile')")
     public ParagrafoEntity updateParagrafo(@RequestBody ParagrafoEntity paragrafoEntity, @PathVariable Long id) {
     	return paragrafoService.updateParagrafo(id, paragrafoEntity);
     }
@@ -50,9 +50,10 @@ public class ParagrafoController {
     public void deleteParagrafo(@PathVariable Long id) {
     	paragrafoService.deleteParagrafo(id);
     }
+    
     @PutMapping("/trash/{id}")
     @PreAuthorize("hasAuthority('admin') or hasAuthority('responsabile')")
-    public ParagrafoEntity trashParagrafo(@PathVariable long id, @RequestBody ParagrafoEntity paragrafoEntity) {
-    	return paragrafoService.trashParagrafo(id, paragrafoEntity);
-    }
+	public ParagrafoEntity trashGruppo(@PathVariable Long id, @RequestBody ParagrafoEntity paragrafoEntity) {
+		return paragrafoService.trashParagrafo(id, paragrafoEntity);
+	}
 }

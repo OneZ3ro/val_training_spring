@@ -79,7 +79,7 @@ public class ValoreService {
     	valoreRepository.deleteById(id);
     }
     
-	public ValoreEntity trashValore(Long id, ValoreEntity valoreEntity) {
+    public ValoreEntity trashValore(Long id, ValoreEntity valoreEntity) {
 		ValoreEntity valore = valoreRepository.findById(id).get();
 		ValoreEntity trashValore = null;
 		

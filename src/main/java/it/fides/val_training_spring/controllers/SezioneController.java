@@ -33,25 +33,26 @@ public class SezioneController {
 	}
 
 	@PostMapping
-    @PreAuthorize("hasAuthority('responsabile')")
+	@PreAuthorize("hasAuthority('admin') or hasAuthority('responsabile')")
 	public SezioneEntity insertSezione(@RequestBody SezioneEntity sezioneEntity) {
 		return sezioneService.insertSezione(sezioneEntity);
 	}
 	
 	@PutMapping("/{id}")
-    @PreAuthorize("hasAuthority('responsabile')")
+	@PreAuthorize("hasAuthority('admin') or hasAuthority('responsabile')")
 	public SezioneEntity updateSezione(@RequestBody SezioneEntity sezioneEntity, @PathVariable Long id) {
 		return sezioneService.updateSezione(sezioneEntity, id);
 	}
 	
 	@DeleteMapping("/{id}")
-    @PreAuthorize("hasAuthority('admin')")
+	@PreAuthorize("hasAuthority('admin')")
 	public void deleteSezione(Long id) {
 		sezioneService.deleteSezione(id);
 	}
-    @PutMapping("/trash/{id}")
-    @PreAuthorize("hasAuthority('admin') or hasAuthority('responsabile')")
-    public SezioneEntity trashSezione(@PathVariable long id, @RequestBody SezioneEntity sezioneEntity) {
-    	return sezioneService.trashSezione(id, sezioneEntity);
-    }
+	
+	@PutMapping("/trash/{id}")
+	@PreAuthorize("hasAuthority('admin') or hasAuthority('responsabile')")
+	public SezioneEntity trashSezione(@PathVariable Long id, @RequestBody SezioneEntity sezioneEntity) {
+		return sezioneService.trashSezione(id, sezioneEntity);
+	}
 }

@@ -88,7 +88,7 @@ public class ScalaService {
 			trashScala = scalaRepository.save(scala);
 			scalaLogger.log.info("Scala spostata nel cestino: " + trashScala);
 		} else {
-			scalaLogger.log.info("scala non spostata nel cestino");
+			scalaLogger.log.info("Scala non spostata nel cestino");
 		}
 		return trashScala;
 	}

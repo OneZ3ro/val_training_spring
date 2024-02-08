@@ -12,5 +12,4 @@ public record UtenteRegistrationDto(
         @NotEmpty(message = "Il cognome è un campo obbligatorio!")
         String cognome,
         String informazioniGenerali
-        
 ){}

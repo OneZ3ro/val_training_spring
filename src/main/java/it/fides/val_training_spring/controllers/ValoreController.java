@@ -34,13 +34,13 @@ public class ValoreController {
     }
 
     @PostMapping
-    @PreAuthorize("hasAuthority('responsabile')")
+    @PreAuthorize("hasAuthority('admin') or hasAuthority('responsabile')")
     public void insertValore(@RequestBody ValoreEntity valore) {
         valoreService.insertValore(valore);
     }
 
     @PutMapping("/{id}")
-    @PreAuthorize("hasAuthority('responsabile')")
+    @PreAuthorize("hasAuthority('admin') or hasAuthority('responsabile')")
     public void updateValore(@PathVariable Long id, @RequestBody ValoreEntity valore) {
         valoreService.updateValore(id, valore);
     }
@@ -53,7 +53,7 @@ public class ValoreController {
     
     @PutMapping("/trash/{id}")
     @PreAuthorize("hasAuthority('admin') or hasAuthority('responsabile')")
-    public ValoreEntity trashValore(@PathVariable long id, @RequestBody ValoreEntity valoreEntity) {
-    	return valoreService.trashValore(id, valoreEntity);
-    }
+	public ValoreEntity trashValore(@PathVariable Long id, @RequestBody ValoreEntity valoreEntity) {
+		return valoreService.trashValore(id, valoreEntity);
+	}
 }

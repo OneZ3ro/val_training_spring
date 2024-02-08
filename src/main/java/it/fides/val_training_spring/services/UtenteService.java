@@ -1,10 +1,14 @@
 package it.fides.val_training_spring.services;
 
+import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import it.fides.val_training_spring.exceptions.NotFoundException;
+import it.fides.val_training_spring.models.dto.UtenteUpdateDto;
+import it.fides.val_training_spring.models.entities.GruppoEntity;
 import it.fides.val_training_spring.models.entities.UtenteEntity;
 import it.fides.val_training_spring.models.repositories.UtenteRepository;
 import it.fides.val_training_spring.utils.loggers.UtenteLogger;
@@ -17,6 +21,12 @@ public class UtenteService {
 	
 	@Autowired
 	private UtenteLogger utenteLogger;
+	
+	@Autowired
+	private GruppoService gruppoService;
+	
+	@Autowired
+	private RuoloService ruoloService;
 
     public List<UtenteEntity> getAllUtenti() {        
         List<UtenteEntity> utenti = utenteRepository.findAll();
@@ -52,25 +62,43 @@ public class UtenteService {
     	return utente;	
     }
     
-    public UtenteEntity updateUtente(Long id, UtenteEntity utenteEntity) {
+    public UtenteEntity updateUtente(Long id, UtenteUpdateDto body) {
     	UtenteEntity utente = utenteRepository.findById(id).get();
     	UtenteEntity updatedUtente = null;
+    	List<GruppoEntity> gruppi = new ArrayList<>();
     	
     	if (utente != null) {
     		utenteLogger.log.info("Utente: " + utente);
-    		
-    		utente.setIdUtente(utenteEntity.getIdUtente());
-    		utente.setNomeUtente(utenteEntity.getNomeUtente());
-    		utente.setCognomeUtente(utenteEntity.getCognomeUtente());
-    		utente.setEmailUtente(utenteEntity.getEmailUtente());
-    		utente.setPasswordUtente(utenteEntity.getPasswordUtente());
-    		utente.setInformazioniGeneraliUtente(utenteEntity.getInformazioniGeneraliUtente());
-    		utente.setDataCreazioneUtente(utenteEntity.getDataCreazioneUtente());
-    		utente.setDataModificaUtente(utenteEntity.getDataModificaUtente());
-    		utente.setFlgCancellatoUtente(utenteEntity.isFlgCancellatoUtente());
-    		utente.setRuolo(utenteEntity.getRuolo());
-    		utente.setGruppi(utenteEntity.getGruppi());
-    		
+    		if(body.nome() != null) {
+    			utente.setNomeUtente(body.nome());
+    		}
+    		if(body.cognome() != null) {
+    			utente.setCognomeUtente(body.cognome());;
+    		}
+    		if(body.email() != null) {
+    			utente.setEmailUtente(body.email());
+    		}
+    		if(body.informazioniGenerali() != null) {
+    			utente.setInformazioniGeneraliUtente(body.informazioniGenerali());
+    		}
+    		if(body.gruppiId() != null) {
+    			System.out.println("è entrato");
+    			System.out.println("è entrato");
+    			System.out.println("è entrato");
+    			System.out.println("è entrato");
+    			for (int i = 0; i < body.gruppiId().size(); i++) {
+    				GruppoEntity gruppo = gruppoService.getGruppo(body.gruppiId().get(i));
+    				gruppi.add(gruppo);
+    			}
+    			utente.setGruppi(gruppi);
+    		} else {
+    			System.out.println("non entra");
+    		}
+    		if(body.ruolo() != null) {
+    			utente.setRuolo(ruoloService.getRuolo(body.ruolo()));
+    		}
+    		utente.setDataModificaUtente(LocalDateTime.now());
+    		utente.setFlgCancellatoUtente(false);
     		updatedUtente = utenteRepository.save(utente);
     		utenteLogger.log.info("Utente aggiornato: " + updatedUtente);
     	} else {
@@ -82,16 +110,17 @@ public class UtenteService {
     public void deleteUtente(Long id) {
     	utenteRepository.deleteById(id);
     }
+    
     public UtenteEntity findById(long id) throws NotFoundException {
         return utenteRepository.findById(id).orElseThrow(() -> new NotFoundException(id));
     }
     
     public UtenteEntity findByEmail(String email) throws Exception {
         return utenteRepository.findByEmailUtente(email)
-                .orElseThrow(() -> new Exception("Utente con email "+ email + " non trovato"));
+                .orElseThrow(() -> new NotFoundException("Utente con email "+ email + " non trovato"));
     }
     
-	public UtenteEntity trashUtente(Long id, UtenteEntity utenteEntity) {
+    public UtenteEntity trashUtente(Long id, UtenteEntity utenteEntity) {
 		UtenteEntity utente = utenteRepository.findById(id).get();
 		UtenteEntity trashUtente = null;
 		
