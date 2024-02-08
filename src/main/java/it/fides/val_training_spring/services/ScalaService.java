@@ -4,6 +4,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import it.fides.val_training_spring.models.entities.ScalaEntity;
+import it.fides.val_training_spring.models.entities.ValoreEntity;
 import it.fides.val_training_spring.models.repositories.ScalaRepository;
 import it.fides.val_training_spring.utils.loggers.ScalaLogger;
 
@@ -76,5 +77,19 @@ public class ScalaService {
 
 	public void deleteScala(Long id) {
 		scalaRepository.deleteById(id);
+	}
+	
+	public ScalaEntity trashScala(Long id, ScalaEntity scalaEntity) {
+		ScalaEntity scala = scalaRepository.findById(id).get();
+		ScalaEntity trashScala = null;
+		
+		if (scala != null && !scala.isFlgCancellatoScala()) {
+			scala.setFlgCancellatoScala(true);
+			trashScala = scalaRepository.save(scala);
+			scalaLogger.log.info("Scala spostata nel cestino: " + trashScala);
+		} else {
+			scalaLogger.log.info("scala non spostata nel cestino");
+		}
+		return trashScala;
 	}
 }

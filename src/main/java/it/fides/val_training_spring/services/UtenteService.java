@@ -90,4 +90,18 @@ public class UtenteService {
         return utenteRepository.findByEmailUtente(email)
                 .orElseThrow(() -> new Exception("Utente con email "+ email + " non trovato"));
     }
+    
+	public UtenteEntity trashUtente(Long id, UtenteEntity utenteEntity) {
+		UtenteEntity utente = utenteRepository.findById(id).get();
+		UtenteEntity trashUtente = null;
+		
+		if (utente != null && !utente.isFlgCancellatoUtente()) {
+			utente.setFlgCancellatoUtente(true);
+			trashUtente = utenteRepository.save(utente);
+			utenteLogger.log.info("Utente spostato nel cestino: " + trashUtente);
+		} else {
+			utenteLogger.log.info("Utente non spostato nel cestino");
+		}
+		return trashUtente;
+	}
 }

@@ -1,6 +1,7 @@
 package it.fides.val_training_spring.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -26,6 +27,7 @@ public class UtenteController {
     }
     
     @GetMapping("/{id}")
+    @PreAuthorize("hasAuthority('responsabile')")
     public UtenteEntity getUtente(@PathVariable Long id) {
         return utenteService.getUtente(id);
     }
@@ -36,12 +38,20 @@ public class UtenteController {
     }
 
     @PutMapping("/{id}")
+    @PreAuthorize("hasAuthority('responsabile')")
     public UtenteEntity updateUtente(@PathVariable Long id, @RequestBody UtenteEntity utenteEntity) {
         return utenteService.updateUtente(id, utenteEntity);
     }
     
     @DeleteMapping("/{id}")
+    @PreAuthorize("hasAuthority('admin')")
     public void deleteUtente(@PathVariable Long id) {
     	utenteService.deleteUtente(id);
+    }
+    
+    @PutMapping("/trash/{id}")
+    @PreAuthorize("hasAuthority('admin')")
+    public UtenteEntity trashUtente(@PathVariable long id, @RequestBody UtenteEntity utenteEntity) {
+    	return utenteService.trashUtente(id, utenteEntity);
     }
 }

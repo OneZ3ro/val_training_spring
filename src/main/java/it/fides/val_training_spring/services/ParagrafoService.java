@@ -77,4 +77,18 @@ public class ParagrafoService {
 	public void deleteParagrafo(Long id) {
 		paragrafoRepository.deleteById(id);
 	}
+	
+	public ParagrafoEntity trashParagrafo(Long id, ParagrafoEntity paragrafoEntity) {
+		ParagrafoEntity paragrafo = paragrafoRepository.findById(id).get();
+		ParagrafoEntity trashParagrafo = null;
+		
+		if (paragrafo != null && !paragrafo.isFlgCancellatoParagrafo()) {
+			paragrafo.setFlgCancellatoParagrafo(true);
+			trashParagrafo = paragrafoRepository.save(paragrafo);
+			paragrafoLogger.log.info("Gruppo spostato nel cestino: " + trashParagrafo);
+		} else {
+			paragrafoLogger.log.info("Gruppo non spostato nel cestino");
+		}
+		return trashParagrafo;
+	}
 }

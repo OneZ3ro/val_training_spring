@@ -77,4 +77,18 @@ public class GruppoService {
 	public void deleteGruppo(Long id) {
 		gruppoRepository.deleteById(id);
 	}
+	
+	public GruppoEntity trashGruppo(Long id, GruppoEntity gruppoEntity) {
+		GruppoEntity gruppo = gruppoRepository.findById(id).get();
+		GruppoEntity trashGruppo = null;
+		
+		if (gruppo != null && !gruppo.isFlgCancellatoGruppo()) {
+			gruppo.setFlgCancellatoGruppo(true);
+			trashGruppo = gruppoRepository.save(gruppo);
+			gruppoLogger.log.info("Gruppo spostato nel cestino: " + trashGruppo);
+		} else {
+			gruppoLogger.log.info("Gruppo non spostato nel cestino");
+		}
+		return trashGruppo;
+	}
 }
