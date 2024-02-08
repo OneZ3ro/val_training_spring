@@ -59,8 +59,10 @@ public class AuthService {
         newUser.setDataCreazioneUtente(LocalDateTime.now());
         newUser.setDataModificaUtente(LocalDateTime.now());
         newUser.setFlgCancellatoUtente(false);
-        if(!body.informazioniGenerali().isBlank()) {
+        if(body.informazioniGenerali() != null) {
         	newUser.setInformazioniGeneraliUtente(body.informazioniGenerali());
+		} else {
+			newUser.setInformazioniGeneraliUtente("Lorem Ipsum");
 		}
         
         utenteRepository.save(newUser);

@@ -58,8 +58,9 @@ public class UtenteController {
 
     @PutMapping("/{id}")
     @PreAuthorize("hasAuthority('admin') or hasAuthority('responsabile')")
-    public UtenteEntity updateUtente(@PathVariable Long id, @RequestBody UtenteEntity utenteEntity) {
-        return utenteService.updateUtente(id, utenteEntity);
+    public UtenteEntity updateUtente(@PathVariable Long id, @RequestBody UtenteUpdateDto body) {
+    	System.out.println("è entrato controller");
+        return utenteService.updateUtente(id, body);
     }
     
     @DeleteMapping("/{id}")
