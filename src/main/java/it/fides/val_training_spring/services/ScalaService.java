@@ -77,4 +77,18 @@ public class ScalaService {
 	public void deleteScala(Long id) {
 		scalaRepository.deleteById(id);
 	}
+	
+	public ScalaEntity trashScala(Long id, ScalaEntity scalaEntity) {
+		ScalaEntity scala = scalaRepository.findById(id).get();
+		ScalaEntity trashScala = null;
+		
+		if (scala != null && !scala.isFlgCancellatoScala()) {
+			scala.setFlgCancellatoScala(true);
+			trashScala = scalaRepository.save(scala);
+			scalaLogger.log.info("Scala spostata nel cestino: " + trashScala);
+		} else {
+			scalaLogger.log.info("Scala non spostata nel cestino");
+		}
+		return trashScala;
+	}
 }

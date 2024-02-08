@@ -32,20 +32,26 @@ public class ScalaController {
 	}
 	
 	@PostMapping
-	@PreAuthorize("hasAuthority('responsabile')")
+	@PreAuthorize("hasAuthority('admin') or hasAuthority('responsabile')")
 	public ScalaEntity insertScala(@RequestBody ScalaEntity scalaEntity) {
 		return scalaService.insertScala(scalaEntity);
 	}
 	
 	@PutMapping("/{id}")
-	@PreAuthorize("hasAuthority('responsabile')")
+	@PreAuthorize("hasAuthority('admin') or hasAuthority('responsabile')")
 	public ScalaEntity updateScala(@RequestBody ScalaEntity scalaEntity, @PathVariable Long id) {
 		return scalaService.updateScala(scalaEntity, id);
 	}
 	
 	@DeleteMapping("/{id}")
-	@PreAuthorize("hasAuthority('responsabile')")
+	@PreAuthorize("hasAuthority('admin')")
 	public void deleteScala(Long id) {
 		scalaService.deleteScala(id);
+	}
+	
+	@PutMapping("/trash/{id}")
+	@PreAuthorize("hasAuthority('admin') or hasAuthority('responsabile')")
+	public ScalaEntity trashScala(@PathVariable Long id, @RequestBody ScalaEntity scalaEntity) {
+		return scalaService.trashScala(id, scalaEntity);
 	}
 }

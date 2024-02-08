@@ -34,19 +34,19 @@ public class RuoloController {
 	}
 	
 	@PostMapping
-	@PreAuthorize("hasAuthority('responsabile')")
+	@PreAuthorize("hasAuthority('admin')")
 	public RuoloEntity insertRuolo(@RequestBody RuoloEntity ruoloEntity) {
 		return ruoloService.insertRuolo(ruoloEntity);
 	}
 	
 	@PutMapping("/{id}")
-	@PreAuthorize("hasAuthority('responsabile')")
+	@PreAuthorize("hasAuthority('admin')")
 	public RuoloEntity updateRuolo(@PathVariable Long id, @RequestBody RuoloEntity ruoloEntity) {
 		return ruoloService.updateRuolo(id, ruoloEntity);
 	}
 	
 	@DeleteMapping("/{id}")
-	@PreAuthorize("hasAuthority('responsabile')")
+	@PreAuthorize("hasAuthority('admin')")
 	public void deleteRuolo(@PathVariable Long id) {
 		ruoloService.deleteRuolo(id);
 	}

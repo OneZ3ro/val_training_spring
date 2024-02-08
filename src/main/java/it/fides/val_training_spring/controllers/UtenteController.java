@@ -46,7 +46,7 @@ public class UtenteController {
     }
     
     @GetMapping("/{id}")
-    @PreAuthorize("hasAuthority('responsabile')")
+    @PreAuthorize("hasAuthority('admin') or hasAuthority('responsabile')")
     public UtenteEntity getUtente(@PathVariable Long id) {
         return utenteService.getUtente(id);
     }
@@ -57,14 +57,20 @@ public class UtenteController {
     }
 
     @PutMapping("/{id}")
-    @PreAuthorize("hasAuthority('responsabile')")
+    @PreAuthorize("hasAuthority('admin') or hasAuthority('responsabile')")
     public UtenteEntity updateUtente(@PathVariable Long id, @RequestBody UtenteEntity utenteEntity) {
         return utenteService.updateUtente(id, utenteEntity);
     }
     
     @DeleteMapping("/{id}")
-    @PreAuthorize("hasAuthority('responsabile')")
+    @PreAuthorize("hasAuthority('admin')")
     public void deleteUtente(@PathVariable Long id) {
     	utenteService.deleteUtente(id);
     }
+    
+    @PutMapping("/trash/{id}")
+    @PreAuthorize("hasAuthority('admin')")
+	public UtenteEntity trashUtente(@PathVariable Long id, @RequestBody UtenteEntity utenteEntity) {
+		return utenteService.trashUtente(id, utenteEntity);
+	}
 }
