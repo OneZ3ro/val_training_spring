@@ -1,7 +1,16 @@
 package it.fides.val_training_spring.models.entities;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
+
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -15,8 +24,14 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "utente")
-public class UtenteEntity {
+@JsonIgnoreProperties({"password", "passwordUtente", "flgCancellatoUtente", "enabled", "accountNonLocked", "credentialsNonExpired", "accountNonExpired"})
+public class UtenteEntity implements UserDetails{
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id_utente")
@@ -133,5 +148,44 @@ public class UtenteEntity {
 				+ ", informazioniGeneraliUtente=" + informazioniGeneraliUtente + ", dataCreazioneUtente="
 				+ dataCreazioneUtente + ", dataModificaUtente=" + dataModificaUtente + ", flgCancellatoUtente="
 				+ flgCancellatoUtente + ", ruolo=" + ruolo + ", gruppi=" + gruppi + "]";
+	}
+
+	@Override
+    public Collection<? extends GrantedAuthority> getAuthorities() {
+    List<GrantedAuthority> authorities = new ArrayList<>();
+       if (this.ruolo != null) {
+           authorities.add(new SimpleGrantedAuthority(this.getRuolo().getNomeRuolo()));
+       }
+        return authorities;
+   }
+
+	@Override
+	public String getPassword() {
+		return passwordUtente;
+	}
+
+	@Override
+	public String getUsername() {
+		return emailUtente;
+	}
+
+	@Override
+	public boolean isAccountNonExpired() {
+		return true;
+	}
+
+	@Override
+	public boolean isAccountNonLocked() {
+		return true;
+	}
+
+	@Override
+	public boolean isCredentialsNonExpired() {
+		return true;
+	}
+
+	@Override
+	public boolean isEnabled() {
+		return true;
 	}
 }
