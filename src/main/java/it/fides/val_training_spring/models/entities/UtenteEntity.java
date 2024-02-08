@@ -13,6 +13,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -65,7 +66,7 @@ public class UtenteEntity implements UserDetails{
     @JoinColumn(name = "id_ruolo")
     private RuoloEntity ruolo;
     
-	@ManyToMany
+	@ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(
             name = "utente_gruppo",
             joinColumns = @JoinColumn(name = "id_utente"),

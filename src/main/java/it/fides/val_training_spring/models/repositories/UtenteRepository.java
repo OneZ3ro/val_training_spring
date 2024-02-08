@@ -19,4 +19,5 @@ public interface UtenteRepository extends JpaRepository<UtenteEntity, Long> {
 	public UtenteEntity getUtenteByPassword(String email);	
 	
 	Optional<UtenteEntity> findByEmailUtente(String email);
+
 }
