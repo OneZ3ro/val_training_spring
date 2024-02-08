@@ -27,7 +27,6 @@ public class UtenteController {
     }
     
     @GetMapping("/{id}")
-    @PreAuthorize("hasAuthority('responsabile')")
     public UtenteEntity getUtente(@PathVariable Long id) {
         return utenteService.getUtente(id);
     }
