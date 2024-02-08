@@ -1,8 +1,11 @@
 package it.fides.val_training_spring.utils.converters;
 
+import org.springframework.stereotype.Component;
+
 import it.fides.val_training_spring.models.dto.RuoloDto;
 import it.fides.val_training_spring.models.entities.RuoloEntity;
 
+@Component
 public class RuoloConverter {
 	
 	public RuoloEntity toEntity(RuoloDto ruoloDto) {

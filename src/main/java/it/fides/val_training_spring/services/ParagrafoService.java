@@ -1,10 +1,15 @@
 package it.fides.val_training_spring.services;
 
+import java.time.LocalDateTime;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import it.fides.val_training_spring.models.dto.ParagrafoDto;
 import it.fides.val_training_spring.models.entities.ParagrafoEntity;
+import it.fides.val_training_spring.models.entities.SezioneEntity;
 import it.fides.val_training_spring.models.repositories.ParagrafoRepository;
+import it.fides.val_training_spring.utils.converters.ParagrafoConverter;
 import it.fides.val_training_spring.utils.loggers.ParagrafoLogger;
 
 @Service
@@ -15,6 +20,9 @@ public class ParagrafoService {
 	
 	@Autowired
 	private ParagrafoLogger paragrafoLogger;
+	
+	@Autowired
+	private ParagrafoConverter paragrafoConverter;
 	
 	public List<ParagrafoEntity> getAllParagrafi() {
 		
@@ -39,13 +47,16 @@ public class ParagrafoService {
 		return paragrafo;
 	}
 	
-	public ParagrafoEntity insertParagrafo(ParagrafoEntity paragrafoEntity) {
-		ParagrafoEntity paragrafo = paragrafoRepository.save(paragrafoEntity);
+	public ParagrafoEntity insertParagrafo(ParagrafoDto paragrafoDto) {
+		ParagrafoEntity paragrafo = paragrafoConverter.toEntity(paragrafoDto);
+		
+		paragrafo.setDataCreazioneParagrafo(LocalDateTime.now());
+		paragrafo.setDataModificaParagrafo(LocalDateTime.now());
+		paragrafo.setFlgCancellatoParagrafo(false);
+		paragrafoRepository.save(paragrafo);
 		
 		if (paragrafo != null) {
 			paragrafoLogger.log.info("Paragrafo: " + paragrafo);
-		} else {
-			paragrafoLogger.log.error("Paragrafo non trovato");
 		}
 		
 		return paragrafo;
