@@ -2,6 +2,7 @@ package it.fides.val_training_spring.controllers;
 
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -31,16 +32,19 @@ public class ScalaController {
 	}
 	
 	@PostMapping
+	@PreAuthorize("hasAuthority('responsabile')")
 	public ScalaEntity insertScala(@RequestBody ScalaEntity scalaEntity) {
 		return scalaService.insertScala(scalaEntity);
 	}
 	
 	@PutMapping("/{id}")
+	@PreAuthorize("hasAuthority('responsabile')")
 	public ScalaEntity updateScala(@RequestBody ScalaEntity scalaEntity, @PathVariable Long id) {
 		return scalaService.updateScala(scalaEntity, id);
 	}
 	
 	@DeleteMapping("/{id}")
+	@PreAuthorize("hasAuthority('responsabile')")
 	public void deleteScala(Long id) {
 		scalaService.deleteScala(id);
 	}

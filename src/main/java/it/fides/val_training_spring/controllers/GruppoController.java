@@ -2,6 +2,7 @@ package it.fides.val_training_spring.controllers;
 
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -31,16 +32,19 @@ public class GruppoController {
 	}
 	
 	@PostMapping
+	@PreAuthorize("hasAuthority('responsabile')")
 	public GruppoEntity insertGruppo(@RequestBody GruppoEntity gruppoEntity) {
 		return gruppoService.insertGruppo(gruppoEntity);
 	}
 	
 	@PutMapping("/{id}")
+	@PreAuthorize("hasAuthority('responsabile')")
 	public GruppoEntity updateGruppo(@PathVariable Long id, @RequestBody GruppoEntity gruppoEntity) {
 		return gruppoService.updateGruppo(id, gruppoEntity);
 	}
 	
 	@DeleteMapping("/{id}")
+	@PreAuthorize("hasAuthority('responsabile')")
 	public void deleteGruppo(@PathVariable Long id) {
 		gruppoService.deleteGruppo(id);
 	}

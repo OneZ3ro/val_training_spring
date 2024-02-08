@@ -63,7 +63,6 @@ public class UtenteService {
     		utente.setNomeUtente(utenteEntity.getNomeUtente());
     		utente.setCognomeUtente(utenteEntity.getCognomeUtente());
     		utente.setEmailUtente(utenteEntity.getEmailUtente());
-    		utente.setPasswordUtente(utenteEntity.getPasswordUtente());
     		utente.setInformazioniGeneraliUtente(utenteEntity.getInformazioniGeneraliUtente());
     		utente.setDataCreazioneUtente(utenteEntity.getDataCreazioneUtente());
     		utente.setDataModificaUtente(utenteEntity.getDataModificaUtente());

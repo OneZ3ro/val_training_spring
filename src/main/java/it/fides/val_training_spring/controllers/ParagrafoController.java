@@ -2,6 +2,7 @@ package it.fides.val_training_spring.controllers;
 
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -32,16 +33,19 @@ public class ParagrafoController {
     }
     
     @PostMapping
+    @PreAuthorize("hasAuthority('responsabile')")
     public ParagrafoEntity insertParagrafo(@RequestBody ParagrafoEntity paragrafoEntity) {
     	return paragrafoService.insertParagrafo(paragrafoEntity);
     }
     
     @PutMapping("/{id}")
+    @PreAuthorize("hasAuthority('responsabile')")
     public ParagrafoEntity updateParagrafo(@RequestBody ParagrafoEntity paragrafoEntity, @PathVariable Long id) {
     	return paragrafoService.updateParagrafo(id, paragrafoEntity);
     }
     
     @DeleteMapping("/{id}")
+    @PreAuthorize("hasAuthority('responsabile')")
     public void deleteParagrafo(@PathVariable Long id) {
     	paragrafoService.deleteParagrafo(id);
     }

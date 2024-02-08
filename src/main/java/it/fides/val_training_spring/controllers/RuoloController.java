@@ -3,6 +3,7 @@ package it.fides.val_training_spring.controllers;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -33,16 +34,19 @@ public class RuoloController {
 	}
 	
 	@PostMapping
+	@PreAuthorize("hasAuthority('responsabile')")
 	public RuoloEntity insertRuolo(@RequestBody RuoloEntity ruoloEntity) {
 		return ruoloService.insertRuolo(ruoloEntity);
 	}
 	
 	@PutMapping("/{id}")
+	@PreAuthorize("hasAuthority('responsabile')")
 	public RuoloEntity updateRuolo(@PathVariable Long id, @RequestBody RuoloEntity ruoloEntity) {
 		return ruoloService.updateRuolo(id, ruoloEntity);
 	}
 	
 	@DeleteMapping("/{id}")
+	@PreAuthorize("hasAuthority('responsabile')")
 	public void deleteRuolo(@PathVariable Long id) {
 		ruoloService.deleteRuolo(id);
 	}
