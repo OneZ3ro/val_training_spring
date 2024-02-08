@@ -2,6 +2,7 @@ package it.fides.val_training_spring.services;
 
 import java.time.LocalDateTime;
 
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -61,7 +62,12 @@ public class AuthService {
         newUser.setDataCreazioneUtente(LocalDateTime.now());
         newUser.setDataModificaUtente(LocalDateTime.now());
         newUser.setFlgCancellatoUtente(false);
-        newUser.setInformazioniGeneraliUtente("Lorem Ipsum");
+        
+        if(body.informazioniGenerali() != null) {
+            newUser.setInformazioniGeneraliUtente(body.informazioniGenerali());
+        } else {
+            newUser.setInformazioniGeneraliUtente("Lorem Ipsum");
+        }
         
         utenteRepository.save(newUser);
 
