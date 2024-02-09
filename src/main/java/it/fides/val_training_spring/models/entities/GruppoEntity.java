@@ -106,6 +106,6 @@ public class GruppoEntity {
 	public String toString() {
 		return "GruppoEntity [idGruppo=" + idGruppo + ", nomeGruppo=" + nomeGruppo + ", dataCreazioneGruppo="
 				+ dataCreazioneGruppo + ", dataModificaGruppo=" + dataModificaGruppo + ", flgCancellatoGruppo="
-				+ flgCancellatoGruppo + ", responsabile=" + responsabile + ", dipendenti=" + dipendenti + "]";
+				+ flgCancellatoGruppo +"]";
 	}
 }

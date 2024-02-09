@@ -38,9 +38,13 @@ public class ScalaEntity {
 	@ManyToOne
 	@JoinColumn(name = "id_paragrafo")
 	private ParagrafoEntity paragrafo;
+	
+	@ManyToOne
+	@JoinColumn(name = "sezione_id")
+    private SezioneEntity sezione;
 
 	// Getter & Setter
-
+	
 	public Long getIdScala() {
 		return idScala;
 	}
@@ -48,7 +52,7 @@ public class ScalaEntity {
 	public void setIdScala(Long idScala) {
 		this.idScala = idScala;
 	}
-	
+
 	public String getTitoloScala() {
 		return titoloScala;
 	}
@@ -97,10 +101,20 @@ public class ScalaEntity {
 		this.paragrafo = paragrafo;
 	}
 
+	public SezioneEntity getSezione() {
+		return sezione;
+	}
+
+	public void setSezione(SezioneEntity sezione) {
+		this.sezione = sezione;
+	}
+
 	@Override
 	public String toString() {
 		return "ScalaEntity [idScala=" + idScala + ", titoloScala=" + titoloScala + ", descrizioneScala="
 				+ descrizioneScala + ", dataCreazioneScala=" + dataCreazioneScala + ", dataModificaScala="
-				+ dataModificaScala + ", flgCancellatoScala=" + flgCancellatoScala + ", paragrafo=" + paragrafo + "]";
-	}	
+				+ dataModificaScala + ", flgCancellatoScala=" + flgCancellatoScala + ", paragrafo=" + paragrafo
+				+ ", sezione=" + sezione + "]";
+	}
+
 }

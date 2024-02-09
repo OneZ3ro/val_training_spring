@@ -1,16 +1,32 @@
 package it.fides.val_training_spring.utils.converters;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import it.fides.val_training_spring.models.dto.ValoreDto;
-import it.fides.val_training_spring.models.entities.ValoreEntity;
+import org.springframework.stereotype.Component;
 
+import it.fides.val_training_spring.models.dto.ParagrafoDto;
+import it.fides.val_training_spring.models.dto.UtenteDto;
+import it.fides.val_training_spring.models.dto.ValoreDto;
+import it.fides.val_training_spring.models.entities.ParagrafoEntity;
+import it.fides.val_training_spring.models.entities.UtenteEntity;
+import it.fides.val_training_spring.models.entities.ValoreEntity;
+import it.fides.val_training_spring.models.repositories.ParagrafoRepository;
+import it.fides.val_training_spring.models.repositories.UtenteRepository;
+
+@Component
 public class ValoreConverter {
 	
 	@Autowired
 	private ParagrafoConverter paragrafoConverter;
 	
 	@Autowired
+	private ParagrafoRepository paragrafoRepository;
+	
+	@Autowired
+	private UtenteRepository utenteRepository;
+	
+	@Autowired
 	private UtenteConverter utenteConverter;
+	
 	
 	public ValoreEntity toEntity(ValoreDto valoreDto) {
 		
@@ -19,8 +35,12 @@ public class ValoreConverter {
 		valoreEntity.setIdValore(valoreDto.getIdValore());
 		valoreEntity.setNomeValore(valoreDto.getNomeValore());
 		valoreEntity.setVotoValore(valoreDto.getVotoValore());
-		valoreEntity.setParagrafo(paragrafoConverter.toEntity(valoreDto.getParagrafo()));
-		valoreEntity.setUtente(utenteConverter.toEntity(valoreDto.getUtente()));
+		
+		ParagrafoEntity paragrafoEntity = paragrafoRepository.findById(valoreDto.getParagrafo()).get();
+		valoreEntity.setParagrafo(paragrafoEntity);
+		
+		UtenteEntity utenteEntity = utenteRepository.findById(valoreDto.getUtente()).get();
+		paragrafoEntity.setUtente(utenteEntity);
 		
 		return valoreEntity;
 	}
@@ -32,8 +52,11 @@ public class ValoreConverter {
 		valoreDto.setIdValore(valoreEntity.getIdValore());
 		valoreDto.setNomeValore(valoreEntity.getNomeValore());
 		valoreDto.setVotoValore(valoreEntity.getVotoValore());
-		valoreDto.setParagrafo(paragrafoConverter.toDto(valoreEntity.getParagrafo()));
-		valoreDto.setUtente(utenteConverter.toDto(valoreEntity.getUtente()));
+		
+		UtenteDto utenteDto = utenteConverter.toDto(valoreEntity.getUtente());
+		ParagrafoDto paragrafoDto = paragrafoConverter.toDto(valoreEntity.getParagrafo());
+		valoreDto.setUtente(utenteDto.getIdUtente());
+		valoreDto.setParagrafo(paragrafoDto.getIdParagrafo());
 		
 		return valoreDto;
 	}

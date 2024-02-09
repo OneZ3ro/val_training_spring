@@ -4,21 +4,22 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import it.fides.val_training_spring.models.dto.GruppoDto;
 import it.fides.val_training_spring.models.dto.UtenteDto;
 import it.fides.val_training_spring.models.entities.GruppoEntity;
 import it.fides.val_training_spring.models.entities.UtenteEntity;
 
+@Component
 public class UtenteConverter {
 	
 	@Autowired
 	private RuoloConverter ruoloConverter;
 	
-	@Autowired
-	private GruppoConverter gruppoConverter;
 	
 	public UtenteEntity toEntity(UtenteDto utenteDto) {
+		GruppoConverter gruppoConverter = new GruppoConverter();
 		
 		UtenteEntity utenteEntity = new UtenteEntity();
 		
@@ -40,7 +41,7 @@ public class UtenteConverter {
 	}
 	
 	public UtenteDto toDto(UtenteEntity utenteEntity) {
-		
+		GruppoConverter gruppoConverter = new GruppoConverter();
 		UtenteDto utenteDto = new UtenteDto();
 		
 		utenteDto.setIdUtente(utenteEntity.getIdUtente());

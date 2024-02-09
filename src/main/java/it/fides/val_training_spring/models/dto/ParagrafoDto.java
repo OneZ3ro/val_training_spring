@@ -1,18 +1,18 @@
 package it.fides.val_training_spring.models.dto;
 
 public class ParagrafoDto {
-	
+
 	private Long idParagrafo;
-	
+
 	private String titoloParagrafo;
-	
+
 	private String descrizioneParagrafo;
-	
-	private UtenteDto utente;
-	
-	private SezioneDto sezione;
-	
-	//GETTER E SETTER
+
+	private Long utente;
+
+	private Long sezione;
+
+	// GETTER E SETTER
 
 	public Long getIdParagrafo() {
 		return idParagrafo;
@@ -38,19 +38,19 @@ public class ParagrafoDto {
 		this.descrizioneParagrafo = descrizioneParagrafo;
 	}
 
-	public UtenteDto getUtente() {
+	public Long getUtente() {
 		return utente;
 	}
 
-	public void setUtente(UtenteDto utente) {
+	public void setUtente(Long utente) {
 		this.utente = utente;
 	}
 
-	public SezioneDto getSezione() {
+	public Long getSezione() {
 		return sezione;
 	}
 
-	public void setSezione(SezioneDto sezione) {
+	public void setSezione(Long sezione) {
 		this.sezione = sezione;
 	}
 
