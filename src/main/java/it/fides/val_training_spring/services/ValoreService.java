@@ -1,10 +1,15 @@
 package it.fides.val_training_spring.services;
 
+import java.time.LocalDateTime;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import it.fides.val_training_spring.models.dto.ValoreDto;
+import it.fides.val_training_spring.models.entities.ParagrafoEntity;
 import it.fides.val_training_spring.models.entities.ValoreEntity;
 import it.fides.val_training_spring.models.repositories.ValoreRepository;
+import it.fides.val_training_spring.utils.converters.ValoreConverter;
 import it.fides.val_training_spring.utils.loggers.ValoreLogger;
 
 @Service
@@ -15,6 +20,9 @@ public class ValoreService {
     
     @Autowired
     private ValoreLogger valoreLogger;
+    
+    @Autowired
+    private ValoreConverter valoreConverter;
 
     public List<ValoreEntity> getAllValori() {
         List<ValoreEntity> valori = valoreRepository.findAll();
@@ -40,14 +48,13 @@ public class ValoreService {
     	return valore;
     }
 
-    public ValoreEntity insertValore(ValoreEntity valoreEntity) {
-    	ValoreEntity valore = valoreRepository.save(valoreEntity);
-    	
-    	if (valore != null) {
-    		valoreLogger.log.info("Valore: " + valore);
-    	} else {
-    		valoreLogger.log.error("Valore non creato");
-    	}
+    public ValoreEntity insertValore(ValoreDto valoreDto) {
+    	ValoreEntity valore = valoreConverter.toEntity(valoreDto);
+		
+    	valore.setDataCreazioneValore(LocalDateTime.now());
+    	valore.setDataModificaValore(LocalDateTime.now());
+    	valore.setFlgCancellatoValore(false);
+    	valoreRepository.save(valore);
     	
     	return valore;
     }

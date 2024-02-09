@@ -10,17 +10,17 @@ public class ValoreDto {
 	
 	private String votoValore;
 
-	private ParagrafoDto paragrafo;
+	private Long paragrafo;
 
-	private UtenteDto utente;
+	private Long utente;
 
 	public ValoreDto() {
 
 	}
 	
 	public ValoreDto(Long idValore, String nomeValore, String votoValore, LocalDateTime dataCreazioneValore,
-			LocalDateTime dataModificaValore, Boolean flgCancellatoValore, ParagrafoDto paragrafo,
-			UtenteDto utente) {
+			LocalDateTime dataModificaValore, Boolean flgCancellatoValore, Long paragrafo,
+			Long utente) {
 		this.idValore = idValore;
 		this.nomeValore = nomeValore;
 		this.votoValore = votoValore;
@@ -52,19 +52,19 @@ public class ValoreDto {
 		this.votoValore = votoValore;
 	}
 
-	public ParagrafoDto getParagrafo() {
+	public Long getParagrafo() {
 		return paragrafo;
 	}
 
-	public void setParagrafo(ParagrafoDto paragrafo) {
+	public void setParagrafo(long paragrafo) {
 		this.paragrafo = paragrafo;
 	}
 
-	public UtenteDto getUtente() {
+	public Long getUtente() {
 		return utente;
 	}
 
-	public void setUtente(UtenteDto utente) {
+	public void setUtente(Long utente) {
 		this.utente = utente;
 	}
 

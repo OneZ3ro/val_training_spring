@@ -1,11 +1,16 @@
 package it.fides.val_training_spring.services;
 
+import java.time.LocalDateTime;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import it.fides.val_training_spring.models.dto.ScalaDto;
+import it.fides.val_training_spring.models.entities.ParagrafoEntity;
 import it.fides.val_training_spring.models.entities.ScalaEntity;
 import it.fides.val_training_spring.models.entities.ValoreEntity;
 import it.fides.val_training_spring.models.repositories.ScalaRepository;
+import it.fides.val_training_spring.utils.converters.ScalaConverter;
 import it.fides.val_training_spring.utils.loggers.ScalaLogger;
 
 @Service
@@ -16,6 +21,9 @@ public class ScalaService {
 
 	@Autowired
 	private ScalaLogger scalaLogger;
+	
+	@Autowired
+	private ScalaConverter scalaConverter;
 
 	public List<ScalaEntity> getAllScale() {
 
@@ -41,14 +49,13 @@ public class ScalaService {
 		return scala;
 	}
 
-	public ScalaEntity insertScala(ScalaEntity scalaEntity) {
-		ScalaEntity scala = scalaRepository.save(scalaEntity);
+	public ScalaEntity insertScala(ScalaDto scalaDto) {
+		ScalaEntity scala = scalaConverter.toEntity(scalaDto);
 		
-		if (scala != null) {
-			scalaLogger.log.info("Scala: " + scala);
-		} else {
-			scalaLogger.log.error("Scala non creata");
-		}
+		scala.setDataCreazioneScala(LocalDateTime.now());
+		scala.setDataModificaScala(LocalDateTime.now());
+		scala.setFlgCancellatoScala(false);
+		scalaRepository.save(scala);
 
 		return scala;
 	}

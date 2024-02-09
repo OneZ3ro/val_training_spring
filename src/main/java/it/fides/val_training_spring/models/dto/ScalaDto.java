@@ -8,7 +8,9 @@ public class ScalaDto {
 
 	private String descrizioneScala;
 
-	private ParagrafoDto paragrafo;
+	private Long paragrafo;
+	
+	private Long sezioneDto;
 
 	// Getter & Setter
 
@@ -36,17 +38,29 @@ public class ScalaDto {
 		this.descrizioneScala = descrizioneScala;
 	}
 
-	public ParagrafoDto getParagrafo() {
+	public Long getParagrafo() {
 		return paragrafo;
 	}
 
-	public void setParagrafo(ParagrafoDto paragrafo) {
+	public void setParagrafo(Long paragrafo) {
 		this.paragrafo = paragrafo;
+	}
+	
+	
+
+	public Long getSezione() {
+		return sezioneDto;
+	}
+
+	public void setSezione(Long sezioneDto) {
+		this.sezioneDto = sezioneDto;
 	}
 
 	@Override
 	public String toString() {
 		return "ScalaDto [idScala=" + idScala + ", titoloScala=" + titoloScala + ", descrizioneScala="
-				+ descrizioneScala + ", paragrafoScala=" + paragrafo + "]";
+				+ descrizioneScala + ", paragrafo=" + paragrafo + ", sezione=" + sezioneDto + "]";
 	}
+
+
 }
