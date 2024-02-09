@@ -2,6 +2,9 @@ package it.fides.val_training_spring.models.entities;
 
 import java.time.LocalDateTime;
 import java.util.List;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -15,6 +18,7 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table(name="gruppo")
+//@JsonIgnoreProperties({"dipendenti"})
 public class GruppoEntity {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -104,8 +108,14 @@ public class GruppoEntity {
 
 	@Override
 	public String toString() {
+		List<UtenteEntity> dipendentiList = dipendenti;
+		String app = "";
+		for(UtenteEntity utente : dipendentiList) {
+			app = app + utente.getNomeUtente() + ", ";
+		}
+		System.out.println("app" + app);
 		return "GruppoEntity [idGruppo=" + idGruppo + ", nomeGruppo=" + nomeGruppo + ", dataCreazioneGruppo="
 				+ dataCreazioneGruppo + ", dataModificaGruppo=" + dataModificaGruppo + ", flgCancellatoGruppo="
-				+ flgCancellatoGruppo +"]";
+				+ flgCancellatoGruppo + ", dipendenti : " + app + "]";
 	}
 }

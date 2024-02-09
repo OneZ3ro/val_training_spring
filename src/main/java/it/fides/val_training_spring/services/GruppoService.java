@@ -1,12 +1,14 @@
 package it.fides.val_training_spring.services;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import it.fides.val_training_spring.models.dto.CreazioneGruppoDto;
 import it.fides.val_training_spring.models.entities.GruppoEntity;
+import it.fides.val_training_spring.models.entities.UtenteEntity;
 import it.fides.val_training_spring.models.repositories.GruppoRepository;
 import it.fides.val_training_spring.models.repositories.UtenteRepository;
 import it.fides.val_training_spring.utils.loggers.GruppoLogger;
@@ -37,11 +39,26 @@ public class GruppoService {
 	
 	public GruppoEntity getGruppo(Long id) {
 		GruppoEntity gruppo = gruppoRepository.findById(id).get();
+		System.out.println("entra nel nostro caso");
+		List<UtenteEntity> app = new ArrayList<>();
+		
+		for(UtenteEntity utente : gruppo.getDipendenti()) {
+			UtenteEntity newUtente = new UtenteEntity();
+			newUtente.setIdUtente(utente.getIdUtente());
+			newUtente.setNomeUtente(utente.getNomeUtente());
+			newUtente.setCognomeUtente(utente.getCognomeUtente());
+			/*newUtente.setEmailUtente(utente.getEmailUtente());
+			newUtente.setInformazioniGeneraliUtente(utente.getInformazioniGeneraliUtente());
+			newUtente.setDataCreazioneUtente(utente.getDataCreazioneUtente());
+			newUtente.setDataModificaUtente(utente.getDataModificaUtente());
+			newUtente.setFlgCancellatoUtente(utente.isFlgCancellatoUtente());
+			newUtente.setRuolo(utente.getRuolo());*/
+			app.add(newUtente);
+		}
+		gruppo.setDipendenti(app);
 		
 		if (gruppo != null) {
 			gruppoLogger.log.info("Gruppo: " + gruppo);
-		} else {
-			gruppoLogger.log.error("Gruppo non trovato");
 		}
 		
 		return gruppo;

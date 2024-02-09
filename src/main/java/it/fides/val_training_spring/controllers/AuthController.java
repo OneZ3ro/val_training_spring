@@ -13,6 +13,8 @@ import it.fides.val_training_spring.models.dto.UtenteLoginSuccessDto;
 import it.fides.val_training_spring.models.dto.UtenteRegistrationDto;
 import it.fides.val_training_spring.models.entities.UtenteEntity;
 import it.fides.val_training_spring.services.AuthService;
+import jakarta.servlet.http.Cookie;
+import jakarta.servlet.http.HttpServletResponse;
 
 
 @RestController
@@ -22,7 +24,13 @@ public class AuthController {
     private AuthService authService;
 
     @PostMapping("/login")
-    public UtenteLoginSuccessDto login(@RequestBody UtenteLoginDto body) throws Exception {
+    public UtenteLoginSuccessDto login(@RequestBody UtenteLoginDto body, HttpServletResponse response) throws Exception {
+    	//imposto cookie
+        Cookie cookie = new Cookie("jwt", authService.authenticateUser(body));
+        cookie.setPath("/"); // Set the cookie's path
+        cookie.setHttpOnly(true); // Make sure the cookie is accessible only through HTTP (not JavaScript)
+        cookie.setMaxAge(3600); // Set the expiration time of the cookie (in seconds)
+        response.addCookie(cookie);
 
         return new UtenteLoginSuccessDto(authService.authenticateUser(body));
     }

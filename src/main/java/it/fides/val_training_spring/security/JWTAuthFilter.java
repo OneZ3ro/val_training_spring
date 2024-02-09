@@ -5,6 +5,7 @@ import it.fides.val_training_spring.models.entities.UtenteEntity;
 import it.fides.val_training_spring.services.UtenteService;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
+import jakarta.servlet.http.Cookie;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,11 +28,11 @@ public class JWTAuthFilter extends OncePerRequestFilter {
 	@Override
 	protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain)
 			throws ServletException, IOException {
-		String authHeader = request.getHeader("Authorization");
-		if (authHeader == null || !authHeader.startsWith("Bearer ")) {
+		String token = getJwtFromRequest(request);
+        if (token == null) {
 			throw new UnauthorizedException("Per favore passa il Bearer Token nell'Authorization header");
 		} else {
-			String token = authHeader.substring(7);
+			//token = authHeader.substring(7);
 			System.out.println("TOKEN -> " + token);
 			jwtTools.verifyToken(token);
 			String id = jwtTools.extractIdFromToken(token);
@@ -45,6 +46,18 @@ public class JWTAuthFilter extends OncePerRequestFilter {
 		}
 
 	}
+	
+	private String getJwtFromRequest(HttpServletRequest request) {
+        Cookie[] cookies = request.getCookies();
+        if (cookies != null) {
+            for (Cookie cookie : cookies) {
+                if ("jwt".equals(cookie.getName())) {
+                    return cookie.getValue();
+                }
+            }
+        }
+        return null;
+    }
 
 	@Override
 	protected boolean shouldNotFilter(HttpServletRequest request) throws ServletException {
