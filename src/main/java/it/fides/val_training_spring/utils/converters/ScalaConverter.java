@@ -1,10 +1,12 @@
 package it.fides.val_training_spring.utils.converters;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import it.fides.val_training_spring.models.dto.ScalaDto;
 import it.fides.val_training_spring.models.entities.ScalaEntity;
 
+@Component
 public class ScalaConverter {
 	
 	@Autowired

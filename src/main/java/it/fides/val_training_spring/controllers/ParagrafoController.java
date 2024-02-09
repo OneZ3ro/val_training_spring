@@ -11,7 +11,10 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import it.fides.val_training_spring.models.dto.ParagrafoDto;
 import it.fides.val_training_spring.models.entities.ParagrafoEntity;
+import it.fides.val_training_spring.models.entities.ValoreEntity;
 import it.fides.val_training_spring.services.ParagrafoService;
 
 @RestController
@@ -34,8 +37,8 @@ public class ParagrafoController {
     
     @PostMapping
     @PreAuthorize("hasAuthority('admin') or hasAuthority('responsabile')")
-    public ParagrafoEntity insertParagrafo(@RequestBody ParagrafoEntity paragrafoEntity) {
-    	return paragrafoService.insertParagrafo(paragrafoEntity);
+    public ParagrafoEntity insertParagrafo(@RequestBody ParagrafoDto paragrafoDto) {
+    	return paragrafoService.insertParagrafo(paragrafoDto);
     }
     
     @PutMapping("/{id}")

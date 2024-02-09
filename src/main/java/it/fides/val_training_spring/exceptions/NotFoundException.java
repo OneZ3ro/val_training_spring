@@ -1,6 +1,5 @@
 package it.fides.val_training_spring.exceptions;
 
-
 public class NotFoundException extends RuntimeException{
     /**
 	 * 

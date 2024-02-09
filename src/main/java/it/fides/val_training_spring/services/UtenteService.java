@@ -10,7 +10,6 @@ import it.fides.val_training_spring.exceptions.NotFoundException;
 import it.fides.val_training_spring.models.dto.UtenteUpdateDto;
 import it.fides.val_training_spring.models.entities.GruppoEntity;
 import it.fides.val_training_spring.models.entities.UtenteEntity;
-import it.fides.val_training_spring.models.repositories.GruppoRepository;
 import it.fides.val_training_spring.models.repositories.UtenteRepository;
 import it.fides.val_training_spring.utils.loggers.UtenteLogger;
 

@@ -4,6 +4,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import it.fides.val_training_spring.models.entities.ScalaEntity;
+import it.fides.val_training_spring.models.entities.ValoreEntity;
 import it.fides.val_training_spring.models.repositories.ScalaRepository;
 import it.fides.val_training_spring.utils.loggers.ScalaLogger;
 

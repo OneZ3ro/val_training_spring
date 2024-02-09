@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import it.fides.val_training_spring.models.dto.CreazioneGruppoDto;
 import it.fides.val_training_spring.models.entities.GruppoEntity;
+import it.fides.val_training_spring.models.entities.ValoreEntity;
 import it.fides.val_training_spring.services.GruppoService;
 
 @RestController
