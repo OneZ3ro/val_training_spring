@@ -40,7 +40,8 @@ public class UtenteController {
     
     @PostMapping
     public UtenteEntity insertUtente(@RequestBody UtenteEntity utenteEntity) {
-        return utenteService.insertUtente(utenteEntity);
+    	System.out.println(utenteEntity.toString());    
+    	return utenteService.insertUtente(utenteEntity);
     }
 
     @PutMapping("/{id}")
