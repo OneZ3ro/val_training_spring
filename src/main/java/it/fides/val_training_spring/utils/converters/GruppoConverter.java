@@ -10,12 +10,13 @@ import it.fides.val_training_spring.models.dto.GruppoDto;
 import it.fides.val_training_spring.models.dto.UtenteDto;
 import it.fides.val_training_spring.models.entities.GruppoEntity;
 import it.fides.val_training_spring.models.entities.UtenteEntity;
+import it.fides.val_training_spring.services.UtenteService;
 
 @Component
 public class GruppoConverter {
 	
 	@Autowired
-	private UtenteConverter utenteConverter;
+	private UtenteService utenteService;
 	
 	public GruppoEntity toEntity(GruppoDto gruppoDto) {
 		
@@ -23,11 +24,12 @@ public class GruppoConverter {
 		
 		gruppoEntity.setIdGruppo(gruppoDto.getIdGruppo());
 		gruppoEntity.setNomeGruppo(gruppoDto.getNomeGruppo());
-		gruppoEntity.setResponsabile(utenteConverter.toEntity(gruppoDto.getResponsabile()));
+		UtenteEntity utente = utenteService.getUtente(gruppoDto.getResponsabile());
+		gruppoEntity.setResponsabile(utente);
 		
 		List<UtenteEntity> utenteEntityList = new ArrayList<>();
-		for (UtenteDto utenteDto : gruppoDto.getDipendenti()) {
-			utenteEntityList.add(utenteConverter.toEntity(utenteDto));
+		for (Long idUtenteDto : gruppoDto.getDipendenti()) {
+			utenteEntityList.add(utenteService.getUtente(idUtenteDto));
 		}
 		gruppoEntity.setDipendenti(utenteEntityList);
 		
@@ -40,12 +42,12 @@ public class GruppoConverter {
 		
 		gruppoDto.setIdGruppo(gruppoEntity.getIdGruppo());
 		gruppoDto.setNomeGruppo(gruppoEntity.getNomeGruppo());
-		gruppoDto.setResponsabile(utenteConverter.toDto(gruppoEntity.getResponsabile()));
+		gruppoDto.setResponsabile(gruppoEntity.getResponsabile().getIdUtente());
 		
 		
-		List<UtenteDto> utenteDtoList = new ArrayList<>();
+		List<Long> utenteDtoList = new ArrayList<>();
 		for (UtenteEntity utenteEntity : gruppoEntity.getDipendenti()) {
-			utenteDtoList.add(utenteConverter.toDto(utenteEntity));
+			utenteDtoList.add(utenteEntity.getIdUtente());
 		}
 		gruppoDto.setDipendenti(utenteDtoList);
 		

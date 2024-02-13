@@ -3,10 +3,14 @@ package it.fides.val_training_spring.services;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
+import java.util.TreeSet;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import it.fides.val_training_spring.models.dto.CreazioneGruppoDto;
+import it.fides.val_training_spring.models.dto.GruppoDto;
 import it.fides.val_training_spring.models.entities.GruppoEntity;
 import it.fides.val_training_spring.models.entities.UtenteEntity;
 import it.fides.val_training_spring.models.repositories.GruppoRepository;
@@ -24,6 +28,8 @@ public class GruppoService {
 	
 	@Autowired
 	private UtenteRepository utenteRepository;
+	
+	
 	
 	public List<GruppoEntity> getAllGruppi() {
 		List<GruppoEntity> gruppi = gruppoRepository.findAll();
@@ -82,25 +88,31 @@ public class GruppoService {
 		
 	}
 	
-	public GruppoEntity updateGruppo(Long id, GruppoEntity gruppoEntity) {
+	public GruppoEntity updateGruppo(Long id, GruppoDto body) {
 		GruppoEntity gruppo = gruppoRepository.findById(id).get();
 		GruppoEntity updatedGruppo = null;
+		List<UtenteEntity> dipendentiSet = new ArrayList<UtenteEntity>();
 		
 		if (gruppo != null) {
-			gruppo.setIdGruppo(gruppoEntity.getIdGruppo());
-			gruppo.setNomeGruppo(gruppoEntity.getNomeGruppo());
-			gruppo.setDataCreazioneGruppo(gruppoEntity.getDataCreazioneGruppo());
-			gruppo.setDataModificaGruppo(gruppoEntity.getDataModificaGruppo());
-			gruppo.setFlgCancellatoGruppo(gruppoEntity.isFlgCancellatoGruppo());
-			gruppo.setResponsabile(gruppoEntity.getResponsabile());
-			gruppo.setDipendenti(gruppoEntity.getDipendenti());
+			if(body.getNomeGruppo() != null) {
+				gruppo.setNomeGruppo(body.getNomeGruppo());
+			}
+			if(body.getResponsabile() != null) {
+				gruppo.setResponsabile(utenteRepository.findById(body.getResponsabile()).get());
+			}
+			if(body.getDipendenti() != null) {
+				for (int i = 0; i < body.getDipendenti().size(); i++) {
+    				UtenteEntity utente = utenteRepository.findById(body.getResponsabile()).get();
+    				dipendentiSet.add(utente);
+    			}
+			}
+			gruppo.setDataModificaGruppo(LocalDateTime.now());
 			
 			updatedGruppo = gruppoRepository.save(gruppo);
 			gruppoLogger.log.info("Gruppo aggiornato: " + updatedGruppo);
 		} else {
 			gruppoLogger.log.error("Gruppo non aggiornato");
 		}
-		
 		return updatedGruppo;
 	}
 	

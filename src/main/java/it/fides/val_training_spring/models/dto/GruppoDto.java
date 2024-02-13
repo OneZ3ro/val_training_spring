@@ -6,8 +6,8 @@ public class GruppoDto {
 
 	private Long idGruppo;
 	private String nomeGruppo;
-	private UtenteDto responsabile;
-    private List<UtenteDto> dipendenti;
+	private Long responsabile;
+    private List<Long> dipendenti;
     
     public GruppoDto() {}
 
@@ -27,19 +27,19 @@ public class GruppoDto {
 		this.nomeGruppo = nomeGruppo;
 	}
 
-	public UtenteDto getResponsabile() {
+	public Long getResponsabile() {
 		return responsabile;
 	}
 
-	public void setResponsabile(UtenteDto responsabile) {
+	public void setResponsabile(Long responsabile) {
 		this.responsabile = responsabile;
 	}
 
-	public List<UtenteDto> getDipendenti() {
+	public List<Long> getDipendenti() {
 		return dipendenti;
 	}
 
-	public void setDipendenti(List<UtenteDto> dipendenti) {
+	public void setDipendenti(List<Long> dipendenti) {
 		this.dipendenti = dipendenti;
 	}
 

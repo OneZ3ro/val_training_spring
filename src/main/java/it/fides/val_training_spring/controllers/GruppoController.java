@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import it.fides.val_training_spring.models.dto.CreazioneGruppoDto;
+import it.fides.val_training_spring.models.dto.GruppoDto;
 import it.fides.val_training_spring.models.entities.GruppoEntity;
 import it.fides.val_training_spring.models.entities.ValoreEntity;
 import it.fides.val_training_spring.services.GruppoService;
@@ -42,8 +43,8 @@ public class GruppoController {
 	
 	@PutMapping("/{id}")
 	@PreAuthorize("hasAuthority('admin') or hasAuthority('responsabile')")
-	public GruppoEntity updateGruppo(@PathVariable Long id, @RequestBody GruppoEntity gruppoEntity) {
-		return gruppoService.updateGruppo(id, gruppoEntity);
+	public GruppoEntity updateGruppo(@PathVariable Long id, @RequestBody GruppoDto body) {
+		return gruppoService.updateGruppo(id, body);
 	}
 	
 	@DeleteMapping("/{id}")

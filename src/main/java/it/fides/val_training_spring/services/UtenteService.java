@@ -82,10 +82,6 @@ public class UtenteService {
     			utente.setInformazioniGeneraliUtente(body.informazioniGenerali());
     		}
     		if(body.gruppiId() != null) {
-    			System.out.println("è entrato");
-    			System.out.println("è entrato");
-    			System.out.println("è entrato");
-    			System.out.println("è entrato");
     			for (int i = 0; i < body.gruppiId().size(); i++) {
     				GruppoEntity gruppo = gruppoService.getGruppo(body.gruppiId().get(i));
     				gruppi.add(gruppo);
