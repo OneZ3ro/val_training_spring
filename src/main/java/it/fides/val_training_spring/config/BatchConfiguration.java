@@ -27,68 +27,58 @@ import it.fides.val_training_spring.models.dto.Person;
 
 @Configuration
 public class BatchConfiguration {
-    
-    @Value("dfgjheriheroighrduhgdfihidsgh.csv")
-    private String fileInput;
-    
-    @Bean
-    public Job importUserJob(JobRepository jobRepository, Step step1) {
-        return new JobBuilder("importUserJob", jobRepository)
-          .incrementer(new RunIdIncrementer())
-          .flow(step1)
-          .end()
-          .build();
-    }
 
-    @Bean
-    public Step step1(JobRepository jobRepository, PlatformTransactionManager transactionManager) {
-        return new StepBuilder("step1", jobRepository)
-          .<Person, Person> chunk(10, transactionManager)
-          .reader(reader())
-          //.processor(processor())
-          .writer(writer())
-          .build();
-    }
-    
-    @Bean
-    public FlatFileItemReader<Person> reader() {
-        return new FlatFileItemReaderBuilder<Person>().name("personItemReader")
-          .resource(new ClassPathResource(""))
-          .delimited()
-          .delimiter(",")
-          .names(new String[] { "nome", "cognome" })
-          .fieldSetMapper(new BeanWrapperFieldSetMapper<Person>() {{
-              setTargetType(Person.class);
-          }})
-          .build();
-    }
-    
-    @Bean
-    public ItemWriter<Person> writer() {
-        return new ItemWriter<Person>() {
-            @Override
-            public void write(Chunk<? extends Person> items) throws Exception {
-                Document document = new Document();
-                PdfWriter.getInstance(document, new FileOutputStream("output.pdf"));
-                document.open();
-                
-                //qui vanno aggiunti i service per poi stamparli nel file
-                //UtenteService utenteService = new UtenteService();
-                //GruppoService gruppoService = new GruppoService();
-                
-                for (Person utente : items) {
-                	document.add(new Paragraph(utente.getNome()));
-                }
-                
-                document.close();
-            }
-        };
-    }
-    
-    
+	@Value("csv/inputData.csv")
+	private String fileInput;
 
-    /*@Bean
-    public PersonItemProcessor processor() {
-        return new PersonItemProcessor();
-    }*/
+	@Bean
+	public Job importUserJob(JobRepository jobRepository, Step step1) {
+		return new JobBuilder("importUserJob", jobRepository).incrementer(new RunIdIncrementer()).flow(step1).end()
+				.build();
+	}
+
+	@Bean
+	public Step step1(JobRepository jobRepository, PlatformTransactionManager transactionManager) {
+		return new StepBuilder("step1", jobRepository).<Person, Person>chunk(10, transactionManager).reader(reader())
+				// .processor(processor())
+				.writer(writer()).allowStartIfComplete(true).build();
+	}
+
+	@Bean
+	public FlatFileItemReader<Person> reader() {
+		return new FlatFileItemReaderBuilder<Person>().name("personItemReader")
+				.resource(new ClassPathResource(fileInput)).delimited().delimiter(",")
+				.names(new String[] { "nome", "cognome" }).fieldSetMapper(new BeanWrapperFieldSetMapper<Person>() {
+					{
+						setTargetType(Person.class);
+					}
+				}).build();
+	}
+
+	@Bean
+	public ItemWriter<Person> writer() {
+		return new ItemWriter<Person>() {
+			@Override
+			public void write(Chunk<? extends Person> items) throws Exception {
+				// qui vanno aggiunti i service per poi stamparli nel file
+				// UtenteService utenteService = new UtenteService();
+				// GruppoService gruppoService = new GruppoService();
+				for (Person utente : items) {
+
+					Document document = new Document();
+					PdfWriter.getInstance(document,
+							new FileOutputStream(utente.getNome() + utente.getCognome() + ".pdf"));
+					document.open();
+					document.add(new Paragraph(utente.getNome()));
+					document.close();
+				}
+
+			}
+		};
+	}
+
+	/*
+	 * @Bean public PersonItemProcessor processor() { return new
+	 * PersonItemProcessor(); }
+	 */
 }
