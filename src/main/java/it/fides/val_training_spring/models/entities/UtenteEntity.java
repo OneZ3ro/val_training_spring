@@ -144,50 +144,11 @@ public class UtenteEntity implements UserDetails{
 
 	@Override
 	public String toString() {
-			return "UtenteEntity [idUtente=" + idUtente + ", nomeUtente=" + nomeUtente + ", cognomeUtente=" + cognomeUtente
-					+ ", emailUtente=" + emailUtente + ", passwordUtente=" + passwordUtente
-					+ ", informazioniGeneraliUtente=" + informazioniGeneraliUtente + ", dataCreazioneUtente="
-					+ dataCreazioneUtente + ", dataModificaUtente=" + dataModificaUtente + ", flgCancellatoUtente="
-					+ flgCancellatoUtente + ", ruolo=" + ruolo + ", gruppi: " + gruppi + "]";
-	}
-
-	@Override
-    public Collection<? extends GrantedAuthority> getAuthorities() {
-    List<GrantedAuthority> authorities = new ArrayList<>();
-       if (this.ruolo != null) {
-           authorities.add(new SimpleGrantedAuthority(this.getRuolo().getNomeRuolo()));
-       }
-        return authorities;
-   }
-
-	@Override
-	public String getPassword() {
-		return passwordUtente;
-	}
-
-	@Override
-	public String getUsername() {
-		return emailUtente;
-	}
-
-	@Override
-	public boolean isAccountNonExpired() {
-		return true;
-	}
-
-	@Override
-	public boolean isAccountNonLocked() {
-		return true;
-	}
-
-	@Override
-	public boolean isCredentialsNonExpired() {
-		return true;
-	}
-
-	@Override
-	public boolean isEnabled() {
-		return true;
+		return "UtenteEntity [idUtente=" + idUtente + ", nomeUtente=" + nomeUtente + ", cognomeUtente=" + cognomeUtente
+				+ ", emailUtente=" + emailUtente + ", passwordUtente=" + passwordUtente
+				+ ", informazioniGeneraliUtente=" + informazioniGeneraliUtente + ", dataCreazioneUtente="
+				+ dataCreazioneUtente + ", dataModificaUtente=" + dataModificaUtente + ", flgCancellatoUtente="
+				+ flgCancellatoUtente + ", ruolo=" + ruolo + ", gruppi=" + gruppi + "]";
 	}
 
 	@Override

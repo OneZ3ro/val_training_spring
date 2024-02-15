@@ -14,7 +14,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import it.fides.val_training_spring.models.dto.ScalaDto;
 import it.fides.val_training_spring.models.entities.ScalaEntity;
-import it.fides.val_training_spring.models.entities.ValoreEntity;
 import it.fides.val_training_spring.services.ScalaService;
 
 @RestController
@@ -36,8 +35,8 @@ public class ScalaController {
 	
 	@PostMapping
 	@PreAuthorize("hasAuthority('admin') or hasAuthority('responsabile')")
-	public ScalaEntity insertScala(@RequestBody ScalaEntity scalaEntity) {
-		return scalaService.insertScala(scalaEntity);
+	public ScalaEntity insertScala(@RequestBody ScalaDto scalaDto) {
+		return scalaService.insertScala(scalaDto);
 	}
 	
 	@PutMapping("/{id}")

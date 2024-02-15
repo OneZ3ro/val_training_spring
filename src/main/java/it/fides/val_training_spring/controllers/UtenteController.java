@@ -1,18 +1,7 @@
 package it.fides.val_training_spring.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
-<<<<<<< HEAD
-import org.springframework.core.io.Resource;
-import org.springframework.http.HttpHeaders;
-import org.springframework.http.MediaType;
-import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
-import org.springframework.security.core.annotation.AuthenticationPrincipal;
-import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.validation.annotation.Validated;
-=======
-import org.springframework.security.access.prepost.PreAuthorize;
->>>>>>> features/paragrafo
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -22,17 +11,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-<<<<<<< HEAD
-import com.itextpdf.text.Document;
-
-import it.fides.val_training_spring.models.dto.UtenteUpdateDto;
-import it.fides.val_training_spring.models.entities.UtenteEntity;
-import it.fides.val_training_spring.services.AuthService;
-=======
 import it.fides.val_training_spring.models.dto.UtenteUpdateDto;
 import it.fides.val_training_spring.models.entities.UtenteEntity;
 //import it.fides.val_training_spring.services.AuthService;
->>>>>>> features/paragrafo
 import it.fides.val_training_spring.services.UtenteService;
 import java.util.List;
 
@@ -49,16 +30,6 @@ public class UtenteController {
     @GetMapping
     public List<UtenteEntity> getAllUtenti() {
         return utenteService.getAllUtenti();
-    }
-    
-    @GetMapping("/me")
-    public UserDetails getProfile(@AuthenticationPrincipal UserDetails currentUser){
-        return currentUser;
-    };
-    
-    @PutMapping("/me")
-    public UtenteEntity updateProfileUser(@AuthenticationPrincipal UtenteEntity currentUser, @RequestBody @Validated UtenteUpdateDto body) {
-        return authService.updateUtenteById(currentUser.getIdUtente(), body);
     }
     
     @GetMapping("/{id}")
