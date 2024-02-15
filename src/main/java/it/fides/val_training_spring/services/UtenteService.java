@@ -18,7 +18,6 @@ import it.fides.val_training_spring.models.dto.UtenteUpdateDto;
 import it.fides.val_training_spring.models.entities.GruppoEntity;
 import it.fides.val_training_spring.models.entities.UtenteEntity;
 import it.fides.val_training_spring.models.repositories.UtenteRepository;
-import it.fides.val_training_spring.security.EmailService;
 import it.fides.val_training_spring.utils.loggers.UtenteLogger;
 
 @Service
@@ -150,6 +149,7 @@ public class UtenteService {
         document.add(new Paragraph("Nome: " + currentUser.getNomeUtente()));
         document.add(new Paragraph("Cognome: " + currentUser.getCognomeUtente()));
         document.add(new Paragraph("Email: " + currentUser.getEmailUtente()));
+        document.add(new Paragraph("Informazioni Generali" + currentUser.getInformazioniGeneraliUtente()));
         // Aggiungi altre informazioni sull'utente al documento
         document.close();
 
