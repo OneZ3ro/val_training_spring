@@ -27,13 +27,13 @@ public class UtenteService {
 	private UtenteRepository utenteRepository;
 	
 	@Autowired
+	private UtenteLogger utenteLogger;
+	
+	@Autowired
 	private GruppoService gruppoService;
 	
 	@Autowired
 	private RuoloService ruoloService;
-	
-	@Autowired
-	private UtenteLogger utenteLogger;
 	
 	@Autowired
 	private EmailService emailService;
@@ -71,6 +71,47 @@ public class UtenteService {
     	}
     	return utente;	
     }
+    
+    public UtenteEntity updateUtente(Long id, UtenteUpdateDto body) {
+    	UtenteEntity utente = utenteRepository.findById(id).get();
+    	UtenteEntity updatedUtente = null;
+    	List<GruppoEntity> gruppi = new ArrayList<>();
+    	
+    	if (utente != null) {
+    		utenteLogger.log.info("Utente: " + utente);
+    		if(body.nome() != null) {
+    			utente.setNomeUtente(body.nome());
+    		}
+    		if(body.cognome() != null) {
+    			utente.setCognomeUtente(body.cognome());;
+    		}
+    		if(body.email() != null) {
+    			utente.setEmailUtente(body.email());
+    		}
+    		if(body.informazioniGenerali() != null) {
+    			utente.setInformazioniGeneraliUtente(body.informazioniGenerali());
+    		}
+    		if(body.gruppiId() != null) {
+    			for (int i = 0; i < body.gruppiId().size(); i++) {
+    				GruppoEntity gruppo = gruppoService.getGruppo(body.gruppiId().get(i));
+    				gruppi.add(gruppo);
+    			}
+    			utente.setGruppi(gruppi);
+    		} else {
+    			System.out.println("non entra");
+    		}
+    		if(body.ruolo() != null) {
+    			utente.setRuolo(ruoloService.getRuolo(body.ruolo()));
+    		}
+    		utente.setDataModificaUtente(LocalDateTime.now());
+    		utente.setFlgCancellatoUtente(false);
+    		updatedUtente = utenteRepository.save(utente);
+    		utenteLogger.log.info("Utente aggiornato: " + updatedUtente);
+    	} else {
+    		utenteLogger.log.error("Utente non aggiornato");
+    	}
+    	return updatedUtente;
+    }
 
     public void deleteUtente(Long id) {
     	utenteRepository.deleteById(id);
@@ -82,7 +123,7 @@ public class UtenteService {
     
     public UtenteEntity findByEmail(String email) throws Exception {
         return utenteRepository.findByEmailUtente(email)
-                .orElseThrow(() -> new Exception("Utente con email "+ email + " non trovato"));
+                .orElseThrow(() -> new NotFoundException("Utente con email "+ email + " non trovato"));
     }
     
     public UtenteEntity trashUtente(Long id, UtenteEntity utenteEntity) {
@@ -98,11 +139,6 @@ public class UtenteService {
 		}
 		return trashUtente;
 	}
-    
-    public UtenteEntity updateUtente(Long id, UtenteUpdateDto body) {
-        UtenteEntity utente = utenteRepository.findById(id).get();
-        UtenteEntity updatedUtente = null;
-        List<GruppoEntity> gruppi = new ArrayList<>();
 
     public Resource generatePdf(UtenteEntity currentUser) throws Exception {
 		// Genera il documento PDF per l'utente
@@ -125,6 +161,13 @@ public class UtenteService {
         	UtenteEntity responsabile = gruppo.getResponsabile();
         	responsabiliList.add(responsabile);
         }
-        return updatedUtente;
+        
+        for(UtenteEntity utente : responsabiliList) {
+        	emailService.send("amministrazione@gmail.com", utente.getEmailUtente(), "Pdf scaricato", "L'utente " + currentUser.getNomeUtente() + " " + currentUser.getCognomeUtente() + "  ha scaricato il pdf");
+           }
+        
+        
+        return new ByteArrayResource(pdfBytes);
+		
     }
 }
