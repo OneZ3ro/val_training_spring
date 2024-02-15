@@ -13,10 +13,7 @@ public class UtenteDto {
     private RuoloDto ruolo;
     private List<GruppoDto> gruppi;
     
-    
     public UtenteDto() {}
-    
-
     
     public Long getIdUtente() {
 		return idUtente;

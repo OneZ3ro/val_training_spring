@@ -36,7 +36,7 @@ public class ValoreController {
 
     @PostMapping
     @PreAuthorize("hasAuthority('admin') or hasAuthority('responsabile')")
-    public void insertValore(@RequestBody ValoreDto valore) {
+    public void insertValore(@RequestBody ValoreEntity valore) {
         valoreService.insertValore(valore);
     }
 

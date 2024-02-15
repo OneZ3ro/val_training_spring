@@ -25,7 +25,7 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "utente")
-@JsonIgnoreProperties({"password", "passwordUtente", "flgCancellatoUtente", "enabled", "accountNonLocked", "gruppi", "credentialsNonExpired", "accountNonExpired"})
+@JsonIgnoreProperties({"password", "passwordUtente", "flgCancellatoUtente", "enabled", "accountNonLocked", "credentialsNonExpired", "accountNonExpired"})
 public class UtenteEntity implements UserDetails{
 	
 	/**
@@ -149,6 +149,45 @@ public class UtenteEntity implements UserDetails{
 					+ ", informazioniGeneraliUtente=" + informazioniGeneraliUtente + ", dataCreazioneUtente="
 					+ dataCreazioneUtente + ", dataModificaUtente=" + dataModificaUtente + ", flgCancellatoUtente="
 					+ flgCancellatoUtente + ", ruolo=" + ruolo + ", gruppi: " + gruppi + "]";
+	}
+
+	@Override
+    public Collection<? extends GrantedAuthority> getAuthorities() {
+    List<GrantedAuthority> authorities = new ArrayList<>();
+       if (this.ruolo != null) {
+           authorities.add(new SimpleGrantedAuthority(this.getRuolo().getNomeRuolo()));
+       }
+        return authorities;
+   }
+
+	@Override
+	public String getPassword() {
+		return passwordUtente;
+	}
+
+	@Override
+	public String getUsername() {
+		return emailUtente;
+	}
+
+	@Override
+	public boolean isAccountNonExpired() {
+		return true;
+	}
+
+	@Override
+	public boolean isAccountNonLocked() {
+		return true;
+	}
+
+	@Override
+	public boolean isCredentialsNonExpired() {
+		return true;
+	}
+
+	@Override
+	public boolean isEnabled() {
+		return true;
 	}
 
 	@Override

@@ -37,14 +37,14 @@ public class GruppoController {
 	
 	@PostMapping
 	@PreAuthorize("hasAuthority('admin') or hasAuthority('responsabile')")
-	public GruppoEntity insertGruppo(@RequestBody CreazioneGruppoDto gruppoEntity) {
+	public GruppoEntity insertGruppo(@RequestBody GruppoEntity gruppoEntity) {
 		return gruppoService.insertGruppo(gruppoEntity);
 	}
 	
 	@PutMapping("/{id}")
 	@PreAuthorize("hasAuthority('admin') or hasAuthority('responsabile')")
-	public GruppoEntity updateGruppo(@PathVariable Long id, @RequestBody GruppoDto body) {
-		return gruppoService.updateGruppo(id, body);
+	public GruppoEntity updateGruppo(@PathVariable Long id, @RequestBody GruppoEntity gruppoEntity) {
+		return gruppoService.updateGruppo(id, gruppoEntity);
 	}
 	
 	@DeleteMapping("/{id}")

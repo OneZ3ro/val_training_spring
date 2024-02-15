@@ -14,23 +14,12 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 
 import it.fides.val_training_spring.exceptions.ExceptionsHandlerFilter;
 
-import static org.springframework.security.config.Customizer.withDefaults;
-
-@Configuration
-@EnableWebSecurity
-@EnableMethodSecurity
-public class SecurityConfig {
-	@Autowired
-	JWTAuthFilter jwtAuthFilter;
-
-	@Autowired
-	ExceptionsHandlerFilter exceptionsHandlerFilter;
-
-	@Bean
-	SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
 		http.sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS));
 		http.csrf(httpSecurityCsrfConfigurer -> httpSecurityCsrfConfigurer.disable());
 		http.formLogin(httpSecurityFormLoginConfigurer -> httpSecurityFormLoginConfigurer.disable());
+		http.formLogin(form -> form.loginPage("/login"));
+		http.sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS));
+		http.csrf(httpSecurityCsrfConfigurer -> httpSecurityCsrfConfigurer.disable());
 		http.addFilterBefore(jwtAuthFilter, UsernamePasswordAuthenticationFilter.class);
 		http.addFilterBefore(exceptionsHandlerFilter, JWTAuthFilter.class);
 		return http.build();

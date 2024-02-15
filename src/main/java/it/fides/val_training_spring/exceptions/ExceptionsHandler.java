@@ -6,7 +6,10 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
+<<<<<<< HEAD
 import it.fides.val_training_spring.models.dto.ErrorsDto;
+=======
+>>>>>>> features/paragrafo
 import it.fides.val_training_spring.models.dto.ErrorsWithListDto;
 
 import java.util.ArrayList;
@@ -30,26 +33,26 @@ public class ExceptionsHandler {
 
     @ExceptionHandler(UnauthorizedException.class)
     @ResponseStatus(HttpStatus.UNAUTHORIZED) // 401
-    public ErrorsDto handleUnauthorized(UnauthorizedException e) {
-        return new ErrorsDto(e.getMessage(), new Date());
+    public ErrorsWithListDto handleUnauthorized(UnauthorizedException e) {
+        return new ErrorsWithListDto(e.getMessage(), new Date(), null);
     }
 
     @ExceptionHandler(AccessDeniedException.class)
     @ResponseStatus(HttpStatus.FORBIDDEN) // 403
-    public ErrorsDto handleAccessDenied(AccessDeniedException e) {
-        return new ErrorsDto(e.getMessage(), new Date());
+    public ErrorsWithListDto handleAccessDenied(AccessDeniedException e) {
+        return new ErrorsWithListDto(e.getMessage(), new Date(), null);
     }
 
     @ExceptionHandler(NotFoundException.class)
     @ResponseStatus(HttpStatus.NOT_FOUND)  // 404
-    public ErrorsDto handleNotFound(NotFoundException e) {
-        return new ErrorsDto(e.getMessage(), new Date());
+    public ErrorsWithListDto handleNotFound(NotFoundException e) {
+        return new ErrorsWithListDto(e.getMessage(), new Date(), null);
     }
 
     @ExceptionHandler(Exception.class)
     @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)  // 500
-    public ErrorsDto handleGeneric(Exception e) {
+    public ErrorsWithListDto handleGeneric(Exception e) {
         e.printStackTrace();
-        return new ErrorsDto("Problema lato server (Internal Server Error)", new Date());
+        return new ErrorsWithListDto("Problema lato server (Internal Server Error)", new Date(), null);
     }
 }

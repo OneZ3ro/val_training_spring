@@ -36,8 +36,8 @@ public class ScalaController {
 	
 	@PostMapping
 	@PreAuthorize("hasAuthority('admin') or hasAuthority('responsabile')")
-	public ScalaEntity insertScala(@RequestBody ScalaDto scalaDto) {
-		return scalaService.insertScala(scalaDto);
+	public ScalaEntity insertScala(@RequestBody ScalaEntity scalaEntity) {
+		return scalaService.insertScala(scalaEntity);
 	}
 	
 	@PutMapping("/{id}")

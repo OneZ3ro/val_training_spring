@@ -28,20 +28,22 @@ public class JWTAuthFilter extends OncePerRequestFilter {
 	@Override
 	protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain)
 			throws ServletException, IOException {
+		
 		String token = getJwtFromRequest(request);
-        if (token == null) {
+		if (token == null) {
 			throw new UnauthorizedException("Per favore passa il Bearer Token nell'Authorization header");
 		} else {
-			//token = authHeader.substring(7);
+			
 			System.out.println("TOKEN -> " + token);
 			jwtTools.verifyToken(token);
 			String id = jwtTools.extractIdFromToken(token);
 			UtenteEntity currentUtente = usersService.findById(Long.parseLong(id));
+			//System.out.println(currentUtente.toString());
 
 			Authentication authentication = new UsernamePasswordAuthenticationToken(currentUtente, null,
 					currentUtente.getAuthorities());
 			SecurityContextHolder.getContext().setAuthentication(authentication);
-
+			System.out.println(authentication.toString());
 			filterChain.doFilter(request, response);
 		}
 
@@ -52,7 +54,7 @@ public class JWTAuthFilter extends OncePerRequestFilter {
         if (cookies != null) {
             for (Cookie cookie : cookies) {
                 if ("jwt".equals(cookie.getName())) {
-                    return cookie.getValue();
+                	return cookie.getValue();
                 }
             }
         }
@@ -61,6 +63,8 @@ public class JWTAuthFilter extends OncePerRequestFilter {
 
 	@Override
 	protected boolean shouldNotFilter(HttpServletRequest request) throws ServletException {
-		return new AntPathMatcher().match("/auth/**", request.getServletPath());
+
+		return new AntPathMatcher().match("/auth/**", request.getServletPath())
+				|| new AntPathMatcher().match("/login", request.getServletPath());
 	}
 }

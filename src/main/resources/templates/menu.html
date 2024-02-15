@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security"><head>
+    <meta charset="UTF-8">
+    <title>MENU</title>
+</head>
+<body>
+
+	<h2>BENVENUTO!</h2>
+	
+	<h3>MENU DELLE OPZIONI</h3>
+	
+	<div sec:authorize="hasAuthority('dipendente')">
+	    Ciao, DIPENDENTE NOME -> <span sec:authentication="principal.nomeUtente">nomeUtente</span> CON EMAIL -> <span sec:authentication="principal.emailUtente"></span>
+	    <!-- tutte le cose che può fare il dipendente -->
+	    <br><br><a href="/utenti">VISUALIZZA TUTTI GLI UTENTI</a>
+	</div>
+	
+	<div sec:authorize="hasAuthority('responsabile')">
+	    Ciao, RESPONSABILE NOME -> <span sec:authentication="principal.nomeUtente">nomeUtente</span> CON EMAIL -> <span sec:authentication="principal.emailUtente"></span>
+	    <!-- tutte le cose che può fare il responsabile -->
+	    <br><br><a href="/utenti">VISUALIZZA TUTTI GLI UTENTI</a>
+	    
+	    <br><p>VISUALIZZA SPECIFICO UTENTE</p>
+	    <form id="myForm" action="/utenti" method="GET">
+	    	<input type="text" id="id">
+	    </form>
+	    
+	    
+	    
+	</div>
+	
+	
+	<script>
+    document.getElementById('myForm').addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevent the default form submission
+        var id = document.getElementById('id').value;
+        var url = 'utenti/' + id; // Construct the URL
+        window.location.href = url;
+    });
+	</script>
+
+</body>
+</html>

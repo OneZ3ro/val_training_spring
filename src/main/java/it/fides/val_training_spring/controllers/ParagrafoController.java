@@ -37,8 +37,8 @@ public class ParagrafoController {
     
     @PostMapping
     @PreAuthorize("hasAuthority('admin') or hasAuthority('responsabile')")
-    public ParagrafoEntity insertParagrafo(@RequestBody ParagrafoDto paragrafoDto) {
-    	return paragrafoService.insertParagrafo(paragrafoDto);
+    public ParagrafoEntity insertParagrafo(@RequestBody ParagrafoEntity paragrafoEntity) {
+    	return paragrafoService.insertParagrafo(paragrafoEntity);
     }
     
     @PutMapping("/{id}")

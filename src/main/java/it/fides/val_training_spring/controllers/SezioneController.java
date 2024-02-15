@@ -36,8 +36,8 @@ public class SezioneController {
 
 	@PostMapping
 	@PreAuthorize("hasAuthority('admin') or hasAuthority('responsabile')")
-	public SezioneEntity insertSezione(@RequestBody SezioneDto sezioneDto) {
-		return sezioneService.insertSezione(sezioneDto);
+	public SezioneEntity insertSezione(@RequestBody SezioneEntity sezioneEntity) {
+		return sezioneService.insertSezione(sezioneEntity);
 	}
 	
 	@PutMapping("/{id}")

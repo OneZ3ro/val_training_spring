@@ -47,7 +47,7 @@ public class RuoloController {
 	}
 	
 	@DeleteMapping("/{id}")
-    @PreAuthorize("hasAuthority('admin')")
+	@PreAuthorize("hasAuthority('admin')")
 	public void deleteRuolo(@PathVariable Long id) {
 		ruoloService.deleteRuolo(id);
 	}

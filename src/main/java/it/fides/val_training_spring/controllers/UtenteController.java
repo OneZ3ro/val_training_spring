@@ -1,6 +1,7 @@
 package it.fides.val_training_spring.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
+<<<<<<< HEAD
 import org.springframework.core.io.Resource;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
@@ -9,6 +10,9 @@ import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.validation.annotation.Validated;
+=======
+import org.springframework.security.access.prepost.PreAuthorize;
+>>>>>>> features/paragrafo
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -18,11 +22,17 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+<<<<<<< HEAD
 import com.itextpdf.text.Document;
 
 import it.fides.val_training_spring.models.dto.UtenteUpdateDto;
 import it.fides.val_training_spring.models.entities.UtenteEntity;
 import it.fides.val_training_spring.services.AuthService;
+=======
+import it.fides.val_training_spring.models.dto.UtenteUpdateDto;
+import it.fides.val_training_spring.models.entities.UtenteEntity;
+//import it.fides.val_training_spring.services.AuthService;
+>>>>>>> features/paragrafo
 import it.fides.val_training_spring.services.UtenteService;
 import java.util.List;
 
@@ -33,8 +43,8 @@ public class UtenteController {
     @Autowired
     private UtenteService utenteService;
     
-    @Autowired
-    private AuthService authService;
+    //@Autowired
+    //private AuthService authService;
 
     @GetMapping
     public List<UtenteEntity> getAllUtenti() {
@@ -59,13 +69,14 @@ public class UtenteController {
     
     @PostMapping
     public UtenteEntity insertUtente(@RequestBody UtenteEntity utenteEntity) {
-        return utenteService.insertUtente(utenteEntity);
+    	System.out.println(utenteEntity.toString());    
+    	return utenteService.insertUtente(utenteEntity);
     }
 
     @PutMapping("/{id}")
     @PreAuthorize("hasAuthority('admin') or hasAuthority('responsabile')")
     public UtenteEntity updateUtente(@PathVariable Long id, @RequestBody UtenteUpdateDto body) {
-    	System.out.println("è entrato controller");
+        System.out.println("è entrato controller");
         return utenteService.updateUtente(id, body);
     }
     
@@ -80,19 +91,4 @@ public class UtenteController {
 	public UtenteEntity trashUtente(@PathVariable Long id, @RequestBody UtenteEntity utenteEntity) {
 		return utenteService.trashUtente(id, utenteEntity);
 	}
-    
-    @GetMapping("/me/downloadPdf")
-    public ResponseEntity<Resource> downloadPdf(@AuthenticationPrincipal UtenteEntity currentUser) throws Exception{
-    	Resource pdfResource = utenteService.generatePdf(currentUser);
-
-        // Imposta gli header per indicare che si tratta di un download e specifica il nome del file
-        HttpHeaders headers = new HttpHeaders();
-        headers.add(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=utente.pdf");
-
-        // Restituisci una risposta con il contenuto del file PDF
-        return ResponseEntity.ok()
-                .headers(headers)
-                .contentType(MediaType.APPLICATION_PDF)
-                .body(pdfResource);
-    }
 }
