@@ -1,10 +1,17 @@
 package it.fides.val_training_spring.services;
 
+import java.io.ByteArrayOutputStream;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.io.ByteArrayResource;
+import org.springframework.core.io.Resource;
 import org.springframework.stereotype.Service;
+
+import com.itextpdf.text.Document;
+import com.itextpdf.text.Paragraph;
+import com.itextpdf.text.pdf.PdfWriter;
 
 import it.fides.val_training_spring.exceptions.NotFoundException;
 import it.fides.val_training_spring.models.dto.UtenteUpdateDto;
@@ -129,4 +136,22 @@ public class UtenteService {
 		}
 		return trashUtente;
 	}
+
+    public Resource generatePdf(UtenteEntity currentUser) throws Exception {
+		// Genera il documento PDF per l'utente
+        Document document = new Document();
+        ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+        PdfWriter.getInstance(document, outputStream);
+        document.open();
+        document.add(new Paragraph("Nome: " + currentUser.getNomeUtente()));
+        document.add(new Paragraph("Cognome: " + currentUser.getCognomeUtente()));
+        document.add(new Paragraph("Email: " + currentUser.getEmailUtente()));
+        // Aggiungi altre informazioni sull'utente al documento
+        document.close();
+
+        // Converte il ByteArrayOutputStream in ByteArrayResource
+        byte[] pdfBytes = outputStream.toByteArray();
+        return new ByteArrayResource(pdfBytes);
+		
+    }
 }

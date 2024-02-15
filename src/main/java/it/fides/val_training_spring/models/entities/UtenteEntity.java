@@ -24,7 +24,7 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "utente")
-@JsonIgnoreProperties({"password", "passwordUtente", "flgCancellatoUtente", "enabled", "accountNonLocked", "credentialsNonExpired", "accountNonExpired", "gruppi"})
+@JsonIgnoreProperties({"password", "passwordUtente", "flgCancellatoUtente", "enabled", "accountNonLocked", "gruppi", "credentialsNonExpired", "accountNonExpired"})
 public class UtenteEntity implements UserDetails{
 	
 	/**
