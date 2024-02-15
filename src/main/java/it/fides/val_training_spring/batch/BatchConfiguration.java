@@ -89,9 +89,7 @@ public class BatchConfiguration {
                     
                     Document document = new Document();
                     
-                    UtenteEntity utenteEntity = utenteService.findByEmail(utente.getEmailUtente());
-                    
-                    PdfWriter.getInstance(document, new FileOutputStream(utenteEntity.getIdUtente()+utente.getNomeUtente()+utente.getCognomeUtente()+".pdf"));
+                    PdfWriter.getInstance(document, new FileOutputStream(utente.getIdUtente()+utente.getNomeUtente()+utente.getCognomeUtente()+".pdf"));
                     document.open();
                 	
                 	document.add(new Paragraph(utente.getNomeUtente()));
