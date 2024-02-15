@@ -18,6 +18,7 @@ import it.fides.val_training_spring.models.dto.UtenteUpdateDto;
 import it.fides.val_training_spring.models.entities.GruppoEntity;
 import it.fides.val_training_spring.models.entities.UtenteEntity;
 import it.fides.val_training_spring.models.repositories.UtenteRepository;
+import it.fides.val_training_spring.security.EmailService;
 import it.fides.val_training_spring.utils.loggers.UtenteLogger;
 
 @Service
@@ -34,6 +35,9 @@ public class UtenteService {
 	
 	@Autowired
 	private RuoloService ruoloService;
+	
+	@Autowired
+	private EmailService emailService;
 
     public List<UtenteEntity> getAllUtenti() {        
         List<UtenteEntity> utenti = utenteRepository.findAll();
@@ -151,6 +155,18 @@ public class UtenteService {
 
         // Converte il ByteArrayOutputStream in ByteArrayResource
         byte[] pdfBytes = outputStream.toByteArray();
+        
+        List<UtenteEntity> responsabiliList = new ArrayList<>();
+        for(GruppoEntity gruppo : currentUser.getGruppi()) {
+        	UtenteEntity responsabile = gruppo.getResponsabile();
+        	responsabiliList.add(responsabile);
+        }
+        
+        for(UtenteEntity utente : responsabiliList) {
+        	emailService.send("amministrazione@gmail.com", utente.getEmailUtente(), "Pdf scaricato", "L'utente " + currentUser.getNomeUtente() + " " + currentUser.getCognomeUtente() + "  ha scaricato il pdf");
+           }
+        
+        
         return new ByteArrayResource(pdfBytes);
 		
     }

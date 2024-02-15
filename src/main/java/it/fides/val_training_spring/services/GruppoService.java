@@ -94,6 +94,7 @@ public class GruppoService {
 		List<UtenteEntity> dipendentiSet = new ArrayList<UtenteEntity>();
 		
 		if (gruppo != null) {
+			
 			if(body.getNomeGruppo() != null) {
 				gruppo.setNomeGruppo(body.getNomeGruppo());
 			}
@@ -102,9 +103,10 @@ public class GruppoService {
 			}
 			if(body.getDipendenti() != null) {
 				for (int i = 0; i < body.getDipendenti().size(); i++) {
-    				UtenteEntity utente = utenteRepository.findById(body.getResponsabile()).get();
+    				UtenteEntity utente = utenteRepository.findById(body.getDipendenti().get(i)).get();
     				dipendentiSet.add(utente);
     			}
+				gruppo.setDipendenti(dipendentiSet);
 			}
 			gruppo.setDataModificaGruppo(LocalDateTime.now());
 			
